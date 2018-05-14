@@ -1,5 +1,5 @@
 <script>
-import WP from '@/lib/wp-api';
+import WP from '@/lib/wp.api';
 
 export default {
   methods:{
@@ -8,10 +8,13 @@ export default {
     },
   },
   asyncComputed:{
-    page:{
+    context:{
       async get(){
-        let page =  await WP.then( this.fetch );
-        return page[0]
+        let data =  await WP.then( this.fetch )
+        if( Array.isArray(data) && data.length<=1 )
+          return data[0]
+        else
+          return data
       },
       watch(){ this.$route },
     }

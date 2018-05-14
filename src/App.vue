@@ -15,3 +15,11 @@ export default {
   components:{ WpNav, Layout }
 }
 </script>
+
+<style>
+hr {
+  border-style: solid;
+  border-width: .75px 0 0;
+  border-color: #dddddd;
+}
+</style>

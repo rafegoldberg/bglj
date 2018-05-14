@@ -1,5 +1,7 @@
-import Home from './views/Home.vue'
-import Page from './views/Page.vue'
+import Home   from './views/Home.vue'
+import Page   from './views/Page.vue'
+import Posts  from './views/Posts.vue'
+import Events from './views/Events.vue'
 
 export default [
   { path: '/',
@@ -8,6 +10,11 @@ export default [
     },
   { path: '/home',
     redirect: to => '/'
+    },
+  { path: '/events/',
+    name: 'events',
+    component: Events,
+    children: []
     },
   { path: '/:slug',
     name: 'page',

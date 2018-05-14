@@ -6,7 +6,7 @@
     <div class="PageLayout--main">
       <transition name="fade" mode="out-in">
         <slot name="main"></slot>
-        <slot></slot>
+        <slot>Loading...</slot>
       </transition>
     </div>
   </div>
@@ -26,14 +26,18 @@ html, body {
     display: flex;
     align-items: stretch;
     min-height: 100vh;
+    border-color: #CCC;
+  }
+  * {
+    border-color: inherit !important;
   }
   > * {
     padding: 0 1rem;
   }
   &--side {
     flex: 0 25vw;
-    // background: #F8F8F8;
-    border-right: .75px solid #000;
+    background: #F8F8F8;
+    border-right: .75px solid;
   }
   &--main {
     flex: 1 100%
@@ -44,7 +48,7 @@ html, body {
 .fade{
   &-enter-active,
   &-leave-active {
-    transition: opacity .3s .15s ease-in-out;
+    transition: opacity .3s ease-out;
   }
   &-enter,
   &-leave-to {

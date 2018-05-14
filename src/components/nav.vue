@@ -1,13 +1,14 @@
 <template>
-<nav>
-  <li v-for="page in pages">
-    <router-link :to="`/${page.slug}`" v-html="page.title.rendered"></router-link>
-  </li>
-</nav>
+  <nav v-if="pages">
+    <template v-for="page in pages">
+      <router-link :to="`/${page.slug}`" :key="page.id" v-html="page.title.rendered"></router-link>
+    </template>
+    <!-- <router-link :to="'/posts'">Posts</router-link> -->
+  </nav>
 </template>
 
 <script>
-import WP from '@/lib/wp-api';
+import WP from '@/lib/wp.api';
 export default {
   props:{
     parent:{ type:[Number,String,Array], default:0 }
@@ -26,24 +27,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-nav {
-  padding: .75rem 0 .25rem;
-}
-li {
-  display: block;
+a {
+  position: relative;
   margin: 0 -1rem;
   white-space: nowrap;
-  &:first-of-type {
-    font-weight: bold;
-    border-bottom: .75px solid #000;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  border: solid transparent;
+  border-width: .75px 0;
+  color: inherit;
+  transition: .2s ease-out, letter-spacing 0s, font-weight 0s;
+  &:hover {
+    background: #FFF;
   }
-  a {
-    display: block;
-    padding: 1em 1rem;
-    text-decoration: none;
-    &:hover {
-      background: #FAFAFA;
+  &:hover, &.active {
+    border-color: #DDD !important;
+    + a {
+      border-top-color: transparent !important;
     }
+  }
+  &.active {
+    z-index: 1;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    color: dodgerblue;
+    background: linear-gradient(to right, transparent 50%, #FFF);
+    box-shadow: inset 5px 0 0 dodgerblue, 1px 0 0 white;
+  }
+  &:first-of-type {
+    background: transparent !important;
+    font-weight: bold;
+    padding: 1.5rem 1rem;
+    border-bottom: solid #DDD;
+    border-width: 0 0 .75px !important;
+    & + a { border-top: 0; }
   }
 }
 </style>

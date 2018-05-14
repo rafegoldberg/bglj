@@ -1,13 +1,13 @@
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import App from '@/App.vue'
 
-import AsyncComputed from 'vue-async-computed';
-Vue.use(AsyncComputed)
-
-Vue.config.productionTip = false
+import '@/lib/use.log'
+import '@/lib/use.async-computed'
+import router from '@/lib/use.router'
 
 export default new Vue({
   router,
   render: h => h(App),
 }).$mount('#app')
+
+Vue.config.productionTip = false
