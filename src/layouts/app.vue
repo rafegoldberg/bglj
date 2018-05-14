@@ -4,10 +4,8 @@
       <slot name="side"></slot>
     </div>
     <div class="PageLayout--main">
-      <transition name="fade" mode="out-in">
         <slot name="main"></slot>
         <slot>Loading...</slot>
-      </transition>
     </div>
   </div>
 </template>

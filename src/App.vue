@@ -1,18 +1,20 @@
 <template>
   <div id="app">
     <AppLayout>
-      <WpNav slot=side></WpNav>
-      <router-view></router-view>
+      <AppNav></AppNav>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </AppLayout>
   </div>
 </template>
 
 <script>
-import WpNav from '@/components/nav.vue'
 import AppLayout from '@/layouts/app.vue'
+import AppNav from '@/components/nav.vue'
 export default {
   name: "App",
-  components:{ WpNav, AppLayout }
+  components:{ AppLayout, AppNav }
 }
 </script>
 
