@@ -12,8 +12,9 @@ add_action('send_headers', function () {
 });
 
 function WpUi(){
-  $BUNDLE = get_template_directory_uri() . "/dist/UI.umd.js";
-  wp_enqueue_script('WpUi',$BUNDLE,[],false,true);
+  $BUNDLE = get_template_directory_uri() . "/dist/bglj";
+  wp_enqueue_style('WpUi',"$BUNDLE.css",[],false,true);
+  wp_enqueue_script('WpUi',"$BUNDLE.umd.js",[],false,true);
   wp_localize_script('WpUi','WP_API_Settings',array(
     'endpoint' => esc_url_raw(rest_url()),
     'nonce' => wp_create_nonce('wp_rest')

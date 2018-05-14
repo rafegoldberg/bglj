@@ -1,4 +1,4 @@
 <?
-include "lib/config/api.php";
-include "lib/config/post-types/events.php";
+include "php/api.php";
+include "php/post-types/events.php";
 ?>
