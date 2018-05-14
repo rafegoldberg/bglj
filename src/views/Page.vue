@@ -1,5 +1,5 @@
 <template>
-  <div v-if="context" class="page">
+  <div v-if="!context.loading" class="page">
 
     <h2 v-html="context.title.rendered"></h2>
 

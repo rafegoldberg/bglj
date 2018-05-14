@@ -16,6 +16,7 @@ export default {
         else
           return data
       },
+      default:{ loading: 'Loading...' },
       watch(){ this.$route },
     }
   }

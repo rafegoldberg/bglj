@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <Layout>
+    <AppLayout>
       <WpNav slot=side></WpNav>
       <router-view></router-view>
-    </Layout>
+    </AppLayout>
   </div>
 </template>
 
 <script>
 import WpNav from '@/components/nav.vue'
-import Layout from '@/components/layout.vue'
+import AppLayout from '@/layouts/app.vue'
 export default {
   name: "App",
-  components:{ WpNav, Layout }
+  components:{ WpNav, AppLayout }
 }
 </script>
 

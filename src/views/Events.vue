@@ -1,16 +1,16 @@
 <template>
-  <div v-if="context" class="events">
+  <div v-if="!context.loading" class="events">
     <h2>events</h2>
     <hr>
     <ul v-for="event in context">
       <li>
-        <b>
-          <router-link :to="`/events/${event.id}`" v-html="event.title.rendered"></router-link>
+        <b v-html="event.title.rendered">
+          <!-- <router-link :to="`/events/${event.id}`" v-html="event.title.rendered"></router-link> -->
         </b>
         <p v-html="event.acf['event-description']"></p>
       </li>
     </ul>
-    <router-view :context="context"></router-view>
+    <!-- <router-view :context="context"></router-view> -->
   </div>
 </template>
 

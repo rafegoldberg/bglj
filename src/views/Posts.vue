@@ -1,5 +1,5 @@
 <template>
-  <div v-if="context" class="posts">
+  <div v-if="!context.loading" class="posts">
     <h2 v-if="$route.params.slug!=='online-edition'">Posts</h2>
     <hr>
     <div v-for="post in context">
