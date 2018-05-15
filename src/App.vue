@@ -45,6 +45,10 @@ pre {
   white-space: pre;
   overflow-x: scroll;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-slab;
+  font-weight: 100;
+}
 </style>
 
 <style lang="scss" scoped>

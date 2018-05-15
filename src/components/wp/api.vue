@@ -31,7 +31,7 @@ export default {
     context:{
       async get(){
         let data = await WP.then( this.fetch )
-
+        
         if( Array.isArray(data) && data.length==1 )
           return data[0]
         else
