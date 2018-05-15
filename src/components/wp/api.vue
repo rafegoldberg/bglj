@@ -30,7 +30,9 @@ export default {
     },
     context:{
       async get(){
-        let data = await WP.then( this.fetch )
+        let
+        err  = false,
+        data = await WP.then( this.fetch ).catch(e=>( err = e ))
         
         if( Array.isArray(data) && data.length==1 )
           return data[0]

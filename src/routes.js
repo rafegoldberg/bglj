@@ -4,7 +4,7 @@ import Page from './views/Page.vue'
 export default [
   { path: '/',
     name: 'home',
-    component: Home
+    components:{ default: Home }
     },
   { path: '/home',
     redirect: to => '/'

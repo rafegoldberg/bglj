@@ -1,14 +1,21 @@
 <template>
-<div class="PageLayout">
+<div class="AppLayout">
 
-  <div class="PageLayout--side">
+  <div class="AppLayout--side">
     <slot name="side"></slot>
   </div>
 
-  <div class="PageLayout--main">
-      <slot name="main"></slot>
+  <main class="AppLayout--main">
+    <header>
+      <slot name="head"></slot>
+    </header>
+    <article>
       <slot>Loading...</slot>
-  </div>
+    </article>
+    <footer>
+      <slot name="foot"></slot>
+    </footer>
+  </main>
 
 </div>
 </template>
@@ -23,23 +30,17 @@ html, body {
 </style>
 
 <style lang="scss" scoped>
-.PageLayout{
+.AppLayout{
   & {
     display: flex;
     align-items: stretch;
     min-height: 100vh;
-    border-color: #CCC;
-  }
-  * {
-    border-color: inherit !important;
   }
   > * {
     padding: 0 1rem;
   }
   &--side {
-    flex: 0 25vw;
-    // background: #F8F8F8;
-    border-right: .75px solid;
+    flex: 0 30vw;
   }
   &--main {
     flex: 1 100%
