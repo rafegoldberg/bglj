@@ -6,10 +6,13 @@
   </h1>
 
   <hr>
-  
-  <router-link :to="'/online'">Page</router-link>
-  <router-link :to="'/submit/catherine-albiston-prize'">Subpage</router-link>
 
+  <template v-if="!context.loading">
+    <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="`/${page.feed}`">
+      <a>{{page.label}}</a>
+    </router-link>
+  </template>
+    
   <slot></slot>
 
 </nav>
@@ -19,5 +22,16 @@
 import WpAsync from "./wp/api";
 export default {
   extends: WpAsync,
+  methods:{
+    fetch(API){
+      return API.namespace('acf/v3').options().id('sidebar').get()
+    }
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+.active {
+  font-weight: bold;
+}
+</style>

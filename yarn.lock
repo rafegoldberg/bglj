@@ -6412,6 +6412,12 @@ vue-loader@^15.0.10:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-mini-calendar@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vue-mini-calendar/-/vue-mini-calendar-0.1.1.tgz#55010d38609fe1556c3c7bd390ee686c9f7ed7f9"
+  dependencies:
+    vue "^2.5.11"
+
 vue-router@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
@@ -6441,7 +6447,7 @@ vue2-google-maps@^0.9.7:
     babel-runtime "^5.8.0"
     marker-clusterer-plus "^2.1.4"
 
-vue@^2.5.16:
+vue@^2.5.11, vue@^2.5.16:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
 
