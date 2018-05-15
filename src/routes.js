@@ -9,8 +9,8 @@ export default [
   { path: '/home',
     redirect: to => '/'
     },
-  { path: '/:slug',
+  { path: '/:path*/:slug',
     name: 'page',
     component: Page,
-    }
+    },
 ]

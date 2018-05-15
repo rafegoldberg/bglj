@@ -18,7 +18,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  font-family: $font-serif;
+  font-family: $font-sans;
 }
 </style>
 
@@ -43,19 +43,6 @@ html, body {
   }
   &--main {
     flex: 1 100%
-  }
-}
-</style>
-
-<style lang="scss">
-.fade{
-  &-enter-active,
-  &-leave-active {
-    transition: opacity .3s ease-out;
-  }
-  &-enter,
-  &-leave-to {
-    opacity: 0;
   }
 }
 </style>

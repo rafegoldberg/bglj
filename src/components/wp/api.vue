@@ -5,9 +5,12 @@
 import WP from '@/includes/wp.api';
 
 export default {
-  props:[
-    'endpoint'
-  ],
+  props:{
+    endpoint:{
+      type: String,
+      default: 'pages'
+    }
+  },
   methods:{
     /**
      * @public overwrite this method in your component with custom API access logic
@@ -20,7 +23,6 @@ export default {
   asyncComputed:{
     API:{
       async get(){
-        // TODO: add 'api-base-url' prop
         let API = await WP
         return API
       },
@@ -28,10 +30,15 @@ export default {
     },
     context:{
       async get(){
-        let API = await WP.then(this.fetch)
-        return API
+        let data = await WP.then( this.fetch )
+
+        if( Array.isArray(data) && data.length==1 )
+          return data[0]
+        else
+          return data
       },
       default:{ loading: 'Loading...' },
+      watch(){ this.$route.params }
     }
   }
 }

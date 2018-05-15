@@ -6,12 +6,11 @@
     <article v-html="context.content.rendered">
       <!-- inject Wordpress Wysiwyg markup here -->
     </article>
-
   </div>
 </template>
 
 <script>
-import WpAsync from '../components/wp/async.vue';
+import WpAsync from '../components/wp/api.vue';
 
 export default {
   name:"Page",
