@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <AppLayout>
-      <!-- <div slot=side>
+      <div slot=side>
         <AppNav></AppNav>
       </div>
       <transition name="fade" mode="out-in">
         <router-view></router-view>
-      </transition> -->
+      </transition>
     </AppLayout>
   </div>
 </template>
