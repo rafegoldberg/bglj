@@ -1,28 +1,21 @@
 <template>
-  <nav v-if="pages">
-    <template v-for="page in pages">
+  <nav v-if="!context.loading">
+    <template v-for="page in context">
       <router-link :to="`/${page.slug}`" :key="page.id" v-html="page.title.rendered"></router-link>
     </template>
-    <!-- <router-link :to="'/posts'">Posts</router-link> -->
   </nav>
 </template>
 
 <script>
-import WP from '@/lib/wp.api';
+import WpAsync from '@/components/wp/async.vue';
 export default {
+  extends:WpAsync,
   props:{
     parent:{ type:[Number,String,Array], default:0 }
   },
   methods:{
     fetch(API){ return API.pages().parent(this.parent).get() }
   },
-  asyncComputed:{
-    pages:{
-      async get(){
-        return await WP.then( this.fetch )
-      }
-    }
-  }
 }
 </script>
 

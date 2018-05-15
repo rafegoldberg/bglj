@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import WpAsync from '../components/wp-async.vue';
+import WpAsync from '../components/wp/async.vue';
 
 export default {
   name:"Page",

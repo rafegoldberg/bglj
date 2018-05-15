@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <AppLayout>
-      <AppNav></AppNav>
+      <!-- <div slot=side>
+        <AppNav></AppNav>
+      </div>
       <transition name="fade" mode="out-in">
         <router-view></router-view>
-      </transition>
+      </transition> -->
     </AppLayout>
   </div>
 </template>
@@ -12,9 +14,11 @@
 <script>
 import AppLayout from '@/layouts/app.vue'
 import AppNav from '@/components/nav.vue'
+import WpApi from '@/components/wp/api.vue'
+
 export default {
   name: "App",
-  components:{ AppLayout, AppNav }
+  components:{ AppLayout, AppNav, WpApi }
 }
 </script>
 

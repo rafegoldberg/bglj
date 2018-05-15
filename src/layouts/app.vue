@@ -1,13 +1,16 @@
 <template>
-  <div class="PageLayout">
-    <div class="PageLayout--side">
-      <slot name="side"></slot>
-    </div>
-    <div class="PageLayout--main">
-        <slot name="main"></slot>
-        <slot>Loading...</slot>
-    </div>
+<div class="PageLayout">
+
+  <div class="PageLayout--side">
+    <slot name="side"></slot>
   </div>
+
+  <div class="PageLayout--main">
+      <slot name="main"></slot>
+      <slot>Loading...</slot>
+  </div>
+
+</div>
 </template>
 
 <style lang="scss">
@@ -18,6 +21,7 @@ html, body {
   font-family: $font-serif;
 }
 </style>
+
 <style lang="scss" scoped>
 .PageLayout{
   & {
@@ -34,7 +38,7 @@ html, body {
   }
   &--side {
     flex: 0 25vw;
-    background: #F8F8F8;
+    // background: #F8F8F8;
     border-right: .75px solid;
   }
   &--main {
@@ -42,6 +46,7 @@ html, body {
   }
 }
 </style>
+
 <style lang="scss">
 .fade{
   &-enter-active,

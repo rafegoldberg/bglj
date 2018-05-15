@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from '@/App.vue'
 
-import '@/lib/use.log'
-import '@/lib/use.async-computed'
-import router from '@/lib/use.router'
+import '@/includes/use.log'
+import '@/includes/use.async-computed'
+import router from '@/includes/use.router'
 
 export default new Vue({
   router,
