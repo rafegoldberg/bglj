@@ -38,7 +38,7 @@ a {
 @import "~@/styles/fonts.scss";
 @import "~@/styles/mixin/wp.adminbar.scss";
 
-$wp-adminbar-app-height: calc(100vh - #{$wp-adminbar-height});
+$app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
 .AppLayout{
   & {
@@ -46,7 +46,7 @@ $wp-adminbar-app-height: calc(100vh - #{$wp-adminbar-height});
     align-items: stretch;
     min-height: 100vh;
     @include AdminBar {
-      min-height: $wp-adminbar-app-height;
+      min-height: $app-adminbar-height;
     }
   }
   > * {
@@ -68,7 +68,7 @@ $wp-adminbar-app-height: calc(100vh - #{$wp-adminbar-height});
     max-height: 100vh;
     @include AdminBar {
       top: $wp-adminbar-height;
-      max-height: $wp-adminbar-app-height;
+      max-height: $app-adminbar-height;
     }
     >:only-child {      
     }
@@ -83,7 +83,7 @@ $wp-adminbar-app-height: calc(100vh - #{$wp-adminbar-height});
       // max-width: 80vw;
       min-height: 100vh;
       @include AdminBar {
-        min-height: $wp-adminbar-app-height;
+        min-height: $app-adminbar-height;
       }
     }
     &-head {}
