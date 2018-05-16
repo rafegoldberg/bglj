@@ -9,7 +9,7 @@
   <script src="//unpkg.com/vue"></script>
   <?wp_head()?>
 </head>
-<body>
+<body <?body_class()?> >
 
   <div id="app">
   <?/*if( have_posts() )while( have_posts() ){

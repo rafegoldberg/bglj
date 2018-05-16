@@ -1,13 +1,19 @@
 @import url("https://use.typekit.net/xoz1ltr.css");
 
 $font-mono:
-Fira Code,
-Source Code Pro,
-Menlo,
-monospace;
+  "Source Code Pro",
+  "Fira Code",
+  Menlo,
+  monospace;
 
 $font-slab:
-  "Adelle";
+  "Adelle",
+  serif;
+  
+$font-serif:
+  "Hoefler Text",
+  serif;
+
 
 $font-sans:
   -apple-system,

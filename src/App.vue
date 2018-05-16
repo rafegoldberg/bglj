@@ -11,13 +11,15 @@
     <router-view></router-view>
   </transition>
   
+  <small slot="foot" style="font-size:.75em">
+    ©{{new Date(Date.now()).getFullYear()}} — <em>the Berkley Journal of Gender, Law & Justice</em>
+  </small>
+  
 </AppLayout>
 </template>
 
 <script>
-import WpApi from '@/components/wp/api.vue'
-
-import AppLayout from '@/components/layout/app.vue'
+import AppLayout from '@/components/layout.vue'
 import AppNav from "@/components/nav.vue";
 
 export default {
@@ -36,8 +38,7 @@ html, body {
 }
 hr {
   border-style: solid;
-  border-width: .8px 0 0;
-  // border-color: magenta;
+  border-width: .9px 0 0;
 }
 pre, code {
   font-family: $font-mono;

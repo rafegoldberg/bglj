@@ -1,0 +1,5 @@
+$wp-adminbar-height: 32px;
+
+@mixin AdminBar {
+  .admin-bar & { @content }
+}

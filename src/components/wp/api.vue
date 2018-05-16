@@ -35,7 +35,8 @@ export default {
         data = await WP.then( this.fetch ).catch(e=>( err = e ))
         
         if( err )
-          return {err}
+          return { error: err }
+
         if( Array.isArray(data) && data.length==1 )
           return data[0]
         else

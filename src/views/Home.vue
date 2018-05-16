@@ -1,12 +1,36 @@
 <template>
-  <div class="home">
-    <h1>Berkley Journal of Gender, Law & Justice</h1>
-    <p>The home page. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, voluptatum magni ut iure amet cupiditate nam aspernatur. Consequuntur, aliquid veritatis non ex voluptatem eum illum cumque maiores, nemo sed autem.</p>
+  <div class="Home">
+    <small>the Berkley Journal of</small>
+    <h1>Gender, Law & Justice</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'Home',
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~@/styles/fonts.scss";
+@import "~@/styles/colors.scss";
+
+.Home {
+  color: nth($purples,2);
+  }
+small {
+  display: inline-block;
+  font-family: $font-slab;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 0.5rem;
+}
+h1 {
+  margin: 0;
+  font-family: $font-serif;
+  font-size: 4em;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+</style>

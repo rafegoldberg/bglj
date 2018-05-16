@@ -1,37 +1,33 @@
 import Home from './views/Home.vue'
-import Page from './views/Page.vue'
+import WpPosts from './views/Posts.vue'
+import WpEvents from './views/Events.vue'
 
-import Test from './views/Test.vue'
 import event from '@/components/event.vue'
+import post from '@/components/post.vue'
 
 export default [
-  { path: '/',
-    name: 'home',
-    components:{ default: Home }
+  { path: "/",
+    name: "home",
+    component: Home,
+    alias:[ "/home", "/page/home" ]
     },
-  { path: '/home',
-    redirect: to => '/'
-  },
-  { path: '/post',
-    name: 'posts',
-    component: Test,
-    alias: '/posts',
-    },
-  { path: '/events',
-    name: 'events',
-    component: Test,
+  { path: "/events",
+    name: "events",
+    component: WpEvents,
     children:[{
-      path: ':slug',
-      name: 'events',
+      path: ":slug",
+      name: "event",
       component: event,
       }]
     },
-  { path: '/volumes/:slug?',
-    name: 'volumes',
-    component: Test
-    },
-  { path: '/:path*/:slug',
-    name: 'page',
-    component: Page,
-    },
+  { path: "/posts",
+    name: "posts",
+    component: WpPosts,
+    children:[{
+      path: ":id",
+      name: "post",
+      component: post,
+      props: true
+      }]
+    }
 ]
