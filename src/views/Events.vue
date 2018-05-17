@@ -58,7 +58,7 @@ export default {
       grid-gap: 0;
     }
     > .Event {
-      min-height: 15rem;
+      min-height: 10rem;
       border: $edge;
       border-width: 1px;
       margin-bottom: -1px;

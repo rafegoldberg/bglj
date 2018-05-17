@@ -3,14 +3,13 @@
   
   <header>
     <h3 class="Event--title">{{title}}</h3>
-    <time>At <b>{{time}}</b> on <b>{{month}} {{day}}</b> {{year}}</time>
+    <time>At <b>{{time}}</b> on {{month}} {{day}} {{year}}</time>
   </header>
   <div class="Event--decorator">{{day}}<br>{{month}}</div>
   
-  <small class="Event--details">
-    <hr>
-    <address v-html="locale"></address>
-  </small>
+  <address class="Event--details">
+    <a :href="mapLink" target="_BLANK" v-html="locale"></a>
+  </address>
 
 </div>
 </template>
@@ -31,21 +30,18 @@ export default {
       default: 'location'
     },
   },
-  created(){
-    this.datetime = this.date
-  },
   computed:{
     month(){
-      return this.datetime.toLocaleString( 'en-US', { month:'short' } )
+      return this.date.toLocaleString( 'en-US', { month:'short' } )
     },
     year(){
-      return this.datetime.toLocaleString( 'en-US', { year:'numeric' } )
+      return this.date.toLocaleString( 'en-US', { year:'numeric' } )
     },
     day(){
-      return this.datetime.toLocaleString( 'en-US', { day:'numeric' } )
+      return this.date.toLocaleString( 'en-US', { day:'numeric' } )
     },
     time(){
-      return this.datetime.toLocaleString( 'en-US', { hour:'numeric', minute:'numeric' } )
+      return this.date.toLocaleString( 'en-US', { hour:'numeric', minute:'numeric' } )
     },
     locale(){
       let
@@ -56,6 +52,12 @@ export default {
 
       return [ln1,ln2].map( arr=>arr.join(sep) ).join('<br>')
     },
+    mapLink(){
+      let
+      addr = this.address.replace(',','')
+      addr = encodeURIComponent(addr)
+      return `https://google.com/maps/place/${addr}`
+    }
   }
 }
 </script>
@@ -73,7 +75,7 @@ export default {
   &--title {
     margin: 0;
     align-self: flex-start;
-    max-width: 60%;
+    max-width: 88%;
   }
   header > time {
     // TODO add class
@@ -86,6 +88,7 @@ export default {
     align-self: flex-end;
     text-align: left;
     min-width: 100%;
+    margin-top: 1.5rem;
   }
   &--decorator {
     position: absolute;
