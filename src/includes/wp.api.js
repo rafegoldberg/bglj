@@ -1,7 +1,7 @@
 import WpRest from 'wpapi'
 
 const
-URI = WP_API_Settings ? WP_API_Settings.endpoint.split('wp-json/')[0] : '//192.168.64.2/BGLJ/',
+URI = typeof WP_API_Settings == 'object' ? WP_API_Settings.endpoint.split('wp-json/')[0] : '//192.168.64.2/BGLJ/',
 API = WpRest.discover(URI),
 cache = []
 

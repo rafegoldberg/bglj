@@ -1,0 +1,16 @@
+<title>bglj demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./bglj.umd.js"></script>
+<link rel="stylesheet" href="./bglj.css">
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: bglj
+  }
+}).$mount('#app')
+</script>
