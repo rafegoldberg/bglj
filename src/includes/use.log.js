@@ -7,6 +7,7 @@ if (process.env.NODE_ENV == 'development'){
     NODEENV: process.env.NODE_ENV
   })
 }
+else console.log({ VUECONF: Vue.config })
 
 else
   Vue.prototype.$log = new Function;
