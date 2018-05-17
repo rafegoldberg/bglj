@@ -23,6 +23,6 @@ include "php/api.php";
 /**
  * Attach UI Bundle
  */
-// include "php/ui.php";
+include "php/ui.php";
 
 ?>

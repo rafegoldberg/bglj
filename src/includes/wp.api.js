@@ -1,14 +1,15 @@
 import WpRest from 'wpapi'
 
 const
-API = WpRest.discover('//192.168.64.2/BGLJ/'),
+URI = WP_API_Settings ? WP_API_Settings.endpoint.split('wp-json/')[0] : '//192.168.64.2/BGLJ/',
+API = WpRest.discover(URI),
 cache = []
 
 // wpapi auth
 if( typeof WP_API_Settings == 'object' )
-  API.then( site=> site.auth({
+  API.then(site=> site.auth({
     nonce: WP_API_Settings.nonce
-  }) )
+  }))
   
 // wpapi cache
 API.then( site=> site.transport({
