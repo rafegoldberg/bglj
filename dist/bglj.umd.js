@@ -640,8 +640,17 @@ var App_component = normalizeComponent(
 /* harmony default export */ var App = (App_component.exports);
 // CONCATENATED MODULE: ./src/includes/use.log.js
 
+console.log({
+  VUECONF: external_commonjs_vue_commonjs2_vue_root_Vue_default.a.config,
+  NODEENV: "production"
+});
 
-if (false) {} else external_commonjs_vue_commonjs2_vue_root_Vue_default.a.prototype.$log = new Function();
+if (false) {} else {
+  console.log({
+    VUECONF: external_commonjs_vue_commonjs2_vue_root_Vue_default.a.config
+  });
+  external_commonjs_vue_commonjs2_vue_root_Vue_default.a.prototype.$log = new Function();
+}
 // EXTERNAL MODULE: ./node_modules/vue-async-computed/dist/vue-async-computed.js
 var vue_async_computed = __webpack_require__("lDeg");
 var vue_async_computed_default = /*#__PURE__*/__webpack_require__.n(vue_async_computed);
