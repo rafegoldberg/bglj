@@ -4,9 +4,6 @@ const
 API = WpRest.discover('//192.168.64.2/BGLJ/'),
 cache = []
 
-// window alias
-if( window ) window.API = API
-
 // wpapi auth
 if( typeof WP_API_Settings == 'object' )
   API.then( site=> site.auth({
@@ -35,3 +32,6 @@ API.then( site=> site.transport({
 )
 
 export default API
+
+// window alias
+if (window) API.then(wp => (window.API = wp))

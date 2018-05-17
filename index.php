@@ -12,11 +12,19 @@
 <body <?body_class()?> >
 
   <div id="app">
-  <?/*if( have_posts() )while( have_posts() ){
+  <?if( have_posts() ) while( have_posts() ){
     the_post();
     the_title();
     the_content();
-    }*/?>
+    ?><script>
+      console.log(
+        "%cPost%c: %o %O",
+        'font-weight:bold', '',
+        <?=json_encode(get_the_title())?>,
+        <?=json_encode(get_post())?>
+        )//log
+      </script><?
+    }?>
   </div>
   <? wp_footer() ?>
 </body>

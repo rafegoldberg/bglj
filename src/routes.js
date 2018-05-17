@@ -1,5 +1,6 @@
 import Home from './views/Home.vue'
 import WpPosts from './views/Posts.vue'
+import WpPage from './views/Page.vue'
 import WpEvents from './views/Events.vue'
 
 import event from '@/components/event.vue'
@@ -29,5 +30,11 @@ export default [
       component: post,
       props: true
       }]
-    }
+    },
+  {
+    path: "/:endpoint/:slug*",
+    name: "catchall",
+    component: WpPage,
+    props: true
+  }
 ]

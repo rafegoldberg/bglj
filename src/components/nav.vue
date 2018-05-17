@@ -6,11 +6,11 @@
   </router-link>
   <hr>
 
-  <template v-if="!context.loading">
+  <ul v-if="!context.loading" style="display:block; padding: 0 0 0 1em; line-height: 2.6; ">
     <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="`/${page.object}`">
       <a>{{page.label}}</a>
     </router-link>
-  </template>
+  </ul>
     
   <slot></slot>
 

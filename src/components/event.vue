@@ -1,13 +1,13 @@
 <template>
 <div class="Event">
   
-  <h3 class="Event--title">{{title}}</h3>
+  <header>
+    <h3 class="Event--title">{{title}}</h3>
+    <time>At <b>{{time}}</b> on <b>{{month}} {{day}}</b> {{year}}</time>
+  </header>
   <div class="Event--decorator">{{day}}<br>{{month}}</div>
   
   <small class="Event--details">
-    <time>
-      At <b>{{time}}</b> on <b>{{month}} {{day}}</b> {{year}}
-    </time>
     <hr>
     <address v-html="locale"></address>
   </small>
@@ -73,12 +73,18 @@ export default {
   &--title {
     margin: 0;
     align-self: flex-start;
+    max-width: 60%;
+  }
+  header > time {
+    // TODO add class
+    font-size: 0.8em;
+    opacity: 0.5;
   }
   &--details {
     font-size: 0.8em;
     opacity: 0.5;
     align-self: flex-end;
-    text-align: right;
+    text-align: left;
     min-width: 100%;
   }
   &--decorator {

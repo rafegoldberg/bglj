@@ -51,18 +51,20 @@ export default {
 <style lang="scss">
 .Events {
   &--grid {
-    $edge: solid rgba(#000,.125);    
+    $edge: solid #DDD;    
     & {
       display: grid;
       grid-template-columns: repeat(3,1fr);
       grid-gap: 0;
-      border: $edge;
-      border-width: 0 1px 1px 0;
     }
     > .Event {
-      border: $edge;
-      border-width: 1px 0 0 1px;
       min-height: 15rem;
+      border: $edge;
+      border-width: 1px;
+      margin-bottom: -1px;
+      &:not(:nth-child(3n+1)) {
+        margin-left: -1px;
+      }
     }
   }
 }
