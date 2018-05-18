@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: typeof WP_API_Settings == 'object' ? WP_API_Settings.endpoint.split('wp-json/')[0] : '/BGLJ/',
+  baseUrl: process.env.NODE_ENV == 'development' ? '/BGLJ/' : '/clients/BGLJ/',
   css:{
     extract: false,
   },

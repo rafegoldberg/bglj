@@ -17,7 +17,6 @@
     </div>
     
     <router-view class="Posts--item" v-bind="currentPost"></router-view>
-    {{$log(currentPost)}}
 
   </div>
 </template>

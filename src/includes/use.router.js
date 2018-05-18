@@ -4,8 +4,12 @@ Vue.use(Router)
 
 import routes from '@/routes'
 export default new Router({
-  base: 'BGLJ/',
+  
   routes,
+
   mode: 'history',
-  linkActiveClass: 'active'
+  base: '/clients/BGLJ/',
+
+  linkActiveClass: 'open',
+  linkExactActiveClass: 'active',
 })

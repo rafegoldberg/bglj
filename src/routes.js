@@ -1,6 +1,7 @@
 import Home from './views/Home.vue'
-import WpPosts from './views/Posts.vue'
 import WpPage from './views/Page.vue'
+import WpFeed from './views/Feed.vue'
+import WpPosts from './views/Posts.vue'
 import WpEvents from './views/Events.vue'
 
 import event from '@/components/Event.vue'
@@ -34,10 +35,19 @@ export default [{
     }]
   },
   {
-    path: "/:endpoint/:slug*",
-    name: "catchall",
+    path: "/p/:pid",
+    name: "page",
     component: WpPage,
     props: true
-  }
-  // TODO add 404/error route
+  },
+  {
+    path: "/:endpoint/:slug*",
+    name: "feed",
+    component: WpFeed,
+    props: true
+  },
+  /* TODO - page route
+   *      - 404 route
+   *      - error route
+   */
 ]

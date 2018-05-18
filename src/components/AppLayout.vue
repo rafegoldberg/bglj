@@ -95,7 +95,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       margin: 1rem -1rem 0;
       padding: 1rem;
       min-height: 2rem;
-      background: mix(nth($purples,1),#FFF,25%);
+      @debug nth($purples,3);
+      background: mix(nth($purples,2),#FFF,20%);
       color: rgba(nth($purples,3),.5);
 
       text-align: right;
