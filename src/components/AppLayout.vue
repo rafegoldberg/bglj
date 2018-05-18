@@ -9,9 +9,9 @@
     <header class="AppLayout--main-head">
       <slot name="head"></slot>
     </header>
-    <article class="AppLayout--main-page">
+    <div class="AppLayout--main-page">
       <slot>Loading...</slot>
-    </article>
+    </div>
     <footer class="AppLayout--main-foot">
       <slot name="foot"></slot>
     </footer>

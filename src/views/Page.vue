@@ -7,7 +7,7 @@
   </div>
   <div v-else>
     <header>
-      <h2 style="margin-bottom:0;font-weight:bold"><code>{{context.title.rendered}}</code></h2>
+      <h2 style="margin-bottom:0;font-weight:bold">{{context.title.rendered}}</h2>
       <small>
         Published <time>{{context.acf.pubdate}}</time>.
         <a :href="context.acf.link"><u>View archive.</u></a>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import WpAsync from '../components/wp/api.vue';
+import WpAsync from '../components/WpAsync.vue';
 
 export default {
   name:"Page",

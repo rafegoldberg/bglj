@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import WpAsync from '@/components/wp/api'
-import EventWidget from "@/components/event";
+import WpAsync from '@/components/WpAsync'
+import EventWidget from "@/components/Event";
 import LoadCase from '@/components/load-case'
 
 export default {

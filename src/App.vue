@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import AppLayout from '@/components/layout.vue'
-import AppNav from "@/components/nav.vue";
+import AppLayout from '@/components/AppLayout.vue'
+import AppNav from "@/components/Nav.vue";
 
 export default {
   name: "App",
@@ -45,12 +45,23 @@ pre, code {
 }
 pre {
   margin: unset;
+  box-sizing: border-box;
+  overflow: scroll;
+  max-width: 30em;
+  padding: 0.75rem;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+  max-height: 20vw;
+  background: #fafafa;
+
   white-space: pre;
-  overflow-x: scroll;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-slab;
   font-weight: 100;
+}
+p {
+  max-width: 33em;
 }
 </style>
 <style lang="scss">

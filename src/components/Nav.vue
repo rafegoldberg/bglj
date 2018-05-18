@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import WpAsync from "./wp/api";
+import WpAsync from "./WpAsync";
 import Inflect from "inflection";
 
 export default {
