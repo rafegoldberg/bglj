@@ -75,13 +75,14 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       background-image: url('~@/assets/logo.png');
       background-repeat: no-repeat;
       background-size: auto 24vw;
-      background-position: center right 14vh;
+      background-position: top 1.5rem right -9vw;
       opacity: .05;
 
       pointer-events: none;
     }
 
-    background: #F1F1EE;
+    background: #f1f1ee;
+    background: lighten(mix(#f1f1ee,#f0e9ec,88%),2%);
     position: sticky;
     top: 0;
     max-height: 100vh;

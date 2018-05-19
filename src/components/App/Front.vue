@@ -17,12 +17,14 @@ export default {
 
 .AppFront {
   color: nth($purples,2);
+  color: #1f327b;
   h1 {
     margin: 0;
     font-family: $font-serif;
     font-size: 4em;
     letter-spacing: -0.01em;
     line-height: .8;
+    text-indent: .33rem;
   }
   small {
     display: inline-block;
