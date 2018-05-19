@@ -1,7 +1,7 @@
 module.exports = {
   baseUrl: '/clients/BGLJ/',
   css:{
-    extract: false,
+    extract: true,
   },
   configureWebpack: {
     devtool: "source-map",
