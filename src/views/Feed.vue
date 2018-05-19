@@ -13,7 +13,7 @@
         <a :href="context.acf.link"><u>View archive.</u></a>
       </small>
     </header>
-    <hr>
+    <hr style="opacity:0!important">
     <p v-html="context.acf.note"></p>
   </div>
 </template>
@@ -36,10 +36,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-pre {
-  max-width: 70vw;
-  overflow: auto;
-  overflow-y: scroll;
-  white-space: pre;
-}
+// pre {
+//   max-width: 70vw;
+//   overflow: auto;
+//   overflow-y: scroll;
+//   white-space: pre;
+// }
 </style>

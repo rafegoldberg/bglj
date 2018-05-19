@@ -8,7 +8,7 @@ import "@/includes/use.log"
 import "@/includes/use.async"
 import "@/includes/use.meta"
 
-if( window ) Vue.config.productionTip = false
+Vue.config.productionTip = false
 
 /**
  * Root Instance

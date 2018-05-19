@@ -26,14 +26,14 @@ export default [
     alias:[ "/menu" ]
   },
   {
-    path: "/events",
+    path: "/events/:slug*",
     name: "events",
     component: AppEvents,
-    children: [{
-      path: ":slug",
-      name: "event",
-      component: Event,
-    }]
+    // children: [{
+    //   path: ":slug",
+    //   name: "event",
+    //   component: Event,
+    // }]
   },
   {
     path: "/posts",

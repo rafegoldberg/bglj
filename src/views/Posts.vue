@@ -2,16 +2,13 @@
   <div class="Posts">
     
     <div class="Posts--lists">
-      <header class="Posts--header">
-        <h2>Online Edition</h2>
-      </header>
       <ul class="Posts--nav" v-if="!context.loading">
         <router-link v-for="post in context"
           :to="`/posts/${post.slug}`"
           :key="post.id"
           
           tag="li">
-            <a>{{post.title.rendered}}</a>
+            <h3><a>{{post.title.rendered}}</a></h3>
         </router-link>
       </ul>
     </div>
@@ -41,7 +38,10 @@ export default {
       if( Array.isArray(this.context) )
       return this.context.find(obj=> obj.slug==slug )
     }
-  }
+  },
+  metas: {
+    title: 'Posts'
+  },
 }
 </script>
 
@@ -53,5 +53,10 @@ export default {
   display: flex;
   align-content: center;
   align-items: baseline;
+  justify-content: space-between;
+  ul {
+    margin-right: 1.5rem;
+    padding-left: 1em;
+  }
   }
 </style>

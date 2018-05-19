@@ -19,7 +19,12 @@ export default {
       type:[ String, Object ],
       default: "<p>Lorem ipsum dolor.</p>"
     }
-  }
+  },
+  metas(){
+    return {
+      title: this.title.rendered || this.title
+    }
+  },
 }
 </script>
 
@@ -27,17 +32,6 @@ export default {
 <style lang="scss" scoped>
 .Post {
   align-self: baseline;
-  margin-left: 1em;
-  &--title {
-    position: relative;
-    &:before {
-      position: absolute;
-      right: 100%;
-      font-size: 1.5em;
-      font-weight: 100;
-      content: "/";
-      margin: 0 0.25em;
-    }
-  }
+  margin: 0 auto;
 }
 </style>
