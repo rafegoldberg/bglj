@@ -1,8 +1,8 @@
 module.exports = {
   baseUrl: process.env.NODE_ENV == 'development' ? '/BGLJ/' : '/clients/BGLJ/',
-  css:{
-    extract: false,
-  },
+  // css:{
+  //   extract: false,
+  // },
   configureWebpack: {
     devtool: "source-map",
     resolve: {
