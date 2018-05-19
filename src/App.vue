@@ -1,10 +1,15 @@
 <template>
-<AppLayout id="app">
+<AppLayout id="App">
   
   <AppNav slot="side">
-    <transition name="fade" mode="out-in">
+    <router-link tag="h1" :to="'/home'" :class="{
+        out: $route.name=='home'
+      }">
+      <a>The Berkley Journal of Gender, Law &amp; Justice</a>
+    </router-link>
+    <div slot="after">
       <router-view name="nav"></router-view>
-    </transition>
+    </div>
   </AppNav>
 
   <transition name="fade" mode="out-in">
@@ -19,8 +24,8 @@
 </template>
 
 <script>
-import AppLayout from '@/components/AppLayout.vue'
-import AppNav from "@/components/Nav.vue"
+import AppLayout from '@/components/App/Layout.vue'
+import AppNav from "@/components/App/Nav.vue"
 
 export default {
   name: "App",
@@ -69,7 +74,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" for="document">
 @import '~@/styles/fonts.scss';
 html, body {
   margin: 0;
@@ -108,8 +113,17 @@ h1, h2, h3, h4, h5, h6 {
 p {
   max-width: 33em;
 }
+ul {
+  list-style-type: square;
+  .AppLayout--side & {
+    list-style-type: circle;
+    }
+}
 </style>
-<style lang="scss">
+<style lang="scss" for="component" scoped>
+// #App {}
+</style>
+<style lang="scss" for="transitions">
 .fade{
   &-enter-active,
   &-leave-active {

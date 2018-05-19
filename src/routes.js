@@ -1,30 +1,34 @@
-import Home from './views/Home.vue'
-import WpPage from './views/Page.vue'
-import WpFeed from './views/Feed.vue'
-import WpPosts from './views/Posts.vue'
-import WpEvents from './views/Events.vue'
+import AppNav from '@/components/App/Nav.vue'
+import AppFront from '@/components/App/Front.vue'
 
-import Nav from '@/components/Nav.vue'
+import AppPage from './views/Page.vue'
+import AppFeed from './views/Feed.vue'
+import AppPosts from './views/Posts.vue'
+import AppEvents from './views/Events.vue'
+
 import Event from '@/components/Event.vue'
 import Post from '@/components/Post.vue'
 
 export default [
   {
-    path: "/",
+    path: '/',
     name: "home",
-    component: Home,
-    alias:[ "/home" ]
+    component: AppFront,
+  },
+  {
+    path: "/home",
+    redirect: to=> "/"
   },
   {
     path: "/nav",
     name: "nav",
-    component: Nav,
+    component: AppNav,
     alias:[ "/menu" ]
   },
   {
     path: "/events",
     name: "events",
-    component: WpEvents,
+    component: AppEvents,
     children: [{
       path: ":slug",
       name: "event",
@@ -34,7 +38,7 @@ export default [
   {
     path: "/posts",
     name: "posts",
-    component: WpPosts,
+    component: AppPosts,
     children: [{
       path: ":slug",
       name: "post",
@@ -45,13 +49,13 @@ export default [
   {
     path: "/p/:pid",
     name: "page",
-    component: WpPage,
+    component: AppPage,
     props: true
   },
   {
     path: "/:endpoint/:slug*",
     name: "feed",
-    component: WpFeed,
+    component: AppFeed,
     props: true
   },
   /* TODO - page route

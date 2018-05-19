@@ -1,17 +1,22 @@
 <template>
 <div class="AppLayout">
 
+
   <div class="AppLayout--side">
     <slot name="side"></slot>
   </div>
 
   <main class="AppLayout--main">
+    <router-link tag=button to="/nav" class="AppLayout--navToggle"></router-link>
+
     <header class="AppLayout--main-head">
       <slot name="head"></slot>
     </header>
+
     <div class="AppLayout--main-page">
       <slot>Loading...</slot>
     </div>
+
     <footer class="AppLayout--main-foot">
       <slot name="foot"></slot>
     </footer>
@@ -75,8 +80,6 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
       pointer-events: none;
     }
-    // background: nth($purples,3);
-    // color: nth($purples,1);
 
     background: #F1F1EE;
     position: sticky;
@@ -120,6 +123,19 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       text-align: right;
       font-family: $font-serif;
     }
+  }
+  &--navToggle {
+    background-image: url(
+      https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png
+      );
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 2em;
+    width: 2em;
+    appearance: none;
+    margin: 1.5em 0 0 auto;
+    border: none;
   }
 }
 </style>

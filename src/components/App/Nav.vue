@@ -1,26 +1,21 @@
 <template>
 <nav class="AppNav">
-  
-  <router-link tag="h1" :to="'/home'" :class="{
-      out: $route.name=='home'
-      }">
-    <a>The Berkley Journal of Gender, Law &amp; Justice</a>
-  </router-link>
-  <!-- <hr> -->
 
+  <slot></slot>
+  
   <ul v-if="!context.loading" style="display:block; padding: 0 0 0 1em; line-height: 2.6; ">
     <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="makeLink(page)">
       <a>{{page.label}}</a>
     </router-link>
   </ul>
     
-  <slot></slot>
+  <slot name="after"></slot>
 
 </nav>
 </template>
 
 <script>
-import WpAsync from "./WpAsync";
+import WpAsync from "@/components/WpAsync";
 import Inflect from "inflection";
 
 import url from 'url'
