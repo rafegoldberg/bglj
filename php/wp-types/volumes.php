@@ -1,6 +1,6 @@
-<?if(! function_exists('volume_custom_post_type') ){ # register post type
+<?if( !function_exists('volumes_custom_post_type') ){ # register post type
 
-	function volume_custom_post_type(){
+	function volumes_custom_post_type(){
 		$labels = array(
 			'name'                  => _x( 'Volumes Library', 'Post Type General Name', 'volume_cpt' ),
 			'singular_name'         => _x( 'Volume', 'Post Type Singular Name', 'volume_cpt' ),
@@ -54,6 +54,6 @@
 		register_post_type( 'volumes', $args );
 	}
 
-	add_action( 'init', 'volume_custom_post_type', 0 );
+	add_action( 'init', 'volumes_custom_post_type', 0 );
 	
 }?>

@@ -35,6 +35,10 @@ html, body {
   padding: 0;
   line-height: 1.3;
   font-family: $font-sans;
+  background-color: #fbfbf6;
+}
+body {
+  font-size: 112.5%;
 }
 hr {
   border-style: solid;

@@ -11,7 +11,7 @@ include "php/wp-types/volumes.php";
 /**
  * ACF Options Page Registration
  */
-include "php/acf-options/sidebar.php";
+include "php/acf.php";
 
 
 /**
