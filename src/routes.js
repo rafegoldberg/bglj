@@ -4,14 +4,22 @@ import WpFeed from './views/Feed.vue'
 import WpPosts from './views/Posts.vue'
 import WpEvents from './views/Events.vue'
 
-import event from '@/components/Event.vue'
+import Nav from '@/components/Nav.vue'
+import Event from '@/components/Event.vue'
 import Post from '@/components/Post.vue'
 
-export default [{
+export default [
+  {
     path: "/",
     name: "home",
     component: Home,
     alias:[ "/home" ]
+  },
+  {
+    path: "/nav",
+    name: "nav",
+    component: Nav,
+    alias:[ "/menu" ]
   },
   {
     path: "/events",
@@ -20,7 +28,7 @@ export default [{
     children: [{
       path: ":slug",
       name: "event",
-      component: event,
+      component: Event,
     }]
   },
   {

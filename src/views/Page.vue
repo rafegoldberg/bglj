@@ -8,6 +8,11 @@ import WpAsync from '../components/WpAsync.vue';
 export default {
   name:"Page",
   extends: WpAsync,
+  metas(){
+    return {
+      title: !this.context.loading ? this.context.title.rendered : ''
+    }
+  },
   methods:{
     fetch(WP){
       let

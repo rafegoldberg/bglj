@@ -70,7 +70,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       background-image: url('~@/assets/logo.png');
       background-repeat: no-repeat;
       background-size: auto 24vw;
-      background-position: top right 14vh;
+      background-position: center right 14vh;
       opacity: .05;
 
       pointer-events: none;

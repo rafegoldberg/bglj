@@ -1,13 +1,37 @@
-import Vue from 'vue'
-import App from '@/App.vue'
+import Vue from "vue"
 
-import '@/includes/use.log'
-import '@/includes/use.async-computed'
-import router from '@/includes/use.router'
+/**
+ * Configuration
+ */
+
+import "@/includes/use.log"
+import "@/includes/use.async"
+import "@/includes/use.meta"
+
+if( window ) Vue.config.productionTip = false
+
+/**
+ * Root Instance
+ */
+
+import App from "@/App.vue"
+import router from "@/includes/use.router"
 
 export default new Vue({
   router,
   render: h => h(App),
 }).$mount('#app')
 
-Vue.config.productionTip = false
+
+/**
+ * In-Browser Aliases
+ */
+
+import API from "@/includes/lib/WordpressAPI"
+
+if( window && process.env.NODE_ENV=='development' ){
+  window.Vue = Vue
+  API.then(WP=>(
+    window.API = WP
+    ))
+}

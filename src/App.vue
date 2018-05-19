@@ -20,11 +20,52 @@
 
 <script>
 import AppLayout from '@/components/AppLayout.vue'
-import AppNav from "@/components/Nav.vue";
+import AppNav from "@/components/Nav.vue"
 
 export default {
   name: "App",
-  components:{ AppLayout, AppNav }
+  components:{ AppLayout, AppNav },
+  metas(){ return {
+    title: "Home",
+    titleTemplate: '%s | BGLJ',
+    bodyAttrs: {},
+    htmlAttrs: {},
+    base: {},
+    meta: [
+      { name: 'og:title',
+        content: 'Page title.',
+        vmid: 'ogTitle',
+        },
+      { name: 'description',
+        content: 'A brief descriptive excerpt.',
+        vmid: 'ogDescription',
+        },
+      { name: 'og:description',
+        content: 'A brief descriptive excerpt.',
+        vmid: 'ogDescription',
+        },
+      { name: 'twitter:card',
+        content: 'A brief descriptive excerpt.',
+        vmid: 'ogDescription',
+        },
+      { name: 'og:type',
+        content: 'article',
+        vmid: 'ogType',
+        },
+      { name: 'og:url',
+        content: 'http://canonical.wp/link/to-page',
+        vmid: 'ogUrl',
+        },
+      { name: 'og:image',
+        content: 'http://link.to/featured.img',
+        vmid: 'ogImage',
+        },
+    ],
+    link: [],
+    style: [],
+    script: [],
+    noscript: [],
+  } },
 }
 </script>
 

@@ -2,7 +2,7 @@
 </template>
 
 <script>
-import WP from '@/includes/wp.api';
+import WP from '@/includes/lib/WordpressAPI';
 
 export default {
   props:{

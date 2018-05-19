@@ -24,6 +24,9 @@ import LoadCase from '@/components/load-case'
 
 export default {
   name: 'Events',
+  metas:{
+    title: "Events"
+  },
   extends: WpAsync,
   components:{
     EventWidget,
