@@ -1,5 +1,14 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("vue"), require("WPAPI"));
+	else if(typeof define === 'function' && define.amd)
+		define([, "WPAPI"], factory);
+	else if(typeof exports === 'object')
+		exports["BGLJ"] = factory(require("vue"), require("WPAPI"));
+	else
+		root["BGLJ"] = factory(root["Vue"], root["WPAPI"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE_i7_w__, __WEBPACK_EXTERNAL_MODULE_nv08__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -8863,7 +8872,7 @@ exports.f = __webpack_require__("nh4g") ? Object.defineProperty : function defin
 /***/ "i7/w":
 /***/ (function(module, exports) {
 
-module.exports = require("vue");
+module.exports = __WEBPACK_EXTERNAL_MODULE_i7_w__;
 
 /***/ }),
 
@@ -10520,7 +10529,7 @@ module.exports = !__webpack_require__("eeVq")(function () {
 /***/ "nv08":
 /***/ (function(module, exports) {
 
-module.exports = require("WPAPI");
+module.exports = __WEBPACK_EXTERNAL_MODULE_nv08__;
 
 /***/ }),
 
@@ -10738,4 +10747,5 @@ module.exports = function (original, length) {
 /***/ })
 
 /******/ })["default"];
-//# sourceMappingURL=bglj.common.js.map
+});
+//# sourceMappingURL=BGLJ.umd.js.map

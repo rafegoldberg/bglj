@@ -1,28 +1,20 @@
-<?
+<?/** Custom Post Type Registration
+   */
+  include "php/types/events.php";
+  include "php/types/volumes.php";
+  ?>
 
+<?/** ACF Options Page Registration
+   */
+  include "php/acf.php";
+  ?>
 
-/**
- * Custom Post Type Registration
- */
-include "php/wp-types/events.php";
-include "php/wp-types/volumes.php";
+<?/** Attach UI Bundle
+   */
+  include "php/ui.php";
+  ?>
 
-
-/**
- * ACF Options Page Registration
- */
-include "php/acf.php";
-
-
-/**
- * WP Rest API Configuration
- */
-include "php/api.php";
-
-
-/**
- * Attach UI Bundle
- */
-include "php/ui.php";
-
-?>
+<?/** WP Rest API Configuration
+   */
+  include "php/api.php";
+  ?>

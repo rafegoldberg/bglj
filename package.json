@@ -5,7 +5,7 @@
   "scripts": {
     "start": "yarn dev --open",
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name bglj src/main.js"
+    "build": "vue-cli-service build --target lib --name BGLJ src/main.js"
   },
   "dependencies": {
     "inflection": "^1.12.0",
