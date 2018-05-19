@@ -59,7 +59,6 @@ export default {
     top: 0;
   }
   h1 {
-    // font-style: italic;
     line-height: 1.1;
     font-weight: 100 !important;
     transition: opacity .2s .1s ease-out;
