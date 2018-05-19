@@ -65,6 +65,7 @@ export default {
     transition: opacity .2s .1s ease-out;
     &.out {
       opacity: 0;
+      pointer-events: none;
     }
   }
   .open {
