@@ -60,17 +60,31 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     justify-content: center;
     align-items: stretch;
 
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      right: 0%;
+      width: 100%;
+      height: 100%;
+      background-image: url('~@/assets/logo.png');
+      background-repeat: no-repeat;
+      background-size: auto 24vw;
+      background-position: top right 14vh;
+      opacity: .05;
+
+      pointer-events: none;
+    }
     // background: nth($purples,3);
     // color: nth($purples,1);
 
+    background: #F1F1EE;
     position: sticky;
     top: 0;
     max-height: 100vh;
     @include AdminBar {
       top: $wp-adminbar-height;
       max-height: $app-adminbar-height;
-    }
-    >:only-child {      
     }
   }
   &--main {
