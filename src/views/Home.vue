@@ -1,7 +1,7 @@
 <template>
   <div class="Home">
     <small>the Berkley Journal of</small>
-    <h1>Gender, Law & Justice</h1>
+    <h1>Gender, Law <em>&amp;</em> Justice</h1>
   </div>
 </template>
 
@@ -29,7 +29,6 @@ h1 {
   margin: 0;
   font-family: $font-serif;
   font-size: 4em;
-  font-style: italic;
   letter-spacing: -0.01em;
   line-height: 1.4;
 }

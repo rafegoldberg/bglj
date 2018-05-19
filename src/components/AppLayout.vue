@@ -60,8 +60,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     justify-content: center;
     align-items: stretch;
 
-    background: nth($purples,3);
-    color: nth($purples,1);
+    // background: nth($purples,3);
+    // color: nth($purples,1);
 
     position: sticky;
     top: 0;
@@ -96,7 +96,11 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       padding: 1rem;
       min-height: 2rem;
       @debug nth($purples,3);
-      background: mix(nth($purples,2),#FFF,20%);
+      background: linear-gradient(
+        to right,
+        transparent,
+        mix(nth($purples,2),#FFF,10%)
+        );
       color: rgba(nth($purples,3),.5);
 
       text-align: right;

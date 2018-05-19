@@ -1,10 +1,12 @@
 <template>
 <nav class="AppNav">
   
-  <router-link tag="h1" :to="'/home'">
+  <router-link tag="h1" :to="'/home'" :class="{
+      out: $route.name=='home'
+      }">
     <a>The Berkley Journal of Gender, Law &amp; Justice</a>
   </router-link>
-  <hr>
+  <!-- <hr> -->
 
   <ul v-if="!context.loading" style="display:block; padding: 0 0 0 1em; line-height: 2.6; ">
     <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="makeLink(page)">
@@ -57,9 +59,13 @@ export default {
     top: 0;
   }
   h1 {
-    font-style: italic;
+    // font-style: italic;
     line-height: 1.1;
     font-weight: 100 !important;
+    transition: opacity .2s .1s ease-out;
+    &.out {
+      opacity: 0;
+    }
   }
   .open {
     font-weight: bold;

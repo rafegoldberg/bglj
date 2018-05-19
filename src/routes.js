@@ -11,7 +11,7 @@ export default [{
     path: "/",
     name: "home",
     component: Home,
-    alias: ["/home", "/page/home"]
+    alias:[ "/home" ]
   },
   {
     path: "/events",
