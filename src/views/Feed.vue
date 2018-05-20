@@ -27,14 +27,14 @@ export default {
   methods:{
     fetch(WP){
       let
-      end  = this.endpoint || this.$route.params.endpoint,
+      end  = this.$route.params.endpoint || 'volumes',
       slug = this.slug || this.$route.params.slug
       return WP[end]().slug(slug).get()
     },
   },
   metas(){
     let
-    END = this.$route.params.endpoint
+    END = this.$route.params.endpoint || 'volumes'
     return {title: END.charAt(0).toUpperCase() + END.slice(1) }
   }
 }

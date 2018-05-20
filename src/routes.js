@@ -48,10 +48,10 @@ export default [
     ]
   },
   {
-    path: "/:endpoint/:slug*",
+    path: "/volumes/:slug*",
     name: "feed",
     component: AppFeed,
-    props: true
+    props: true,
   },
   {
     path: "/:pid",
