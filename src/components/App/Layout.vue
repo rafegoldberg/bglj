@@ -121,7 +121,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       @debug nth($purples,3);
       background: linear-gradient(
         to right,
-        transparent,
+        rgba(white,0),
         mix(nth($purples,2),#FFF,10%)
         );
       color: rgba(nth($purples,3),.5);
