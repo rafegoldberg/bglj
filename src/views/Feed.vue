@@ -32,14 +32,10 @@ export default {
       return WP[end]().slug(slug).get()
     },
   },
+  metas(){
+    let
+    END = this.$route.params.endpoint
+    return {title: END.charAt(0).toUpperCase() + END.slice(1) }
+  }
 }
 </script>
-
-<style lang="scss" scoped>
-// pre {
-//   max-width: 70vw;
-//   overflow: auto;
-//   overflow-y: scroll;
-//   white-space: pre;
-// }
-</style>

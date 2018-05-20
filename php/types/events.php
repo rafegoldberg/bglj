@@ -31,13 +31,12 @@
 			'filter_items_list'     => __( 'Filter events', 'event_cpt' ),
 		);
 		$args = array(
+			'public'                => true,
 			'label'                 => __( 'Event', 'event_cpt' ),
 			'description'           => __( 'Create and manage events', 'event_cpt' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'thumbnail', 'custom-fields', 'excerpt', 'revisions' ),
-			// 'taxonomies'            => array( 'category', 'post_tag' ),
 			'hierarchical'          => false,
-			'public'                => true,
 			'show_ui'               => true,
 			'show_in_menu'          => true,
 			'menu_position'         => 5,
@@ -50,6 +49,7 @@
 			'publicly_queryable'    => true,
 			'capability_type'       => 'page',
 			'show_in_rest'          => true,
+			'rewrite'               =>[ 'with_front'=>false ],
 		);
 		register_post_type( 'events', $args );
 	}

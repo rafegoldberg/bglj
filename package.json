@@ -8,6 +8,7 @@
     "build": "vue-cli-service build --target lib --name BGLJ src/main.js"
   },
   "dependencies": {
+    "breakpoint-sass": "^2.7.1",
     "inflection": "^1.12.0",
     "vue": "^2.5.16",
     "vue-async-computed": "^3.3.1",

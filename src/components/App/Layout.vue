@@ -39,6 +39,7 @@ a {
 </style>
 
 <style lang="scss" scoped>
+@import "~@/styles/breaks.scss";
 @import "~@/styles/colors.scss";
 @import "~@/styles/fonts.scss";
 @import "~@/styles/mixin/wp.adminbar.scss";
@@ -76,6 +77,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       background-repeat: no-repeat;
       background-size: auto 24vw;
       background-position: top 1.5rem right -9vw;
+      background-position: center right -9vw;
       opacity: .05;
 
       pointer-events: none;
@@ -89,6 +91,9 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     @include AdminBar {
       top: $wp-adminbar-height;
       max-height: $app-adminbar-height;
+    }
+    @include breakpoint( max-width $break ){
+      display: none !important;
     }
   }
   &--main {
@@ -135,8 +140,11 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     height: 2em;
     width: 2em;
     appearance: none;
-    margin: 1.5em 0 0 auto;
+    margin: 1.5em 0 1.5em auto;
     border: none;
+    @include breakpoint( min-width $break ){
+      display: none !important;
+    }    
   }
 }
 </style>

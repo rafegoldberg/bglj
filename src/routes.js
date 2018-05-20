@@ -39,23 +39,24 @@ export default [
     path: "/posts",
     name: "posts",
     component: AppPosts,
-    children: [{
-      path: ":slug",
-      name: "post",
-      component: Post,
-      props: true
-    }]
-  },
-  {
-    path: "/p/:pid",
-    name: "page",
-    component: AppPage,
-    props: true
+    children: [
+      { path: ":slug",
+        name: "post",
+        component: Post,
+        props: true
+      }
+    ]
   },
   {
     path: "/:endpoint/:slug*",
     name: "feed",
     component: AppFeed,
+    props: true
+  },
+  {
+    path: "/:pid",
+    name: "page",
+    component: AppPage,
     props: true
   },
   /* TODO - page route

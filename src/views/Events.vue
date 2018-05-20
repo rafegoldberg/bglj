@@ -48,22 +48,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/styles/breaks.scss";
 .Events {
   $edge: solid #DDD;    
   &--grid {
-    & {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      grid-gap: 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 0;
+    .Event {
+      min-height: 10rem;
+      border: $edge;
+      border-width: 1px;
+      margin-bottom: -1px;
+      &:not(:nth-child(3n+1)) {
+        margin-left: -1px;
+      }
     }
-  }
-  .Event {
-    min-height: 10rem;
-    border: $edge;
-    border-width: 1px;
-    margin-bottom: -1px;
-    &:not(:nth-child(3n+1)) {
-      margin-left: -1px;
+    @include breakpoint( max-width $break ){
+      grid-template-columns: repeat(2,1fr);
+      .Event{
+        &:not(:nth-child(3n+1)) { margin-left: 0px }
+        &:not(:nth-child(2n+1)) { margin-left:-1px }
+      }
+    }
+    @include breakpoint( max-width 500px ){
+      grid-template-columns: repeat(1,1fr);
+      .Event {
+        border-width: 1px;
+        margin-bottom: -1px;
+        margin-left: 0 !important;
+      }
     }
   }
 }

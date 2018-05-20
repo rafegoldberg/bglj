@@ -28,9 +28,9 @@ export default {
       let
       href = url.parse(navItem.object),
       slug = href.pathname.replace(this.$router.options.base,'')
-      if( navItem.acf_fc_layout=='page' )
-        return `/p/${slug}`
-      else
+      // if( navItem.acf_fc_layout=='page' )
+      //   return `/p/${slug}`
+      // else
         return `/${slug}`
     },
     fetch(API){
