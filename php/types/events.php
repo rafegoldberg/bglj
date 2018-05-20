@@ -48,6 +48,7 @@
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'capability_type'       => 'page',
+			'rest_base'             => 'events',
 			'show_in_rest'          => true,
 			'rewrite'               =>[ 'with_front'=>false ],
 		);
