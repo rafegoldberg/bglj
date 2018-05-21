@@ -9,7 +9,8 @@ import AppEvents from './views/Events'
 import Event from '@/components/Event'
 import Post from '@/components/Post'
 
-import VpList from '@/components/VP/list'
+import PostsList from '@/components/VP/temp.PostList'
+import PostsItem from '@/components/VP/temp.PostItem'
 
 export default [
   {
@@ -22,9 +23,14 @@ export default [
     redirect: to=> '/'
   },
   {
-    path: '/test',
-    name: 'test',
-    component: VpList
+    path: '/posts',
+    name: 'posts',
+    component: PostsList
+  },
+  {
+    path: '/posts/:post',
+    name: 'postsItem',
+    component: PostsItem
   },
   {
     path: '/nav',
@@ -36,24 +42,19 @@ export default [
     path: '/events/:slug*',
     name: 'events',
     component: AppEvents,
-    // children: [{
-    //   path: ':slug',
-    //   name: 'event',
-    //   component: Event,
-    // }]
   },
-  {
-    path: '/posts',
-    name: 'posts',
-    component: AppPosts,
-    children: [
-      { path: ':slug',
-        name: 'post',
-        component: Post,
-        props: true
-      }
-    ]
-  },
+  // {
+  //   path: '/posts',
+  //   name: 'posts',
+  //   component: AppPosts,
+  //   children: [
+  //     { path: ':slug',
+  //       name: 'post',
+  //       component: Post,
+  //       props: true
+  //     }
+  //   ]
+  // },
   {
     path: '/volumes/:slug*',
     name: 'feed',

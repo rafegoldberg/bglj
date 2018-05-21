@@ -86,6 +86,14 @@ html, body {
 body {
   font-size: 112.5%;
 }
+* {
+  box-sizing: border-box
+}
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
 hr {
   border-style: solid;
   border-width: .9px 0 0;

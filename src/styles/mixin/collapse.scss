@@ -1,0 +1,10 @@
+@mixin collapse( $dir: top, $nth: ':first-child', $me2: false) {
+  @if $me2 {
+    @include collapse($dir, '', false)
+  }
+  & #{$nth} {
+    @each $pfx in $dir {
+      margin-#{$pfx}: 0 !important;
+    }
+  }
+}

@@ -5,19 +5,25 @@
     </div>
     <div class="MediaBox--excerpt">
       <div class="MediaBox--title">
-        <h3>{{title}}</h3>
+        <router-link tag="h3" :to="slug">
+          <a v-html="title"></a>
+        </router-link>
       </div>
       <div class="MediaBox--text" v-html="text"></div>
     </div>
+    <slot/>
   </div>
 </template>
 
 <script>
 export default {
-  props:['title','text','image']
+  props:['title','text','image','slug']
 }
 </script>
 
-<style>
-
+<style lang="scss">
+@import "~@/styles/mixin/collapse.scss";
+.MediaBox {
+  @include collapse(bottom,":last-child")
+}
 </style>
