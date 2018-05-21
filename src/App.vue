@@ -102,17 +102,19 @@ pre, code {
   font-family: $font-mono;
 }
 pre {
+  white-space: pre;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+
   margin: unset;
   box-sizing: border-box;
-  overflow: scroll;
   max-width: 100%;
+  max-height: 75vw;
   padding: 0.75rem;
+
+  background: #fafafa;
   border: 1px solid #dadada;
   border-radius: 3px;
-  max-height: 60vw;
-  background: #fafafa;
-
-  white-space: pre;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-slab;
