@@ -12,16 +12,14 @@
     </slot>
   </div>
   
-  <div class="PostList--pagination">
+  <div class="PostList--pagination" v-if="pages>1">
     <router-link append :to="{query:{ page:this.next() }}">
       ⇠Next
     </router-link> / 
     <router-link append :to="{query:{ page:1 }}">
       First
     </router-link> / 
-    <router-link append :to="{query:{ page: this.context._paging
-        && this.context._paging.totalPages
-        || 1 }}">
+    <router-link append :to="{query:{ page: this.pages }}">
       Last
     </router-link> / 
     <router-link append :to="{query:{ page:this.prev() }}">
