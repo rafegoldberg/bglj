@@ -1,5 +1,6 @@
 <template>
 <div>
+  
   <div v-if="!context.loading && !context.error">
     <slot name="item" v-for="item in context">
       <MediaBox :title="item.title.rendered"
@@ -10,18 +11,22 @@
       </MediaBox>
     </slot>
   </div>
-  <router-link tag=small append :to="{
-      path: '.',
-      query:{ page: this.page - 1 || 1 }
-      }">
-    <a>⇠Prior</a>
-  </router-link> / 
-  <router-link tag=small append :to="{
-      path: '.',
-      query:{ page: this.page + 1 }
-      }">
-    <a>Next⇢</a>
-  </router-link>
+  
+  <small>
+    <router-link tag=b append :to="{
+        path: '.',
+        query:{ page: this.page - 1 || 1 }
+        }">
+      <a>⇠Prior</a>
+    </router-link> / 
+    <router-link tag=b append :to="{
+        path: '.',
+        query:{ page: this.page + 1 }
+        }">
+      <a>Next⇢</a>
+    </router-link>
+  </small>
+  
 </div>
 </template>
 
