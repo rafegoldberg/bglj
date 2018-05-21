@@ -84,7 +84,7 @@ html, body {
   background-color: #fbfbf6;
 }
 body {
-  font-size: 112.5%;
+  font-size: 115%;
 }
 * {
   box-sizing: border-box

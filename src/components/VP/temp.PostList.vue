@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="PostList">
   
   <div v-if="!context.loading && !context.error">
     <slot name="item" v-for="item in context">
@@ -12,20 +12,22 @@
     </slot>
   </div>
   
-  <small>
-    <router-link tag=b append :to="{
-        path: '.',
-        query:{ page: this.page - 1 || 1 }
-        }">
-      <a>⇠Prior</a>
-    </router-link> / 
-    <router-link tag=b append :to="{
-        path: '.',
-        query:{ page: this.page + 1 }
-        }">
-      <a>Next⇢</a>
+  <div class="PostList--pagination">
+    <router-link append :to="{query:{ page:this.next() }}">
+      ⇠Next
+    </router-link> / 
+    <router-link append :to="{query:{ page:1 }}">
+      First
+    </router-link> / 
+    <router-link append :to="{query:{ page: this.context._paging
+        && this.context._paging.totalPages
+        || 1 }}">
+      Last
+    </router-link> / 
+    <router-link append :to="{query:{ page:this.prev() }}">
+      <b>Prior⇢</b>
     </router-link>
-  </small>
+  </div>
   
 </div>
 </template>
@@ -39,8 +41,14 @@ export default {
   methods:{
     fetch(WP){
       let page = this.$route.query.page
-      return this.endpoint.perPage(3).page( page || 1 )
+      return this.endpoint.perPage(6).page( page || 1 )
     },
+    next(){
+      return this.page==1 ? this.pages : this.page-1
+    },
+    prev(){
+      return this.page==this.pages ? 1 : this.page+1
+    }
   },
   computed:{
     page(){
@@ -48,11 +56,34 @@ export default {
       page = this.$route.query.page
       page = parseInt(page)
       return ( page && page>0 ) ? page : 1
+    },
+    pages(){
+      if( this.context.loading || this.context.error ) return 1
+      let total = parseInt(this.context._paging.totalPages) || 1
+      return total
     }
   }
 }
 </script>
 
+<style lang="scss">
+@import "~@/styles/colors.scss";
+.PostList {
+  &--pagination {
+    padding: 1rem .63rem;
+    font-size: .75em;
+
+    margin: 0 -1rem -1rem;
+    margin: 0 0 -1rem;
+    
+    background-color: #fff;
+    background-image: linear-gradient(to right, rgba(nth($purples,3),.08), #fbfbf7);
+    position: sticky;
+    bottom: -1px;
+    color: nth($purples,3);
+  }
+}
+</style>
 <style lang="scss">
 .MediaBox {
   margin-bottom: 2em;
@@ -64,9 +95,8 @@ export default {
     padding: 0.5em;
     font: inherit;
     font-size: .63em;
-    line-height: 1;
+    line-height: 1.1;
     border: 1px solid #DDD;
-    border-radius: 3px;
   }
 }
 </style>
