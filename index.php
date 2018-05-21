@@ -11,6 +11,13 @@
 </head>
 <body <?body_class()?> >
 
+  <?global $wp;
+    $qvars = $wp->public_query_vars
+    ?>
+  <script>
+  console.log(<?=json_encode($wp)?>);
+  </script>
+
   <div id="app">
   <?if( have_posts() ) while( have_posts() ){
     the_post();

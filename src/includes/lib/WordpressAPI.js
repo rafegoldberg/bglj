@@ -5,7 +5,7 @@ import WpRest from 'wpapi'
  */
 const
 URI = typeof WP_API_Settings == 'object'
-  ? WP_API_Settings.endpoint.split('wp-json/')[0]
+  ? WP_API_Settings.endpoint
   : '//192.168.64.2/clients/BGLJ/',
 API = WpRest.discover(URI)
 

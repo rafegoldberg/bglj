@@ -4,6 +4,11 @@
   include "php/types/volumes.php";
   ?>
 
+<?/** WP Rest API Configuration
+  */
+  include "php/api.php";
+  ?>
+
 <?/** ACF Options Page Registration
    */
   include "php/acf.php";
@@ -12,9 +17,4 @@
 <?/** Attach UI Bundle
    */
   include "php/ui.php";
-  ?>
-
-<?/** WP Rest API Configuration
-   */
-  include "php/api.php";
   ?>
