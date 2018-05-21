@@ -158,7 +158,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     padding: .5rem 1rem;
     background-color: rgba($matte, .5);
     background-image: linear-gradient( to bottom, nth($theme, 4), rgba(nth($theme, 4), .9));
-    border-bottom: 1px solid rgba(mix(nth($theme, 4), #888, 88%), .88);    
+    border-bottom: 1px solid rgba(mix(nth($theme, 4), #888, 88%), .93);    
     box-shadow: 0 6px 24px -8px rgba(#333, .1);
     
     &:before {
