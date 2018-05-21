@@ -1,17 +1,4 @@
-$blockbuster:(
-  astra: #FAEDBE,
-  honey: #FCE3A7,
-  spanishWhite: #E8D5BE,
-  rockBlue: #9FB8C9,
-  glacier: #75A2C7,
-  danube: #528DC4,
-  funBlue: #164D94,
-  deepSaphire: #0A2269,
-  deepCove: #070836,
-  deepGray: #0F0F0F,
-  );
-
-$normal:(
+$COLORLIST:(
   honey: #FCEBB6,
   burnt: #ED8751,
   beige: #E3DAC8,
@@ -21,18 +8,11 @@ $normal:(
   dark: #160A21,
   black: #0F0F0F,
   );
-  
-$purples: // original
-  #d4c6eb
-  #8e62f5
-  #120633;
 
-$purples: // theme: blockbuster
-  white
-  dodgerblue
-  map-get($blockbuster,deepSaphire);
+$theme:
+  #FCEBB6
+  #ED8751
+  #1f327b // #2C62A3
+  #F6F5F4;
   
-$purples: // theme: normalized
-  map-get($normal,"honey")
-  map-get($normal,"burnt")
-  map-get($normal,"blues");
+$matte: #FBFBF7;

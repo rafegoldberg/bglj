@@ -105,7 +105,7 @@ pre {
   margin: unset;
   box-sizing: border-box;
   overflow: scroll;
-  max-width: 30em;
+  max-width: 100%;
   padding: 0.75rem;
   border: 1px solid #dadada;
   border-radius: 3px;

@@ -101,7 +101,7 @@ export default {
     text-align: right;
     text-transform: uppercase;
 
-    color: rgba(nth($purples,2),.125);
+    color: rgba(nth($theme,2),.125);
 
     ponter-events: none;
   }

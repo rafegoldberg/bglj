@@ -36,6 +36,9 @@ import VpList from './list';
 export default {
   name:'PostList',
   extends: VpList,
+  metas:{
+    title: 'Posts'
+  },
   methods:{
     fetch(WP){
       let page = this.$route.query.page
@@ -68,21 +71,23 @@ export default {
 @import "~@/styles/colors.scss";
 .PostList {
   &--pagination {
-    padding: 1rem .63rem;
-    font-size: .75em;
-
     margin: 0 -1rem -1rem;
-    margin: 0 0 -1rem;
+    padding: 1rem .63rem;
+    
+    font-size: .75em;
     
     background-color: #fff;
-    background-image: linear-gradient(to right, rgba(nth($purples,3),.08), #fbfbf7);
+    background-image: linear-gradient(to right, nth($theme,4), $matte);
     position: sticky;
     bottom: -1px;
-    color: nth($purples,3);
+
+    border-top: 1px solid rgba(mix(nth($theme, 4), #888, 88%), .36);
   }
 }
 </style>
 <style lang="scss">
+@import "~@/styles/colors.scss";
+@import "~@/styles/fonts.scss";
 .MediaBox {
   margin-bottom: 2em;
   & + & {
@@ -95,6 +100,9 @@ export default {
     font-size: .63em;
     line-height: 1.1;
     border: 1px solid #DDD;
+    background: nth($theme,4);
+    font-family: $font-mono;
+    font-weight: 700;
   }
 }
 </style>

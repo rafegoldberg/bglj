@@ -1,6 +1,6 @@
 <template>
   <div v-if="!context.loading && !context.error" class="PostItem">
-    <h2><b v-html="context.title.rendered"></b></h2>
+    <h2 v-html="context.title.rendered"></h2>
     <hr>
     <article v-html="context.content.rendered"></article>
   </div>
@@ -12,6 +12,9 @@ import VpItem from './item';
 export default {
   name:'PostItem',
   extends: VpItem,
+  metas:{
+    title: 'Posts'
+  },
   methods:{
     fetch(WP){
       let post = this.$route.params.post

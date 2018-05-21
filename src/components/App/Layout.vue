@@ -7,7 +7,13 @@
   </div>
 
   <main class="AppLayout--main">
-    <router-link tag=button to="/nav" class="AppLayout--navToggle"></router-link>
+    <div class="TopNav"  :class="{ TopNav_hid:this.$route.name=='home' }">
+      <router-link tag="h4" to="/" class="Brand">
+        <small class="Brand--ln1">The Berkley Journal of</small>
+        <div class="Brand--ln2">Gender, Law <span>&amp;</span> Justice</div>
+      </router-link>
+      <router-link tag=button to="/nav" class="TopNav--toggle"></router-link>
+    </div>
 
     <header class="AppLayout--main-head">
       <slot name="head"></slot>
@@ -108,6 +114,9 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       @include breakpoint( min-width $break ){
         padding-top: 1rem;
       }
+      @include breakpoint( max-width $break ){
+        max-width: 100vw;
+      }
       @include AdminBar {
         min-height: $app-adminbar-height;
       }
@@ -121,33 +130,98 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       margin: 1rem -1rem 0;
       padding: 1rem;
       min-height: 2rem;
-      @debug nth($purples,3);
+      @debug nth($theme,3);
       background: linear-gradient(
         to right,
         rgba(white,0),
-        mix(nth($purples,2),#FFF,10%)
+        mix(nth($theme,2),#FFF,10%)
         );
-      color: rgba(nth($purples,3),.5);
+      color: rgba(nth($theme,3),.5);
 
       text-align: right;
       font-family: $font-serif;
     }
   }
-  &--navToggle {
+}
+</style>
+<style lang="scss">
+@import "~@/styles/breaks.scss";
+@import "~@/styles/colors.scss";
+.TopNav {
+  & {
+    z-index: 10;
+    position: sticky;
+    top: -1px;
+    display: flex;
+    align-items: center;
+    margin: 0 -1rem 1rem;
+    padding: .5rem 1rem;
+    background-color: rgba($matte, .5);
+    background-image: linear-gradient( to bottom, nth($theme, 4), rgba(nth($theme, 4), .9));
+    border-bottom: 1px solid rgba(mix(nth($theme, 4), #888, 88%), .88);    
+    box-shadow: 0 6px 24px -8px rgba(#333, .1);
+    
+    &:before {
+      
+      content: " ";
+      pointer-events: none;
+      
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background-image: url('~@/assets/logo.png');      
+      background-repeat: no-repeat;
+      background-size: 4.2rem auto;
+      background-position: left -1.5rem top .3rem;
+      
+      opacity: 0;
+      filter: saturate(.5);
+    }
+    &:before, .Brand {
+      transition: .25s .05s ease-out;
+    }
+    &_hid:before { opacity: .25 }
+    &_hid .Brand { opacity: 0   }
+  }
+  &--toggle {
+    appearance: none;
+
+    height: 2em;
+    width: 2em;
+    margin: 1.5em 0 1.5em auto;
+
+    background-color: transparent;
     background-image: url(
       https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png
       );
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    height: 2em;
-    width: 2em;
-    appearance: none;
-    margin: 1.5em 0 1.5em auto;
     border: none;
-    @include breakpoint( min-width $break ){
-      display: none !important;
-    }    
+  }
+  @include breakpoint( min-width $break ){
+    display: none !important;
+  }
+}
+</style>
+<style lang="scss">
+@import "~@/styles/colors.scss";
+@import "~@/styles/fonts.scss";
+.Brand {
+  z-index: 1;
+  margin: 0;
+  &--ln1 {
+    font-size: .63em;
+    // text-transform: uppercase;
+    // letter-spacing: .05em;
+  }
+  &--ln2 {
+    font-family: $font-serif;
+    > span { font-style: italic }
   }
 }
 </style>
