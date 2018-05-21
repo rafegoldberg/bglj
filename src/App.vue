@@ -109,7 +109,7 @@ pre {
   padding: 0.75rem;
   border: 1px solid #dadada;
   border-radius: 3px;
-  max-height: 20vw;
+  max-height: 60vw;
   background: #fafafa;
 
   white-space: pre;
