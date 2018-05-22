@@ -8,7 +8,7 @@
 
   <main class="AppLayout--main">
     <div class="TopNav"  :class="{ TopNav_hid:this.$route.name=='home' }">
-      <router-link tag="h4" to="/" class="Brand">
+      <!-- <router-link tag="h4" to="/" class="Brand"> -->
         <small class="Brand--ln1">The Berkley Journal of</small>
         <div class="Brand--ln2">Gender, Law <span>&amp;</span> Justice</div>
       </router-link>
@@ -149,6 +149,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 @import "~@/styles/colors.scss";
 .TopNav {
   & {
+    $BG: nth($theme,4);
     z-index: 10;
     position: sticky;
     top: -1px;
@@ -156,9 +157,9 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     align-items: center;
     margin: 0 -1rem 1rem;
     padding: .5rem 1rem;
-    background-color: rgba($matte, .5);
-    background-image: linear-gradient( to bottom, nth($theme, 4), rgba(nth($theme, 4), .9));
-    border-bottom: 1px solid rgba(mix(nth($theme, 4), #888, 88%), .93);    
+    background-color: rgba($BG,.63);
+    background-image: linear-gradient( to bottom, $BG, rgba($BG, .9));
+    border-bottom: 1px solid rgba(mix($BG, #888, 88%), .93);    
     box-shadow: 0 6px 24px -8px rgba(#333, .1);
     
     &:before {
