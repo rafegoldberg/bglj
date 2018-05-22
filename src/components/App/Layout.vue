@@ -8,7 +8,7 @@
 
   <main class="AppLayout--main">
     <div class="TopNav"  :class="{ TopNav_hid:this.$route.name=='home' }">
-      <!-- <router-link tag="h4" to="/" class="Brand"> -->
+      <router-link tag="h4" to="/" class="Brand">
         <small class="Brand--ln1">The Berkley Journal of</small>
         <div class="Brand--ln2">Gender, Law <span>&amp;</span> Justice</div>
       </router-link>
