@@ -23,7 +23,15 @@ export default {
 
 <style lang="scss">
 @import "~@/styles/mixin/collapse.scss";
+@import "~@/styles/extend/text.overflow.scss";
 .MediaBox {
+  display: block;
   @include collapse(bottom,":last-child")
+  &--title {
+    h1, h2, h3, h4, h5, h6 {
+      max-width: 100%;
+      @extend %ellipses;
+    }
+  }
 }
 </style>

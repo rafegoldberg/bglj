@@ -66,6 +66,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
   }
   &--side {
     flex: 0 20vw;
+    min-width: 20vw;
 
     display: flex;
     flex-flow: nowrap column;
@@ -109,7 +110,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       display: flex;
       box-sizing: border-box;
       flex-flow: nowrap column;
-      // max-width: 80vw;
+      max-width: 80vw;
       min-height: 100vh;
       @include breakpoint( min-width $break ){
         padding-top: 1rem;

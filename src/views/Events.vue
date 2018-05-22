@@ -56,7 +56,7 @@ export default {
     grid-template-columns: repeat(3,1fr);
     grid-gap: 0;
     .Event {
-      min-height: 10rem;
+      min-height: 12.5rem;
       border: $edge;
       border-width: 1px;
       margin-bottom: -1px;

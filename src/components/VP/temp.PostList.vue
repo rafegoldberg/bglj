@@ -42,7 +42,7 @@ export default {
   methods:{
     fetch(WP){
       let page = this.$route.query.page
-      return this.endpoint.perPage(2).page( page || 1 )
+      return this.endpoint.perPage(4).page( page || 1 )
     },
     next(){
       return this.page==1 ? this.pages : this.page-1

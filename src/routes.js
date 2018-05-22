@@ -36,7 +36,6 @@ export default [
     path: '/nav',
     name: 'nav',
     component: AppNav,
-    alias:[ '/menu' ]
   },
   {
     path: '/events/:slug*',
