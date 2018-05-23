@@ -68,26 +68,32 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@/styles/colors.scss";
+@import "~@/styles/theme/colors.scss";
 .PostList {
   &--pagination {
-    margin: 0 -1rem -1rem;
-    padding: 1rem .63rem;
-    
-    font-size: .75em;
-    
-    background-color: #fff;
-    background-image: linear-gradient(to right, nth($theme,4), $matte);
     position: sticky;
     bottom: -1px;
 
-    border-top: 1px solid rgba(mix(nth($theme, 4), #888, 88%), .36);
+    margin: 0 -1rem -1rem;
+    padding: 1rem .63rem;
+    font-size: .75em;
+    
+    background-color: $matte;
+    color: $theme;
+    border-style: solid;
+    border-color: $edge transparent $matte;
+    border-width: 1px 0;
+    // background-image: linear-gradient(to right, nth($theme-list,4), $matte);
+
+    // color: #fff;
+    // background: mix(white,nth($theme-list,3),63);
+    // border-top: none;
   }
 }
 </style>
 <style lang="scss">
-@import "~@/styles/colors.scss";
-@import "~@/styles/fonts.scss";
+@import "~@/styles/theme/colors.scss";
+@import "~@/styles/theme/fonts.scss";
 .MediaBox {
   margin-bottom: 2em;
   & + & {
@@ -100,7 +106,7 @@ export default {
     font-size: .63em;
     line-height: 1.1;
     border: 1px solid #DDD;
-    background: nth($theme,4);
+    background: rgba(nth($theme-list,3),.02);
     font-family: $font-mono;
     font-weight: 700;
   }

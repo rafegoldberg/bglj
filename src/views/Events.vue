@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/breaks.scss";
+@import "~@/styles/theme/breaks.scss";
 .Events {
   $edge: solid #DDD;    
   &--grid {

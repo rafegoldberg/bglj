@@ -1,9 +1,6 @@
 <template>
   <div class="AppFront">
-    <header>
-      <span>The Berkley Journal of</span>
-      <h1>Gender, Law <em>&amp;</em> Justice</h1>
-    </header>
+    <BgljHead tag="h1"></BgljHead>
     <template v-if="context.mandate">
       <hr>
       <article v-html="context.mandate"></article>
@@ -12,10 +9,12 @@
 </template>
 
 <script>
+import BgljHead from '@/components/BGLJ'
 import WpAsync from '@/components/WpAsync'
 export default {
   name: 'AppFront',
   extends: WpAsync,
+  components:{BgljHead},
   methods:{
     fetch(WP){
       return WP.namespace('acf/v3').options().id('options').get().then(item=> item.acf || item )
@@ -26,13 +25,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/breaks.scss";
-@import "~@/styles/fonts.scss";
-@import "~@/styles/colors.scss";
+@import "~@/styles/theme/breaks.scss";
+@import "~@/styles/theme/fonts.scss";
+@import "~@/styles/theme/colors.scss";
 
 .AppFront {
   header {
-    color: nth($theme,3);
+    color: nth($theme-list,3);
     h1 {
       margin: 0;
       font-family: $font-serif;

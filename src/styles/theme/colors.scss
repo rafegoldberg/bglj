@@ -9,12 +9,20 @@ $COLORLIST:(
   black: #0F0F0F,
   );
 
-$theme:
-  #FCEBB6
-  #ED8751
-  #1f327b // #2C62A3
-  #F6F5F4
-  #160A21;
-  
+// $theme-list:
+//   #FCEBB6
+//   #ED8751
+//   #1f327b // #2C62A3
+//   #F6F5F4
+//   #160A21;
+
+$theme-list:
+#1f327b
+#1f327b
+#1f327b
+#1f327b
+black;
+
+$theme: #1F327B;
 $matte: #FBFBF7;
 $edge:  #E2E2E2;

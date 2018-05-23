@@ -8,9 +8,8 @@
 
   <main class="AppLayout--main">
     <div class="TopNav"  :class="{ TopNav_hid:this.$route.name=='home' }">
-      <router-link tag="h4" to="/" class="Brand">
-        <small class="Brand--ln1">The Berkley Journal of</small>
-        <div class="Brand--ln2">Gender, Law <span>&amp;</span> Justice</div>
+      <router-link to="/" class="Brand">
+        <BgljHead tag="h5"></BgljHead>
       </router-link>
       <router-link tag=button to="/nav" class="TopNav--toggle"></router-link>
     </div>
@@ -31,8 +30,16 @@
 </div>
 </template>
 
+<script>
+import BgljHead from '../BGLJ'
+export default {
+  components:{ BgljHead }
+}
+</script>
+
+
 <style lang="scss">
-@import "~@/styles/fonts.scss";
+@import "~@/styles/theme/fonts.scss";
 html, body {
   padding: 0;
   margin: 0;
@@ -45,9 +52,9 @@ a {
 </style>
 
 <style lang="scss" scoped>
-@import "~@/styles/breaks.scss";
-@import "~@/styles/colors.scss";
-@import "~@/styles/fonts.scss";
+@import "~@/styles/theme/breaks.scss";
+@import "~@/styles/theme/colors.scss";
+@import "~@/styles/theme/fonts.scss";
 @import "~@/styles/mixin/wp.adminbar.scss";
 
 $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
@@ -84,14 +91,20 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       background-repeat: no-repeat;
       background-size: auto 24vw;
       background-position: top 1.5rem right -9vw;
-      background-position: center right -9vw;
-      opacity: .05;
+      background-position: bottom right -9vw;
+      opacity: .25;
+      filter: saturate(0) invert(1);
 
       pointer-events: none;
     }
 
-    background: #f1f1ee;
-    background: lighten(mix(#f1f1ee,#f0e9ec,88%),2%);
+    // background: #f1f1ee;
+    // background: lighten(mix(#f1f1ee,#f0e9ec,88%),2%);
+    // background: rgba(nth($theme-list,3),.063);
+    background: $theme;
+    color: $matte;
+    // border-right: 1px solid $matte;
+    
     position: sticky;
     top: 0;
     max-height: 100vh;
@@ -131,13 +144,14 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       margin: 1rem -1rem 0;
       padding: 1rem;
       min-height: 2rem;
-      @debug nth($theme,3);
-      background: linear-gradient(
-        to right,
-        rgba(white,0),
-        mix(nth($theme,2),#FFF,10%)
-        );
-      color: rgba(nth($theme,3),.5);
+      // background: linear-gradient(
+      //   to right,
+      //   rgba(white,0),
+      //   mix(nth($theme-list,2),#FFF,10%)
+      //   );
+      // color: rgba(nth($theme-list,3),.5);
+      background: $edge;
+      color: $theme;
 
       text-align: right;
       font-family: $font-serif;
@@ -146,11 +160,12 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 }
 </style>
 <style lang="scss">
-@import "~@/styles/breaks.scss";
-@import "~@/styles/colors.scss";
+@import "~@/styles/theme/breaks.scss";
+@import "~@/styles/theme/colors.scss";
 .TopNav {
   & {
-    $BG: nth($theme,4);
+    $BG: nth($theme-list,4);
+    color: #FFF !important;
     z-index: 10;
     position: sticky;
     top: -1px;
@@ -180,8 +195,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       background-size: 4.2rem auto;
       background-position: left -1.5rem top .3rem;
       
-      opacity: 0;
-      filter: saturate(.5);
+      opacity: .125;
+      filter: saturate(0) invert(1);      
     }
     &:before, .Brand {
       transition: .25s .05s ease-out;
@@ -198,7 +213,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
     background-color: transparent;
     background-image: url(
-      https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png
+      "~@/assets/nav.svg"
       );
     background-repeat: no-repeat;
     background-size: contain;
@@ -207,23 +222,6 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
   }
   @include breakpoint( min-width $break ){
     display: none !important;
-  }
-}
-</style>
-<style lang="scss">
-@import "~@/styles/colors.scss";
-@import "~@/styles/fonts.scss";
-.Brand {
-  z-index: 1;
-  margin: 0;
-  &--ln1 {
-    font-size: .63em;
-    // text-transform: uppercase;
-    // letter-spacing: .05em;
-  }
-  &--ln2 {
-    font-family: $font-serif;
-    > span { font-style: italic }
   }
 }
 </style>

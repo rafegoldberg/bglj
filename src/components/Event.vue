@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/colors.scss";
+@import "~@/styles/theme/colors.scss";
 .Event {
   & {
     position: relative;
@@ -101,7 +101,7 @@ export default {
     text-align: right;
     text-transform: uppercase;
 
-    color: rgba(nth($theme,2),.125);
+    color: rgba(nth($theme-list,2),.125);
 
     ponter-events: none;
   }

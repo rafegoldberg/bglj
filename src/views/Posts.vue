@@ -46,8 +46,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/fonts.scss";
-@import "~@/styles/colors.scss";
+@import "~@/styles/theme/fonts.scss";
+@import "~@/styles/theme/colors.scss";
 
 .Posts {
   display: flex;
