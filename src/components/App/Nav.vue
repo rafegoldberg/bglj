@@ -64,6 +64,7 @@ export default {
   }
   .open {
     font-weight: bold;
+    list-style-type: disc;
   }
 }
 </style>
