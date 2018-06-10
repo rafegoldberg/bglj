@@ -123,6 +123,9 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
   }
   &--main {
     & {
+      overflow-x: hidden;
+      overflow-y: initial;
+
       flex: 1 80vw;
       align-self: center;
       display: flex;
@@ -149,12 +152,6 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       margin: 1rem -1rem 0;
       padding: 1rem;
       min-height: 2rem;
-      // background: linear-gradient(
-      //   to right,
-      //   rgba(white,0),
-      //   mix(nth($theme-list,2),#FFF,10%)
-      //   );
-      // color: rgba(nth($theme-list,3),.5);
       background: $edge;
       color: $theme;
 
