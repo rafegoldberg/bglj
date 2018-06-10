@@ -99,11 +99,11 @@ export default {
       padding: 1em .75em;
       text-align: center;
       transition: background .25s ease-out;
-      background-image: linear-gradient(
-        to bottom,
-        rgba($matte,0),
-        $matte
-        );
+      // background-image: linear-gradient(
+      //   to bottom,
+      //   rgba($matte,0),
+      //   $matte
+      //   );
       &:hover {
         background-color: mix($matte,$edge,75%);
       }
