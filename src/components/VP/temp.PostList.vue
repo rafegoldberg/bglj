@@ -101,7 +101,7 @@ export default {
       transition: background .25s ease-out;
       background-image: linear-gradient(
         to bottom,
-        transparent,
+        rgba($matte,0),
         $matte
         );
       &:hover {
