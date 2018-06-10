@@ -15,15 +15,19 @@
     </header>
     <hr style="opacity:0!important">
     <p v-html="context.acf.note"></p>
+    <hr style="opacity:0!important">
+    <Masthead :info="context.acf.masthead"></Masthead>
   </div>
 </template>
 
 <script>
 import WpAsync from '../components/WpAsync.vue';
+import Masthead from '../components/masthead.vue';
 
 export default {
   name:"Feed",
   extends: WpAsync,
+  components:{ Masthead },
   methods:{
     fetch(WP){
       let

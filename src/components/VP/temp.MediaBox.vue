@@ -1,37 +1,57 @@
 <template>
   <div class="MediaBox">
-    <div class="MediaBox--media">
-      <img v-if="image" :alt="title" :src="image">
-    </div>
+    <router-link tag="h2" :to="slug" class="MediaBox--title">
+      <a v-html="title"></a>
+    </router-link>
+    <VpImg v-if="image" class="MediaBox--media" v-bind="image"></VpImg>
     <div class="MediaBox--excerpt">
-      <div class="MediaBox--title">
-        <router-link tag="h3" :to="slug">
-          <a v-html="title"></a>
-        </router-link>
-      </div>
       <div class="MediaBox--text" v-html="text"></div>
     </div>
-    <slot/>
+    <footer class="MediaBox--actions">
+      <slot/>
+    </footer>
   </div>
 </template>
 
 <script>
+
+import VpImg from './img'
+
 export default {
-  props:['title','text','image','slug']
+  props:['title','text','image','slug'],
+  components:{ VpImg, }
 }
 </script>
 
 <style lang="scss">
+@import "~@/styles/theme/colors.scss";
+@import "~@/styles/mixin/button.scss";
 @import "~@/styles/mixin/collapse.scss";
 @import "~@/styles/extend/text.overflow.scss";
 .MediaBox {
-  display: block;
-  @include collapse(bottom,":last-child")
+  & { // self
+    clear: both;
+    display: block;
+    margin-bottom: 2em;
+    @include collapse(bottom,":last-child");
+
+    & + & { margin-top: 3em }
+  }
+  > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
   &--title {
-    h1, h2, h3, h4, h5, h6 {
-      max-width: 100%;
-      @extend %ellipses;
-    }
+    max-width: 100%;
+    margin: unset;
+    @extend %ellipses;
+  }
+  &--actions {
+    clear: left;
+  }
+  button {
+    font-size: 1rem;
+    @include button;
+    cursor: pointer;
   }
 }
 </style>

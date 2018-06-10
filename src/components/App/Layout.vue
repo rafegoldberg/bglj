@@ -1,17 +1,23 @@
 <template>
 <div class="AppLayout">
 
-
   <div class="AppLayout--side">
     <slot name="side"></slot>
   </div>
 
   <main class="AppLayout--main">
+
     <div class="TopNav"  :class="{ TopNav_hid:this.$route.name=='home' }">
+      
       <router-link to="/" class="Brand">
         <BgljHead tag="h5"></BgljHead>
       </router-link>
-      <router-link tag=button to="/nav" class="TopNav--toggle"></router-link>
+
+      <button v-if="$route.name=='nav'" @click.prevent="$router.go(-1)" class="TopNav--toggle TopNav--toggle-close">
+        </button>
+      <router-link v-else tag=button to="/nav" class="TopNav--toggle TopNav--toggle-open">
+        </router-link>
+
     </div>
 
     <header class="AppLayout--main-head">
@@ -87,13 +93,12 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       right: 0%;
       width: 100%;
       height: 100%;
-      background-image: url('~@/assets/logo.png');
+      background-image: url('~@/assets/logo.svg');
       background-repeat: no-repeat;
       background-size: auto 24vw;
       background-position: top 1.5rem right -9vw;
       background-position: bottom right -9vw;
-      opacity: .25;
-      filter: saturate(0) invert(1);
+      filter: opacity(.2) saturate(0) invert(1);
 
       pointer-events: none;
     }
@@ -164,8 +169,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 @import "~@/styles/theme/colors.scss";
 .TopNav {
   & {
-    $BG: nth($theme-list,4);
-    color: #FFF !important;
+    $BG: $theme;
+    color: $matte;
     z-index: 10;
     position: sticky;
     top: -1px;
@@ -190,19 +195,20 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       bottom: 0;
       left: 0;
 
-      background-image: url('~@/assets/logo.png');      
+      background-image: url('~@/assets/logo.svg');      
       background-repeat: no-repeat;
       background-size: 4.2rem auto;
       background-position: left -1.5rem top .3rem;
       
-      opacity: .125;
-      filter: saturate(0) invert(1);      
+      filter: opacity(.2) saturate(0) invert(1);
     }
     &:before, .Brand {
       transition: .25s .05s ease-out;
     }
-    &_hid:before { opacity: .25 }
-    &_hid .Brand { opacity: 0   }
+    &_hid:before { 
+      filter: opacity(.5) saturate(0) invert(1);      
+    }
+    &_hid .Brand { opacity: 0 }
   }
   &--toggle {
     appearance: none;
@@ -211,14 +217,24 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     width: 2em;
     margin: 1.5em 0 1.5em auto;
 
+    color: #ffffff;
+    font-weight: bold;
+
     background-color: transparent;
-    background-image: url(
-      "~@/assets/nav.svg"
-      );
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     border: none;
+    &-open {
+      background-image: url(
+        "~@/assets/nav.svg"
+      );
+    }
+    &-close {
+      background-image: url(
+        "~@/assets/close.svg"
+      );
+    }
   }
   @include breakpoint( min-width $break ){
     display: none !important;

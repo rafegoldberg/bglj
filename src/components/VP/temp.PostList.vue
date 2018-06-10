@@ -15,13 +15,13 @@
   <div class="PostList--pagination" v-if="pages>1">
     <router-link append :to="{query:{ page:this.next() }}">
       ⇠Next
-    </router-link> / 
-    <router-link append :to="{query:{ page:1 }}">
+    </router-link>
+    <router-link append :to="{query:{ page:1 }}" style="opacity:.75">
       First
-    </router-link> / 
-    <router-link append :to="{query:{ page: this.pages }}">
+    </router-link>
+    <router-link append :to="{query:{ page: this.pages }}" style="opacity:.75">
       Last
-    </router-link> / 
+    </router-link>
     <router-link append :to="{query:{ page:this.prev() }}">
       <b>Prior⇢</b>
     </router-link>
@@ -74,41 +74,44 @@ export default {
     position: sticky;
     bottom: -1px;
 
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: flex-start;
+    align-items: center;
+
     margin: 0 -1rem -1rem;
-    padding: 1rem .63rem;
+    // padding: 1rem .63rem;
     font-size: .75em;
     
     background-color: $matte;
     color: $theme;
     border-style: solid;
-    border-color: $edge transparent $matte;
+    border-color: $edge transparent;
     border-width: 1px 0;
     // background-image: linear-gradient(to right, nth($theme-list,4), $matte);
 
     // color: #fff;
     // background: mix(white,nth($theme-list,3),63);
     // border-top: none;
-  }
-}
-</style>
-<style lang="scss">
-@import "~@/styles/theme/colors.scss";
-@import "~@/styles/theme/fonts.scss";
-.MediaBox {
-  margin-bottom: 2em;
-  & + & {
-    margin-top: 2em;
-  }
-  button {
-    margin-top: 1rem;
-    padding: 0.5em;
-    font: inherit;
-    font-size: .63em;
-    line-height: 1.1;
-    border: 1px solid #DDD;
-    background: rgba(nth($theme-list,3),.02);
-    font-family: $font-mono;
-    font-weight: 700;
+    a {
+      display: inline-block;
+      min-width: 6em;
+      padding: 1em .75em;
+      text-align: center;
+      transition: background .25s ease-out;
+      background-image: linear-gradient(
+        to bottom,
+        transparent,
+        $matte
+        );
+      &:hover {
+        background-color: mix($matte,$edge,75%);
+      }
+      + a {
+        border-left: 1px solid $edge;
+        &:last-child { border-right: 1px solid $edge }
+      }
+    }
   }
 }
 </style>

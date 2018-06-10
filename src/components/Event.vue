@@ -101,9 +101,9 @@ export default {
     text-align: right;
     text-transform: uppercase;
 
-    color: rgba(nth($theme-list,2),.125);
+    color: rgba($theme,.125);
 
-    ponter-events: none;
+    pointer-events: none;
   }
 }
 </style>

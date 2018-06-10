@@ -1,0 +1,13 @@
+@import "~@/styles/theme/fonts.scss";
+
+@mixin button {
+  padding: .4em .5em;
+  font-family: $font-slab;
+  color: $theme;
+  border: 2px solid $theme;
+  transition: .15s .02s ease-out;
+  &:hover {
+    color: $matte;
+    background: $theme;
+  }
+}

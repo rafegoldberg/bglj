@@ -133,6 +133,7 @@ li {
 table {
   & {
     // self 
+    text-align: left;
     border-collapse: collapse;
   }
   thead {
@@ -150,8 +151,9 @@ table {
   th,
   td {
     padding: .75rem;
-    border-style: solid;
+    border-style: dotted;
     border-width: 1px;
+    border-color: $theme;
     &:first-child {
       border-left: none
     }
@@ -160,10 +162,27 @@ table {
     }
   }
   th {
-    background: mix( nth($theme-list, 4), nth($theme-list, 5), 96%);
+    color: $theme;
+    border-style: solid;
     border-color: $matte !important;
+    font-family: $font-slab;
+    font-style: italic;
   }
+  thead th {
+    background: mix( $matte, $theme, 96%);
+    border-bottom:
+      3px solid
+      mix( $matte, $theme, 93%)
+      !important;
+  }
+  // tbody th {
+  // }
   td {
     border-color: $edge !important;
   }
+}
+p {
+  line-height: 1.6;
+  margin: unset;
+  & + & { margin-top: 1.6em }
 }
