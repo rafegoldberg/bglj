@@ -2,9 +2,9 @@ import AppNav from '@/components/App/Nav'
 import AppFront from '@/components/App/Front'
 
 import AppPage from './views/Page'
-import AppFeed from './views/Feed'
 import AppEvents from './views/Events'
 
+import Volume from './views/Volume'
 import PostsList from '@/components/Posts'
 import PostsItem from '@/components/Posts/Item'
 
@@ -43,12 +43,6 @@ export default [
     component: AppEvents,
   },
 
-  // {
-  //   path: '/volumes/:slug*',
-  //   name: 'feed',
-  //   component: AppFeed,
-  //   props: true,
-  // },
   {
     path: '/volumes',
     name: 'volumes',
@@ -58,7 +52,7 @@ export default [
   {
     path: '/volumes/:slug*',
     name: 'feed',
-    component: AppFeed,
+    component: Volume,
     props: true,
   },
 
