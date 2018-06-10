@@ -3,7 +3,7 @@
   
   <div v-if="!context.loading && !context.error">
   <slot name="item" v-for="item in context">
-    <MediaBox v-bind="item" :image="item.acf && item.acf.media_card && item.acf.media_card.image" :slug="`/posts/${item.slug}`">
+    <MediaBox v-bind="item" :image="item.acf && item.acf.media_card && item.acf.media_card.image" :slug="`/${type}/${item.slug}`">
       <router-link tag=button :to="`/${type}/${item.slug}`">Read More</router-link>
     </MediaBox>
   </slot>
@@ -39,7 +39,7 @@ export default {
   methods:{
     fetch(WP){
       let page = this.$route.query.page
-      return this.endpoint.perPage(this.per || 3).page( page || 1 )
+      return this.endpoint.perPage(this.per || 2).page( page || 1 )
     },
     next(){
       return this.page==1 ? this.pages : this.page-1
