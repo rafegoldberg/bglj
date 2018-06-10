@@ -2,14 +2,11 @@
 <div class="PostList">
   
   <div v-if="!context.loading && !context.error">
-    <slot name="item" v-for="item in context">
-      <MediaBox :title="item.title.rendered"
-        :text="item.excerpt.rendered"
-        :image="item.acf.image"
-        :slug="`/posts/${item.slug}`">
-        <router-link tag=button :to="`/posts/${item.slug}`">Read More</router-link>
-      </MediaBox>
-    </slot>
+  <slot name="item" v-for="item in context">
+    <MediaBox v-bind="item" :image="item.acf && item.acf.image" :slug="`/posts/${item.slug}`">
+      <router-link tag=button :to="`/${type}/${item.slug}`">Read More</router-link>
+    </MediaBox>
+  </slot>
   </div>
   
   <div class="PostList--pagination" v-if="pages>1">
@@ -31,7 +28,7 @@
 </template>
 
 <script>
-import VpList from './list';
+import VpList from '@/VuePress/list';
 
 export default {
   name:'PostList',

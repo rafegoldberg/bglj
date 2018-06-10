@@ -4,7 +4,7 @@
   <slot></slot>
   
   <ul v-if="!context.loading" style="display:block; padding: 0 0 0 1em; line-height: 2.6; ">
-    <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="makeLink(page)">
+    <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="makeLink(page)" :replace="$route.name=='nav'">
       <a>{{page.label}}</a>
     </router-link>
   </ul>

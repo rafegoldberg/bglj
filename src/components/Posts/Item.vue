@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import VpItem from './item';
+import VpItem from '@/VuePress/item';
 
 export default {
   name:'PostItem',

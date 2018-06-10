@@ -1,11 +1,11 @@
 <template>
   <div class="MediaBox">
     <router-link tag="h2" :to="slug" class="MediaBox--title">
-      <a v-html="title"></a>
+      <a v-html="title&&title.rendered||title"></a>
     </router-link>
     <VpImg v-if="image" class="MediaBox--media" v-bind="image"></VpImg>
     <div class="MediaBox--excerpt">
-      <div class="MediaBox--text" v-html="text"></div>
+      <div class="MediaBox--text" v-html="excerpt&&excerpt.rendered||excerpt"></div>
     </div>
     <footer class="MediaBox--actions">
       <slot/>
@@ -15,10 +15,10 @@
 
 <script>
 
-import VpImg from './img'
+import VpImg from '@/VuePress/img'
 
 export default {
-  props:['title','text','image','slug'],
+  props:['title','excerpt','image','slug'],
   components:{ VpImg, }
 }
 </script>

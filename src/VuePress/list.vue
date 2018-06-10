@@ -1,13 +1,17 @@
 <template>
-  <pre>{{context}}</pre>
+  <ul v-if="!context.loading && !context.error">
+    <slot name="item" v-for="item in context"/>
+  </ul>
 </template>
 
 <script>
 import VpConnect from './connect';
+import MediaBox from '@/components/MediaBox';
 
 export default {
-  name:'VpItem',
+  name:'VpList',
   extends: VpConnect,
+  components:{ MediaBox },
   props:{
     type:{ type:String, default:'posts' }
   },
@@ -19,12 +23,12 @@ export default {
 
         let
         error = false,
-        data  = await this.fetch( this.API ).get().catch(e=>( error = e ))
+        data  = await this.fetch( this.API ).then().catch(e=>( error = e ))
         
         if( error )
           return {error}
-        if( typeof data=='object' && Array.isArray(data) )
-          return data[0]
+        if( typeof data=='object' && !Array.isArray(data) )
+          return [data]
         else
           return data
       },

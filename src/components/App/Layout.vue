@@ -123,9 +123,6 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
   }
   &--main {
     & {
-      overflow-x: hidden;
-      overflow-y: initial;
-
       flex: 1 80vw;
       align-self: center;
       display: flex;
