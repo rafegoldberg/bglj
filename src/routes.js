@@ -45,7 +45,7 @@ export default [
     path: '/volumes',
     name: 'volumes',
     component: PostsList,
-    props:{ default:true, type:'volumes' },
+    props:{ default:true, type:'volumes', per:8 },
   },
   {
     path: '/volumes/:slug*',

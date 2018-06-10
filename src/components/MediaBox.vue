@@ -5,7 +5,7 @@
     </router-link>
     <VpImg v-if="image" class="MediaBox--media" v-bind="image"></VpImg>
     <div class="MediaBox--excerpt">
-      <div class="MediaBox--text" v-html="excerpt&&excerpt.rendered||excerpt"></div>
+      <div class="MediaBox--text" v-html="text||excerpt&&excerpt.rendered||excerpt"></div>
     </div>
     <footer class="MediaBox--actions">
       <slot/>
@@ -18,7 +18,7 @@
 import VpImg from '@/VuePress/img'
 
 export default {
-  props:['title','excerpt','image','slug'],
+  props:['title','text','excerpt','image','slug'],
   components:{ VpImg, }
 }
 </script>
