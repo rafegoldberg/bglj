@@ -8,7 +8,6 @@
         :address="item.acf['event-location'].address"
         :date="item.acf['event-date']"></EventWidget>
     </div>
-    <LoadCase v-else></LoadCase>
 
   </div>
 </template>
@@ -16,7 +15,6 @@
 <script>
 import WpAsync from '@/components/WpAsync'
 import EventWidget from "@/components/Event";
-import LoadCase from '@/components/load-case'
 
 export default {
   name: 'Events',
@@ -24,10 +22,7 @@ export default {
     title: "Events"
   },
   extends: WpAsync,
-  components:{
-    EventWidget,
-    LoadCase,
-  },
+  components:{ EventWidget },
   methods:{
     fetch(API){
       let

@@ -8,9 +8,7 @@ import Volume from './views/Volume'
 import PostsList from '@/components/Posts'
 import PostsItem from '@/components/Posts/Item'
 
-// import AppPosts from './views/Posts'
 // import Event from '@/components/Event'
-// import Post from '@/components/Post'
 
 export default [
   {

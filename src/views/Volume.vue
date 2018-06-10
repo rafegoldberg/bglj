@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import WpAsync from '../components/WpAsync.vue';
-import Masthead from '../components/masthead.vue';
+import WpAsync from '../components/WpAsync'
+import Masthead from '../components/Masthead'
 
 export default {
   name:"Feed",
