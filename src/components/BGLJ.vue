@@ -27,7 +27,10 @@ export default {
   z-index: 1;
   margin: .7rem 0;
   color: currentColor !important;
+  font-size: 100%;
   &--ln1 {
+    display: block;
+    margin: 0 0 .5em;
     font-weight: 100 ;
     font-family: $font-slab;
     font-size: .66em;
@@ -35,9 +38,9 @@ export default {
     letter-spacing: .05em;
   }
   &--ln2 {
+    margin: unset;
     font-family: $font-serif;
     line-height: .93;
-    margin: .3rem 0 0;
     > span { font-style: italic }
   }
 }

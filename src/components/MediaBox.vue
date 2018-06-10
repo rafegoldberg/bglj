@@ -3,9 +3,9 @@
     <router-link tag="h2" :to="slug" class="MediaBox--title">
       <a v-html="title&&title.rendered||title"></a>
     </router-link>
-    <VpImg v-if="image" class="MediaBox--media" v-bind="image"></VpImg>
-    <div class="MediaBox--excerpt">
-      <div class="MediaBox--text" v-html="text||excerpt&&excerpt.rendered||excerpt"></div>
+    <VpImg v-if="card.image" class="MediaBox--media" v-bind="card.image"></VpImg>
+    <div v-if="card.showExcerpt" class="MediaBox--excerpt">
+      <div class="MediaBox--text" v-html="card.text||excerpt&&excerpt.rendered||excerpt"></div>
     </div>
     <footer class="MediaBox--actions">
       <slot/>
@@ -18,7 +18,7 @@
 import VpImg from '@/VuePress/img'
 
 export default {
-  props:['title','text','excerpt','image','slug'],
+  props:['title','excerpt','slug','card'],
   components:{ VpImg, }
 }
 </script>

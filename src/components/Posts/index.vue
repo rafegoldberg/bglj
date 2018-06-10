@@ -4,10 +4,11 @@
   <div v-if="!context.loading && !context.error">
   <slot name="item" v-for="item in context">
     <MediaBox v-bind="item"
-        :text="item.acf && item.acf.media_card && item.acf.media_card.text"
-        :image="item.acf && item.acf.media_card && item.acf.media_card.image"
-        :slug="`/${type}/${item.slug}`">
-      <router-link tag=button :to="`/${type}/${item.slug}`">Read More</router-link>
+        :slug="`/${type}/${item.slug}`"
+        :card="item.acf && item.acf.media_card || {}">
+      <router-link tag=button :to="`/${type}/${item.slug}`">
+        {{item.acf && item.acf.media_card && item.acf.media_card.ctaText || 'More...'}}
+      </router-link>
     </MediaBox>
   </slot>
   </div>
