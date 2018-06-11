@@ -24,10 +24,13 @@ export default {
 </script>
 
 <style lang="scss">
+
 @import "~@/styles/theme/colors.scss";
+@import "~@/styles/theme/breaks.scss";
 @import "~@/styles/mixin/button.scss";
 @import "~@/styles/mixin/collapse.scss";
 @import "~@/styles/extend/text.overflow.scss";
+
 .MediaBox {
   & { // self
     clear: both;
@@ -47,11 +50,16 @@ export default {
   }
   &--actions {
     clear: left;
+    button {
+      font-size: 1rem;
+      @include button;
+      cursor: pointer;
+    }
   }
-  button {
-    font-size: 1rem;
-    @include button;
-    cursor: pointer;
+  @include breakpoint( max-width $break ){
+    img:not(.layout--spread) {
+      max-width: 8em !important;
+    }
   }
 }
 </style>

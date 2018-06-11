@@ -53,9 +53,10 @@ export default {
     position: sticky;
     top: 0;
   }
-  h1 {
+  &--title {
+    font-size: 1.25em;
+    &, &* { font-weight: 100 !important }
     line-height: 1.1;
-    font-weight: 100 !important;
     transition: opacity .2s .1s ease-out;
     &.out {
       opacity: 0;

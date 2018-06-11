@@ -43,7 +43,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss">
 @import "~@/styles/theme/fonts.scss";
 html, body {
@@ -56,7 +55,6 @@ a {
   text-decoration: none;
 }
 </style>
-
 <style lang="scss" scoped>
 @import "~@/styles/theme/breaks.scss";
 @import "~@/styles/theme/colors.scss";
@@ -66,6 +64,7 @@ a {
 $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
 .AppLayout{
+  $sidebar-min-width: 16rem;
   & {
     display: flex;
     align-items: stretch;
@@ -79,7 +78,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
   }
   &--side {
     flex: 0 20vw;
-    min-width: 20vw;
+    min-width: $sidebar-min-width;
 
     display: flex;
     flex-flow: nowrap column;
@@ -154,6 +153,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
       text-align: right;
       font-family: $font-serif;
+      line-height: .9;
     }
   }
 }
@@ -171,7 +171,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     display: flex;
     align-items: center;
     margin: 0 -1rem 1rem;
-    padding: .5rem 1rem;
+    padding: .25rem 1rem;
     background-color: rgba($BG,.63);
     background-image: linear-gradient( to bottom, $BG, rgba($BG, .9));
     border-bottom: 1px solid rgba(mix($BG, #888, 88%), .93);    
@@ -182,7 +182,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       content: " ";
       pointer-events: none;
       
-      z-index: 0;
+      z-index: -1;
       position: absolute;
       top: 0;
       right: 0;
@@ -191,10 +191,10 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
       background-image: url('~@/assets/logo.svg');      
       background-repeat: no-repeat;
-      background-size: 4.2rem auto;
-      background-position: left -1.5rem top .3rem;
+      background-size: auto 70%;
+      background-position: left .25rem center;
       
-      filter: opacity(.2) saturate(0) invert(1);
+      filter: opacity(.3) saturate(0) invert(1);
     }
     &:before, .Brand {
       transition: .25s .05s ease-out;
