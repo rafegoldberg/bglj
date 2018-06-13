@@ -3,7 +3,7 @@ Berkley Journal of Gender, Law, & Justice
 
 ## To Do
 
-_Check out our **[To Do list](./bglj/blob/master/todo.md)** at the link._
+_Check out our **[To Do list](./todo.md)** at the link._
 
 ## Further Details
 
