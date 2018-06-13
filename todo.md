@@ -13,7 +13,7 @@ To Do
   - [x] ~use minified bundle in prod environment~
 - **Wordpress**
   - [ ] standardize field groups
-  - [x] whitelabel (menu order, options pages, etc.)
+  - [x] ~whitelabel (menu order, options pages, etc.)~
   - [x] ~polish baseline data structures~
 - **Feedback**
   - [ ] client crit
