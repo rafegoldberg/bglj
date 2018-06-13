@@ -1,11 +1,15 @@
 <template>
-  <div class="AppFront">
-    <Brand tag="h1"></Brand>
-    <template v-if="context.mandate">
-      <hr>
-      <article v-html="context.mandate"></article>
-    </template>
-  </div>
+<div class="AppFront">
+  
+  <hr>
+  <Brand tag="h1"></Brand>
+  <hr>
+  
+  <template v-if="context.mandate">
+    <article v-html="context.mandate"></article>
+  </template>
+  
+</div>
 </template>
 
 <script>

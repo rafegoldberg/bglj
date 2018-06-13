@@ -1,39 +1,17 @@
 <template>
-  <div v-if="!context.loading && !context.error" class="PostItem">
-    <h2 v-html="context.title.rendered"></h2>
-    <hr>
-    <Social :url="context.link" inline-template>
-      <div>
+<div v-if="!context.loading && !context.error" class="PostItem">
+  
+  <h2 v-html="context.title.rendered"></h2>
 
-        <!-- Facebook -->
-        <network network="facebook">
-          <i class="fa fa-fw fa-facebook"></i> 
-        </network>
+  <SocialBar :url="context.link"></SocialBar>
 
-        <!-- Google+ -->
-        <network network="googleplus">
-          <i class="fa fa-fw fa-google-plus"></i> 
-        </network>
-
-        <!-- Reddit -->
-        <network network="reddit">
-          <i class="fa fa-fw fa-reddit"></i> 
-        </network>
-
-        <!-- Twitter -->
-        <network network="twitter">
-          <i class="fa fa-fw fa-twitter"></i> 
-        </network>
-
-      </div>
-    </Social>
-    <hr>
-    <article v-html="context.content.rendered"></article>
-  </div>
+  <article v-html="context.content.rendered"></article>
+  
+</div>
 </template>
 
 <script>
-import Social from 'vue-social-sharing'
+import SocialBar from '@/components/SocialBar'
 import VpItem from '@/VuePress/item'
 
 export default {
@@ -51,7 +29,7 @@ export default {
   computed: {
     href:gives=> window.location.href,
   },
-  components:{ Social },
+  components:{ SocialBar },
 }
 </script>
 

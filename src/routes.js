@@ -8,13 +8,16 @@ import Volume from './views/Volume'
 import PostsList from '@/components/Posts'
 import PostsItem from '@/components/Posts/Item'
 
-// import Event from '@/components/Event'
+import SocialBar from '@/components/SocialBar'
 
 export default [
   {
     path: '/',
     name: 'home',
-    component: AppFront,
+    components: {
+      default: AppFront,
+      nav: SocialBar,
+    },
   },
   {
     path: '/home',
