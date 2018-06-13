@@ -10,7 +10,7 @@
     <div class="TopNav"  :class="{ TopNav_hid:this.$route.name=='home' }">
       
       <router-link to="/" class="Brand">
-        <BgljHead tag="h5"></BgljHead>
+        <Brand tag="h5"></Brand>
       </router-link>
 
       <button v-if="$route.name=='nav'" @click.prevent="$router.go(-1)" class="TopNav--toggle TopNav--toggle-close">
@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import BgljHead from '../BGLJ'
+import Brand from '../brand'
 export default {
-  components:{ BgljHead }
+  components:{ Brand }
 }
 </script>
 
@@ -101,13 +101,9 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
       pointer-events: none;
     }
-
-    // background: #f1f1ee;
-    // background: lighten(mix(#f1f1ee,#f0e9ec,88%),2%);
-    // background: rgba(nth($theme-list,3),.063);
+    
     background: $theme;
     color: $matte;
-    // border-right: 1px solid $matte;
     
     position: sticky;
     top: 0;

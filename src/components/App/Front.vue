@@ -1,6 +1,6 @@
 <template>
   <div class="AppFront">
-    <BgljHead tag="h1"></BgljHead>
+    <Brand tag="h1"></Brand>
     <template v-if="context.mandate">
       <hr>
       <article v-html="context.mandate"></article>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import BgljHead from '@/components/BGLJ'
+import Brand from '@/components/brand'
 import WpAsync from '@/components/WpAsync'
 export default {
   name: 'AppFront',
   extends: WpAsync,
-  components:{BgljHead},
+  components:{Brand},
   methods:{
     fetch(WP){
       return WP.namespace('acf/v3').options().id('options').get().then(item=> item.acf || item )
