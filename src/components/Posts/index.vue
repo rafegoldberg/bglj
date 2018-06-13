@@ -5,9 +5,9 @@
   <slot name="item" v-for="item in context">
     <MediaBox v-bind="item"
         :slug="`/${type}/${item.slug}`"
-        :card="item.acf && item.acf.media_card || {}">
+        :card="item.acf && item.acf.metacard || {}">
       <router-link tag=button :to="`/${type}/${item.slug}`">
-        {{item.acf && item.acf.media_card && item.acf.media_card.ctaText || 'More...'}}
+        {{item.acf && item.acf.metacard && item.acf.metacard.ctaText || 'More...'}}
       </router-link>
     </MediaBox>
   </slot>
