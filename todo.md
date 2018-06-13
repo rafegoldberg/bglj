@@ -32,7 +32,7 @@ To Do
 - **Wordpress**
   - [ ] revise sidebar nav fields
 
-    > **should handle display of deep page structures**
+    > *should handle display of deep page structures*
 
   - [ ] page templates
   - [ ] standardize field groups
