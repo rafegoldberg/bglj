@@ -1,20 +1,16 @@
 module.exports = {
   baseUrl: '/clients/BGLJ/',
-  css:{
-    extract: true,
-  },
+
+  css:       { extract: true,     },
+  devServer: { host:    "0.0.0.0" },
+
   configureWebpack: {
     devtool: "source-map",
     resolve: {
-      alias: {
-        'vue$': 'vue/dist/vue.esm.js'
-      }
+      alias:{}
     },
     externals:{
       wpapi: 'WPAPI'
     },
-  },
-  devServer: {
-    host: "0.0.0.0"
   },
 }
