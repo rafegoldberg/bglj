@@ -90,7 +90,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
 
-    margin: 0 -1rem -1rem;
+    margin: 0 -1rem -1rem 0;
     // padding: 1rem .63rem;
     font-size: .75em;
     
@@ -107,7 +107,7 @@ export default {
     a {
       display: inline-block;
       min-width: 6em;
-      padding: 1em .75em;
+      padding: 1.3em .9em;
       text-align: center;
       transition: background .25s ease-out;
       // background-image: linear-gradient(
@@ -120,7 +120,6 @@ export default {
       }
       + a {
         border-left: 1px solid $edge;
-        &:last-child { border-right: 1px solid $edge }
       }
     }
   }
