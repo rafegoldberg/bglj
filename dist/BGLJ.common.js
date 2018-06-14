@@ -4336,12 +4336,12 @@ var Itemvue_type_template_id_30e922d1_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/components/Posts/Item/index.vue?vue&type=template&id=30e922d1
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/z00221y/.bitnami/stackman/machines/xampp/volumes/root/htdocs/clients/BGLJ/wp-content/themes/bglj-wp/node_modules/.cache/vue-loader","cacheIdentifier":"69ab7733-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SocialBar/index.vue?vue&type=template&id=f58d845c
-var SocialBarvue_type_template_id_f58d845c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Social',{staticClass:"SocialBar",attrs:{"url":_vm.url},inlineTemplate:{render:function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"Boxrow"},[_c('network',{attrs:{"network":"facebook"}},[_c('i',{staticClass:"fa fa-fw fa-facebook"})]),_c('network',{attrs:{"network":"googleplus"}},[_c('i',{staticClass:"fa fa-fw fa-google-plus"})]),_c('network',{attrs:{"network":"reddit"}},[_c('i',{staticClass:"fa fa-fw fa-reddit"})]),_c('network',{attrs:{"network":"twitter"}},[_c('i',{staticClass:"fa fa-fw fa-twitter"})])],1)},staticRenderFns:[]}})}
-var SocialBarvue_type_template_id_f58d845c_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/z00221y/.bitnami/stackman/machines/xampp/volumes/root/htdocs/clients/BGLJ/wp-content/themes/bglj-wp/node_modules/.cache/vue-loader","cacheIdentifier":"69ab7733-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/SocialBar/index.vue?vue&type=template&id=4c17e720
+var SocialBarvue_type_template_id_4c17e720_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Social',{staticClass:"SocialBar",attrs:{"url":_vm.url},inlineTemplate:{render:function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"Boxrow"},[_c('network',{attrs:{"network":"facebook"}},[_c('i',{staticClass:"fa fa-fw fa-facebook"})]),_c('network',{attrs:{"network":"googleplus"}},[_c('i',{staticClass:"fa fa-fw fa-google-plus"})]),_c('network',{attrs:{"network":"reddit"}},[_c('i',{staticClass:"fa fa-fw fa-reddit"})]),_c('network',{attrs:{"network":"twitter"}},[_c('i',{staticClass:"fa fa-fw fa-twitter"})])],1)},staticRenderFns:[]}})}
+var SocialBarvue_type_template_id_4c17e720_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/SocialBar/index.vue?vue&type=template&id=f58d845c
+// CONCATENATED MODULE: ./src/components/SocialBar/index.vue?vue&type=template&id=4c17e720
 
 // EXTERNAL MODULE: ./node_modules/vue-social-sharing/dist/vue-social-sharing.common.js
 var vue_social_sharing_common = __webpack_require__("UplU");
@@ -4408,8 +4408,8 @@ var SocialBarvue_type_style_index_1_lang_scss = __webpack_require__("GlnL");
 
 var SocialBar_component = normalizeComponent(
   components_SocialBarvue_type_script_lang_js,
-  SocialBarvue_type_template_id_f58d845c_render,
-  SocialBarvue_type_template_id_f58d845c_staticRenderFns,
+  SocialBarvue_type_template_id_4c17e720_render,
+  SocialBarvue_type_template_id_4c17e720_staticRenderFns,
   false,
   null,
   null,

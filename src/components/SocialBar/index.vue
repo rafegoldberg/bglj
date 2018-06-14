@@ -57,7 +57,7 @@ export default {
     cursor: pointer;
     box-shadow: 0 0 0 -5px transparent;
     transition: $transition;
-    &:hover {
+    &:hover, &:active {
       z-index: 1;
       color: $theme;
       background: $edge;
