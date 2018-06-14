@@ -23,7 +23,7 @@ To Do
 
 - [x] Clarify dependencies
   - [x] Remove extraneous
-  - [x] Externalize the [WPAPI](https://github.com/WP-API/node-wpapi)*
+  - [x] Externalize the [WPAPI](https://github.com/WP-API/node-wpapi)
 - [x] Remove extra fonts [from TypeKit](https://typekit.com/kit_editor/kits/xoz1ltr)
 - [x] Use minified bundle in prod environment
 
@@ -41,10 +41,10 @@ To Do
 ### Feedback
 
 - [ ] Client crit
-- [ ] Final refactor
 - [ ] Credentials
   - [ ] hosting account
   - [ ] FTP account
+- [ ] Refactor + deploy
 
 ### Deployment
 
