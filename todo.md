@@ -11,8 +11,9 @@ To Do
 - [x] Prerender WP page metas on the server-side
 - [x] Set up canon links for non-WP URLs
 
-### Styles
+### Styling
 
+- [ ] add component load cases
 - [ ] Normalize magic numbers
   - [x] Colors
   - [ ] Font sizes
