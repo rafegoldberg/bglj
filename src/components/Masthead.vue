@@ -37,6 +37,7 @@ export default {
   }
   table {
     table-layout: fixed;
+    width: 100%;
     thead th {
       border-bottom: none;
       font-weight: 400;
