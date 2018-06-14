@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~@/styles/theme/sizes';
 @import '~@/styles/theme/fonts';
 @import '~@/styles/theme/breaks';
 @import '~@/styles/theme/colors';
@@ -32,7 +33,7 @@ export default {
   & {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-gap: $gutter;
   }
   @include breakpoint( max-width $break ){
     grid-template-columns: repeat(2,1fr); 

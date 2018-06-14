@@ -25,11 +25,12 @@ export default {
 
 <style lang="scss">
 
-@import "~@/styles/theme/colors.scss";
-@import "~@/styles/theme/breaks.scss";
-@import "~@/styles/mixin/button.scss";
-@import "~@/styles/mixin/collapse.scss";
-@import "~@/styles/extend/text.overflow.scss";
+@import "~@/styles/theme/sizes";
+@import "~@/styles/theme/colors";
+@import "~@/styles/theme/breaks";
+@import "~@/styles/mixin/button";
+@import "~@/styles/mixin/collapse";
+@import "~@/styles/extend/text.overflow";
 
 .MediaBox {
   & { // self
@@ -51,7 +52,7 @@ export default {
   &--actions {
     clear: left;
     button {
-      font-size: 1rem;
+      font-size: $gutter;
       @include button;
       cursor: pointer;
     }

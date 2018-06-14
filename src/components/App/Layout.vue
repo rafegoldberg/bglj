@@ -44,23 +44,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "~@/styles/theme/fonts.scss";
-html, body {
-  padding: 0;
-  margin: 0;
-  font-family: $font-sans;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-</style>
 <style lang="scss" scoped>
-@import "~@/styles/theme/breaks.scss";
-@import "~@/styles/theme/colors.scss";
-@import "~@/styles/theme/fonts.scss";
-@import "~@/styles/mixin/wp.adminbar.scss";
+@import "~@/styles/theme/sizes";
+@import "~@/styles/theme/breaks";
+@import "~@/styles/theme/colors";
+@import "~@/styles/theme/fonts";
+@import "~@/styles/mixin/wp.adminbar";
 
 $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
@@ -75,7 +64,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     }
   }
   > * {
-    padding: 0 1rem;
+    padding: 0 $gutter;
   }
   &--side {
     z-index: 9;
@@ -125,7 +114,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       min-height: 100vh;
       max-height: 100%;
       @include breakpoint( min-width $break ){
-        padding-top: 1rem;
+        padding-top: $gutter;
       }
       @include breakpoint( max-width $break ){
         max-width: 100vw;
@@ -140,8 +129,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     }
     &-foot {
       box-sizing: border-box;
-      margin: 1rem -1rem 0;
-      padding: 1rem;
+      margin: $gutter -$gutter 0;
+      padding: $gutter;
       min-height: 2rem;
       background: $edge;
       color: $theme;
@@ -154,8 +143,9 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 }
 </style>
 <style lang="scss">
-@import "~@/styles/theme/breaks.scss";
-@import "~@/styles/theme/colors.scss";
+@import "~@/styles/theme/sizes";
+@import "~@/styles/theme/breaks";
+@import "~@/styles/theme/colors";
 .TopNav {
   & {
     $BG: $theme;
@@ -165,8 +155,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     top: -1px;
     display: flex;
     align-items: center;
-    margin: 0 -1rem 1rem;
-    padding: .25rem 1rem;
+    margin: 0 -$gutter $gutter;
+    padding: .25rem $gutter;
     background-color: rgba($BG,.63);
     background-image: linear-gradient( to bottom, $BG, rgba($BG, .9));
     border-bottom: 1px solid rgba(mix($BG, #888, 88%), .93);    

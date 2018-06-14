@@ -37,14 +37,15 @@ export default {
 
 <style lang="scss">
 
+@import "~@/styles/theme/sizes";
 @import "~@/styles/theme/colors";
 
 .PostItem {
   &{
     min-height: 100vh;
     padding-top: calc(4em + 8vh);
-    margin: -1rem -1rem 0;
-    padding-left: 1rem;
+    margin: -$gutter -$gutter 0;
+    padding-left: $gutter;
     background-image: linear-gradient(to bottom, rgb(177, 196, 223) -6em, $matte 8em);
   }
   &--title {
@@ -52,17 +53,17 @@ export default {
     font-size: calc(1.3em + 3vmin);
   }
   &--content {
-    margin-right: 1rem;
+    margin-right: $gutter;
   }
 
   .align {
     &left {
       float: left;
-      margin: .1em 1rem .2em 0;
+      margin: .1em $gutter .2em 0;
     }
     &right {
       float: right;
-      margin: .1em 0 .2em 1rem;
+      margin: .1em 0 .2em $gutter;
     }
     &center {
       margin: 0 auto;

@@ -79,7 +79,10 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@/styles/theme/colors.scss";
+
+@import "~@/styles/theme/sizes";
+@import "~@/styles/theme/colors";
+
 .PostList {
   &--pagination {
     position: sticky;
@@ -90,8 +93,8 @@ export default {
     justify-content: flex-start;
     align-items: center;
 
-    margin: 0 -1rem -1rem 0;
-    // padding: 1rem .63rem;
+    margin: 0 -$gutter -$gutter 0;
+    // padding: $gutter .63rem;
     font-size: .75em;
     
     background-color: $matte;
@@ -110,11 +113,6 @@ export default {
       padding: 1.3em .9em;
       text-align: center;
       transition: background .25s ease-out;
-      // background-image: linear-gradient(
-      //   to bottom,
-      //   rgba($matte,0),
-      //   $matte
-      //   );
       &:hover {
         background-color: mix($matte,$edge,75%);
       }
@@ -124,4 +122,5 @@ export default {
     }
   }
 }
+
 </style>

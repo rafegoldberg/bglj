@@ -63,11 +63,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/theme/colors.scss";
+@import "~@/styles/theme/sizes";
+@import "~@/styles/theme/colors";
 .Event {
   & {
     position: relative;
-    padding: 1rem;
+    padding: $gutter;
     display: flex;
     flex-flow: nowrap column;
     justify-content: space-between;
@@ -94,7 +95,7 @@ export default {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 0.15em 1rem;
+    padding: 0.15em $gutter;
     font-size: calc(200% + 1vw);
     line-height: .9;
     font-weight: 800;
