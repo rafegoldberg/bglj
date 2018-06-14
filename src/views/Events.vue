@@ -59,7 +59,7 @@ export default {
         margin-left: -1px;
       }
     }
-    @include breakpoint( max-width $break ){
+    @include breakpoint( nth($breaks,-1) ){
       grid-template-columns: repeat(2,1fr);
       .Event{
         &:not(:nth-child(3n+1)) { margin-left: 0px }

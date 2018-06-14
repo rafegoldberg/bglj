@@ -102,7 +102,7 @@ $sidebar-min-width: 18rem;
     background: $bgc;
     color: $txt;
     
-    @include breakpoint( max-width $break ){
+    @include breakpoint( nth($breaks,-1) ){
       display: none !important;
     }
   }
@@ -116,10 +116,10 @@ $sidebar-min-width: 18rem;
       max-width: 80vw;
       min-height: 100vh;
       max-height: 100%;
-      @include breakpoint( min-width $break ){
+      @include breakpoint( min-width nth($points,-1) ){
         padding-top: $gutter;
       }
-      @include breakpoint( max-width $break ){
+      @include breakpoint( nth($breaks,-1) ){
         max-width: 100vw;
       }
       @include AdminBar {
@@ -223,7 +223,7 @@ $sidebar-min-width: 18rem;
       );
     }
   }
-  @include breakpoint( min-width $break ){
+  @include breakpoint( min-width nth($points,-1) ){
     display: none !important;
   }
 }

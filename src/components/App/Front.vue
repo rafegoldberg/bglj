@@ -51,7 +51,7 @@ export default {
       font-family: $font-slab;
       line-height: 3.5;
     }
-    @include breakpoint( max-width $break ){
+    @include breakpoint( nth($breaks,-1) ){
       text-align: center;
       h1 { font-size: 3em }
       span { line-height: 3; }

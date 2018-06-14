@@ -35,7 +35,7 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: $gutter;
   }
-  @include breakpoint( max-width $break ){
+  @include breakpoint( nth($breaks,-1) ){
     grid-template-columns: repeat(2,1fr); 
   }
   @include breakpoint( max-width 500px ){

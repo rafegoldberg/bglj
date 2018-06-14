@@ -57,7 +57,7 @@ export default {
       cursor: pointer;
     }
   }
-  @include breakpoint( max-width $break ){
+  @include breakpoint( nth($breaks,-1) ){
     img:not(.layout--spread) {
       max-width: 8em !important;
     }
