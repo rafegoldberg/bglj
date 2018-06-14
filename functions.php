@@ -18,3 +18,5 @@
    */
   include "php/ui.php";
   ?>
+
+<? include "php/bglj/frontpage.php" # TEMP ?>

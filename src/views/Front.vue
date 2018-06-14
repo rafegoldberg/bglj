@@ -5,28 +5,48 @@
   <Brand tag="h1" :large="true" :fluid="true"></Brand>
   <hr>
   
-  <template v-if="context.mandate">
-    <article v-html="context.mandate"></article>
+  <template v-if="!context.loading">
+    <article v-html="context.acf.mandate"></article>
   </template>
+  <span v-else>Loading...</span>
   
 </div>
 </template>
 
 <script>
+import VpItem from '@/VuePress/item'
 import Brand from '@/components/brand'
-import WpAsync from '@/components/WpAsync'
 
 export default {
-  name: 'AppFront',
-  extends: WpAsync,
-  components:{Brand},
-  methods:{
+  name:'PostItem',
+  extends: VpItem,
+  props:{
+    type:{ default:'page' }
+  },
+  computed:{
+  },
+  methods: {
     fetch(WP){
-      return WP.namespace('acf/v3').options().id('options').get().then(item=> item.acf || item )
+      return WP.namespace('bglj/v0').frontpage()
     }
   },
-  computed:{}
+  computed: {},
+  components:{ Brand },
 }
+//---------------------------------------------------------
+// import Brand from '@/components/brand'
+// import WpAsync from '@/components/WpAsync'
+// export default {
+//   name: 'AppFront',
+//   extends: WpAsync,
+//   components:{Brand},
+//   methods:{
+//     fetch(WP){
+//       return WP.namespace('acf/v3').options().id('options').get().then(item=> item.acf || item )
+//     }
+//   },
+//   computed:{}
+// }
 </script>
 
 <style lang="scss" scoped>
