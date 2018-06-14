@@ -17,8 +17,6 @@
 
     <div slot="after">
       <transition
-          name="fade"
-          :duration="500"
           enter-active-class="fadeInUp"
           leave-active-class="fadeOutDown">
         <router-view name="nav"></router-view>
@@ -28,7 +26,6 @@
   
   <transition
       name="fade"
-      :duration="650"
       mode="out-in">
     <router-view></router-view>
   </transition>
