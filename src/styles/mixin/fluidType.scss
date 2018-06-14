@@ -1,0 +1,3 @@
+@mixin fluidType( $scale:1em, $respond:2vw ){
+  font-size: calc( #{$scale} + #{$respond} );
+}
