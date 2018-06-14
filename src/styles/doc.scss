@@ -173,9 +173,9 @@ table {
   }
   thead th {
     background: mix( $matte, $theme, 96%);
-    border-bottom:
-      3px solid
-      mix( $matte, $theme, 93%);
+    // border-bottom:
+    //   3px solid
+    //   mix( $matte, $theme, 93%);
   }
   tr {
     & + tr td {
