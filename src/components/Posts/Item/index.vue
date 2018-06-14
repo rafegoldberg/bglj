@@ -43,8 +43,8 @@ export default {
   &{
     min-height: 100vh;
     padding-top: calc(4em + 8vh);
-    margin: -1em -1em 0;
-    padding-left: 1em;
+    margin: -1rem -1rem 0;
+    padding-left: 1rem;
     background-image: linear-gradient(to bottom, rgb(177, 196, 223) -6em, $matte 8em);
   }
   &--title {
