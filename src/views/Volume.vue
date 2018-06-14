@@ -37,9 +37,9 @@ export default {
     },
   },
   metas(){
-    let
-    END = this.$route.params.endpoint || 'volumes'
-    return {title: END.charAt(0).toUpperCase() + END.slice(1) }
-  }
+    return {
+      title: !this.context.loading ? this.context.title.rendered : ''
+    }
+  },
 }
 </script>

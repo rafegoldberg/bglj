@@ -43,8 +43,12 @@ export default {
       default: 2,
     }
   },
-  metas:{
-    title: 'Posts'
+  metas(){
+    return {
+      title: this.type
+        ? this.type.charAt(0).toUpperCase() + this.type.slice(1).toLowerCase()
+        : 'Posts'
+    }
   },
   methods:{
     fetch(WP){

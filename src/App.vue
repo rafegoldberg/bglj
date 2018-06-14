@@ -33,7 +33,7 @@ export default {
   components:{ AppLayout, AppNav },
   metas(){ return {
     title: "Home",
-    titleTemplate: '%s  /  BGLJ',
+    titleTemplate: '%s  //  BGLJ',
     bodyAttrs: {},
     htmlAttrs: {},
     base: {},

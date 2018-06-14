@@ -17,8 +17,10 @@ import VpItem from '@/VuePress/item'
 export default {
   name:'PostItem',
   extends: VpItem,
-  metas: {
-    title: "Posts"
+  metas(){
+    return {
+      title: !this.context.loading ? this.context.title.rendered : ''
+    }
   },
   methods: {
     fetch(WP){
