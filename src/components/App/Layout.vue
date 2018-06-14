@@ -65,7 +65,7 @@ a {
 $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 
 .AppLayout{
-  $sidebar-min-width: 16rem;
+  $sidebar-min-width: 18rem;
   & {
     display: flex;
     align-items: stretch;
@@ -78,6 +78,11 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     padding: 0 1rem;
   }
   &--side {
+    z-index: 9;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+
     flex: 0 20vw;
     min-width: $sidebar-min-width;
 
@@ -106,13 +111,6 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     background: $theme;
     color: $matte;
     
-    position: sticky;
-    top: 0;
-    max-height: 100vh;
-    @include AdminBar {
-      top: $wp-adminbar-height;
-      max-height: $app-adminbar-height;
-    }
     @include breakpoint( max-width $break ){
       display: none !important;
     }
@@ -126,6 +124,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       flex-flow: nowrap column;
       max-width: 80vw;
       min-height: 100vh;
+      color: saturate(invert($matte,88%),-0);
       @include breakpoint( min-width $break ){
         padding-top: 1rem;
       }

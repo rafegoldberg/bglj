@@ -9,7 +9,9 @@
     </router-link>
   </ul>
     
-  <slot name="after"></slot>
+  <div class="AppNav--after">
+    <slot name="after"></slot>
+  </div>
 
 </nav>
 </template>
@@ -55,6 +57,8 @@ export default {
   }
   &--title {
     font-size: 1.25em;
+    margin-bottom: 1em;
+    display: block;
     &, &* { font-weight: 100 !important }
     line-height: 1.1;
     transition: opacity .2s .1s ease-out;
@@ -72,6 +76,11 @@ export default {
       font-weight: bold;
       list-style-type: disc;
     }
+  }
+  &--after {
+    min-height: 2.8rem;
+    transition: all .5s ease-out;
+    margin: 1.5rem 0 0;
   }
 }
 

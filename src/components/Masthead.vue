@@ -1,6 +1,8 @@
 <template>
 <div class="Masthead">
-  <table v-for="x in info" :key="x.position">
+
+  <div v-for="x in info" :key="x.position">
+  <table>
     <thead>
       <th>{{x.position}}</th>
     </thead>
@@ -10,6 +12,8 @@
       </component>
     </tbody>
   </table>
+  </div>
+
 </div>
 </template>
 
@@ -21,14 +25,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/theme/colors";
-@import "~@/styles/theme/fonts";
-@import "~@/styles/theme/breaks";
+@import '~@/styles/theme/fonts';
+@import '~@/styles/theme/breaks';
+@import '~@/styles/theme/colors';
 .Masthead {
   & {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0px;
+    grid-gap: 1rem;
   }
   @include breakpoint( max-width $break ){
     grid-template-columns: repeat(2,1fr); 
@@ -44,7 +48,8 @@ export default {
       font-weight: 400;
       font-family: $font-serif;
       font-style: italic;
-      text-indent: -.75em;
+      text-indent: -.3rem;
+      box-shadow: -1rem 0 0 $matte;
     }
     td {
       font-family: $font-slab;

@@ -2,18 +2,34 @@
 <AppLayout id="App">
   
   <AppNav slot="side">
-    <router-link tag="h1" :to="'/home'" :class="{
+
+    <!-- <router-link tag="h1" :to="'/home'" :class="{
         out: $route.name=='home',
         'AppNav--title': true,
       }">
-      <a>The Berkley Journal of Gender, Law &amp; Justice</a>
+      <a>The Berkley Journal of Gender, Law &amp; Justice</a> -->
+    <router-link :to="'/home'" :class="{
+        out: $route.name=='home',
+        'AppNav--title': true,
+      }">
+      <Brand tag="h1"></Brand>
     </router-link>
+
     <div slot="after">
-      <router-view name="nav"></router-view>
+      <transition
+          name="fade"
+          :duration="500"
+          enter-active-class="fadeInUp"
+          leave-active-class="fadeOutDown">
+        <router-view name="nav"></router-view>
+      </transition>
     </div>
   </AppNav>
   
-  <transition name="fade" mode="out-in">
+  <transition
+      name="fade"
+      :duration="650"
+      mode="out-in">
     <router-view></router-view>
   </transition>
   
@@ -25,12 +41,13 @@
 </template>
 
 <script>
-import AppLayout from '@/components/App/Layout.vue'
-import AppNav from "@/components/App/Nav.vue"
+import AppLayout from '@/components/App/Layout'
+import AppNav from '@/components/App/Nav'
+import Brand from '@/components/brand'
 
 export default {
   name: "App",
-  components:{ AppLayout, AppNav },
+  components:{ AppLayout, AppNav, Brand },
   metas(){ return {
     title: "Home",
     titleTemplate: '%s  //  BGLJ',
@@ -77,16 +94,5 @@ export default {
 
 <style lang="scss">
 @import "~@/styles/doc.scss";
-
-.fade {
-  &-enter-active,
-  &-leave-active {
-    transition: opacity .3s ease-out;
-  }
-  &-enter,
-  &-leave-to {
-    opacity: 0;
-  }
-}
-
+@import "~vue2-animate/src/sass/vue2-animate.scss";
 </style>

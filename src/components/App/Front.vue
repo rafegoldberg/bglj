@@ -35,7 +35,6 @@ export default {
 
 .AppFront {
   header {
-    color: nth($theme-list,3);
     h1 {
       margin: 0;
       font-family: $font-serif;

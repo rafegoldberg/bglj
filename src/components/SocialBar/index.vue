@@ -47,7 +47,6 @@ export default {
 @import "~@/styles/theme/colors";
 
 .SocialBar {
-  margin: 1.5em 0; 
   border: solid $edge;
 
   border-radius: 3px;

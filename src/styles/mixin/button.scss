@@ -3,6 +3,7 @@
 @mixin button {
   padding: .4em .5em;
   font-family: $font-slab;
+  background: $matte;
   color: $theme;
   border: 2px solid $theme;
   transition: .15s .02s ease-out;
