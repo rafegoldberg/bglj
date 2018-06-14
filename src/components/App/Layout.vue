@@ -97,7 +97,7 @@ $sidebar-min-width: 18rem;
       background-image: url('~@/assets/logo.svg');
       background-repeat: no-repeat;
       background-size: auto calc(28rem - 3vw);
-      background-position: bottom #{right} calc(-14rem + 6vw);
+      background-position: #{"bottom right"} calc(-14rem + 6vw);
       filter: opacity(.2) saturate(0) invert(1);
 
       pointer-events: none;
