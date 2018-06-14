@@ -15,6 +15,7 @@
 <script>
 import Brand from '@/components/brand'
 import WpAsync from '@/components/WpAsync'
+
 export default {
   name: 'AppFront',
   extends: WpAsync,

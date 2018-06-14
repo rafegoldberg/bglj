@@ -1,8 +1,8 @@
 import AppNav from '@/components/App/Nav'
-import AppFront from '@/components/App/Front'
 
 import AppPage from './views/Page'
 import AppEvents from './views/Events'
+import AppFront from './views/Front'
 
 import Volume from './views/Volume'
 import PostsList from '@/components/Posts'
