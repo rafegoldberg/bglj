@@ -11,7 +11,7 @@
     <?#=generated=>
       $metas = include "php/metas/webapp.php";
       $metas.= include "php/metas/social.php";
-      echo $meta;
+      echo $metas;
       ?>
     <script>
     console.log(<?=json_encode($metas)?>);
