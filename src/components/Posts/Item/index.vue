@@ -40,17 +40,21 @@ export default {
 @import "~@/styles/theme/sizes";
 @import "~@/styles/theme/colors";
 
+@import "~@/styles/mixin/fluidType";
+
 .PostItem {
   &{
     min-height: 100vh;
     padding-top: calc(4em + 8vh);
-    margin: -$gutter -$gutter 0;
+    margin: -#{$gutter} -#{$gutter} 0;
     padding-left: $gutter;
     background-image: linear-gradient(to bottom, rgb(177, 196, 223) -6em, $matte 8em);
   }
   &--title {
-    font-size: 2.5em;
-    font-size: calc(1.3em + 3vmin);
+    display: block;
+    max-width: 20em;
+    font-size: 2.5em; // fallback
+    @include fluidType( $scale:1.3em );
   }
   &--content {
     margin-right: $gutter;

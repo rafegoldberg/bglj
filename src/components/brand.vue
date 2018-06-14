@@ -1,6 +1,7 @@
 <template>
 <component :is="tag" class="BrandBGLJ" :class="{
-    'BrandBGLJ_large': large
+    'BrandBGLJ_large': large,
+    'BrandBGLJ_fluid': fluid,
     }">
   <small class="BrandBGLJ--ln1">The Berkley Journal of</small>
   <div class="BrandBGLJ--ln2">Gender, Law <span>&amp;</span> Justice</div>
@@ -21,6 +22,10 @@ export default {
     large: {
       type: Boolean,
       default: false
+    },
+    fluid: {
+      type: Boolean,
+      default: false
     }
   },
 }
@@ -29,8 +34,11 @@ export default {
 
 <style lang="scss">
 
-@import "~@/styles/theme/colors.scss";
-@import "~@/styles/theme/fonts.scss";
+@import '~@/styles/theme/fonts';
+@import '~@/styles/theme/colors';
+@import '~@/styles/theme/breaks';
+
+@import '~@/styles/mixin/fluidType';
 
 .BrandBGLJ {
 
@@ -67,6 +75,16 @@ export default {
     #{$root}--ln1 {
       text-transform: unset;
       letter-spacing: 0;
+    }
+  }
+  &_fluid {
+    @include fluidType( $scale:1.6em );
+  }
+
+  @include breakpoint( max-width 36rem ){
+    &_large {
+      text-align: center;
+      font-size: 2.2em
     }
   }
 

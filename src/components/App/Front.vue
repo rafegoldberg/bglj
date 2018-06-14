@@ -2,7 +2,7 @@
 <div class="AppFront">
   
   <hr>
-  <Brand tag="h1" :large="true"></Brand>
+  <Brand tag="h1" :large="true" :fluid="true"></Brand>
   <hr>
   
   <template v-if="context.mandate">
