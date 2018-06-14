@@ -13,9 +13,6 @@
       $metas.= include "php/metas/social.php";
       echo $metas;
       ?>
-    <script>
-    console.log(<?=json_encode($metas)?>);
-    </script>
   
   <!-- Dependencies -->
     <script src="//unpkg.com/wpapi@1.1.2/browser/wpapi.min.js"></script>
