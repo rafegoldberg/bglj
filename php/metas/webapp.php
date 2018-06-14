@@ -16,7 +16,7 @@
 
   <!-- webapp -->
   <link rel="apple-touch-icon" rel:glossy="-precomposed" href="<%= BASE_URL %>app-icon.png"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <?
   # <link rel="apple-touch-startup-image" href="img/splash.png" />
