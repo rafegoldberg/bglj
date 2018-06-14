@@ -36,19 +36,14 @@ export default {
     grid-template-columns: repeat(1,1fr);
   }
   table {
+    table-layout: fixed;
     thead th {
       border-bottom: none;
-      // $bgc: mix( $matte, $theme, 96%);
-      // background: linear-gradient(
-      //   to top right,
-      //   $bgc,
-      //   rgba($bgc,0)
-      //   );
-      font-weight: normal;
+      font-weight: 400;
     }
-    @include breakpoint( max-width 500px ){
-      width: 100%;
-    }
+    // @include breakpoint( max-width 500px ){
+    //   width: 100%;
+    // }
   }
 }
 </style>
