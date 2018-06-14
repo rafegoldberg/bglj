@@ -51,10 +51,13 @@ export default {
 @import "~@/styles/theme/fonts";
 @import "~@/styles/mixin/wp.adminbar";
 
+
 $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
+$sidebar-min-width: 18rem;
 
 .AppLayout{
-  $sidebar-min-width: 18rem;
+  $bgc: $theme;
+  $txt: $matte;
   & {
     display: flex;
     align-items: stretch;
@@ -96,8 +99,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       pointer-events: none;
     }
     
-    background: $theme;
-    color: $matte;
+    background: $bgc;
+    color: $txt;
     
     @include breakpoint( max-width $break ){
       display: none !important;
@@ -129,7 +132,7 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
     }
     &-foot {
       box-sizing: border-box;
-      margin: $gutter -$gutter 0;
+      margin: $gutter -#{$gutter} 0;
       padding: $gutter;
       min-height: 2rem;
       background: $edge;
@@ -147,19 +150,23 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
 @import "~@/styles/theme/breaks";
 @import "~@/styles/theme/colors";
 .TopNav {
+
+  $bgc: $theme;
+  $txt: $matte;
+
   & {
-    $BG: $theme;
-    color: $matte;
     z-index: 10;
     position: sticky;
     top: -1px;
     display: flex;
     align-items: center;
-    margin: 0 -$gutter $gutter;
+    margin: 0 -#{$gutter} $gutter;
     padding: .25rem $gutter;
-    background-color: rgba($BG,.63);
-    background-image: linear-gradient( to bottom, $BG, rgba($BG, .9));
-    border-bottom: 1px solid rgba(mix($BG, #888, 88%), .93);    
+
+    color: $txt;
+    background-color: rgba($bgc,.63);
+    background-image: linear-gradient( to bottom, $bgc, rgba($bgc, .9));
+    border-bottom: 1px solid rgba(mix($bgc, #888, 88%), .93);    
     box-shadow: 0 6px 24px -8px rgba(#333, .1);
     
     &:before {
@@ -181,7 +188,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       
       filter: opacity(.3) saturate(0) invert(1);
     }
-    &:before, .Brand {
+    &:before,
+    .Brand {
       transition: .25s .05s ease-out;
     }
     &_hid:before { 

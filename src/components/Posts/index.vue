@@ -93,7 +93,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
 
-    margin: 0 -$gutter -$gutter 0;
+    margin: 0 -#{$gutter} -#{$gutter} 0;
     // padding: $gutter .63rem;
     font-size: .75em;
     
