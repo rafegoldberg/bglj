@@ -13,12 +13,12 @@ To Do
 
 ### Styling
 
-- [ ] add component load cases
-- [ ] Normalize magic numbers
+- [ ] Add component load cases
+- [x] Normalize magic numbers
   - [x] Colors
-  - [ ] Font sizes
-  - [ ] Spacing
-  - [ ] Breakpoints
+  - [x] Font sizes
+  - [x] Spacing
+  - [x] Breakpoints
     
 ### Optimization
 
@@ -30,18 +30,12 @@ To Do
 
 ### Wordpress & ACF
 
-- [ ] Add layout selector
-  - [ ] WP layout files
-  - [ ] per-layout ACF fieldgroups
-  - [ ] feed, post, page
-  - [ ] map to Vue components
-- [ ] Handle deep page structures in sidebar
+- [x] Move mandate and menu fields to front page.
 - [x] Whitelabel the [WP admin](http://rgd2.co/clients/BGLJ/wp-admin)
 - [x] Revise data groupings + structures
 
 ### Feedback
 
-- [ ] Document components 
 - [ ] Client crit
 - [ ] Credentials
   - [ ] hosting account
