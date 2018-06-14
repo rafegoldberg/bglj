@@ -21,7 +21,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/theme/breaks.scss";
+@import "~@/styles/theme/colors";
+@import "~@/styles/theme/breaks";
 .Masthead {
   & {
     display: grid;
@@ -33,6 +34,21 @@ export default {
   }
   @include breakpoint( max-width 500px ){
     grid-template-columns: repeat(1,1fr);
+  }
+  table {
+    thead th {
+      border-bottom: none;
+      // $bgc: mix( $matte, $theme, 96%);
+      // background: linear-gradient(
+      //   to top right,
+      //   $bgc,
+      //   rgba($bgc,0)
+      //   );
+      font-weight: normal;
+    }
+    @include breakpoint( max-width 500px ){
+      width: 100%;
+    }
   }
 }
 </style>
