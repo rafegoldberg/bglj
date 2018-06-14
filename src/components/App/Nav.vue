@@ -73,7 +73,7 @@ export default {
     line-height: 2.6;
     font-family: $font-sans;
     .open {
-      font-weight: bold;
+      font-weight: 700;
       list-style-type: disc;
     }
   }

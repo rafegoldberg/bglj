@@ -6,6 +6,11 @@
     <i class="fa fa-fw fa-facebook"></i> 
   </network>
 
+  <!-- Twitter -->
+  <network network="twitter">
+    <i class="fa fa-fw fa-twitter"></i> 
+  </network>
+
   <!-- Google+ -->
   <network network="googleplus">
     <i class="fa fa-fw fa-google-plus"></i> 
@@ -14,11 +19,6 @@
   <!-- Reddit -->
   <network network="reddit">
     <i class="fa fa-fw fa-reddit"></i> 
-  </network>
-
-  <!-- Twitter -->
-  <network network="twitter">
-    <i class="fa fa-fw fa-twitter"></i> 
   </network>
 
 </div> </Social>
@@ -64,7 +64,7 @@ export default {
       box-shadow: 0 0 0 5.5px $edge;
       transition-delay: .1s;
     }
-    &:first-child { margin-left: -.25rem }
+    &:first-child { margin-left: -.2rem }
     & + * { border-left: 1px solid $edge }
   }
 }

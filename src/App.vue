@@ -3,11 +3,6 @@
   
   <AppNav slot="side">
 
-    <!-- <router-link tag="h1" :to="'/home'" :class="{
-        out: $route.name=='home',
-        'AppNav--title': true,
-      }">
-      <a>The Berkley Journal of Gender, Law &amp; Justice</a> -->
     <router-link :to="'/home'" :class="{
         out: $route.name=='home',
         'AppNav--title': true,

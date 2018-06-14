@@ -43,24 +43,18 @@ export default {
   table {
     table-layout: fixed;
     width: 100%;
+    color: $dark;
     thead th {
-      border-bottom: none;
       font-weight: 400;
-      font-family: $font-serif;
-      font-style: italic;
+      font-family: $font-slab;
       text-indent: -.36rem;
-      box-shadow: -1rem 0 0 $matte;
+      color: inherit;
+      border-bottom: none;
     }
     td {
-      font-family: $font-slab;
       font-size: 0.9em;
+      font-style: italic;
     }
-    tr td {
-      // border-color: red !important;
-    }
-    // @include breakpoint( max-width 500px ){
-    //   width: 100%;
-    // }
   }
 }
 </style>

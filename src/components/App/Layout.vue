@@ -100,9 +100,8 @@ $app-adminbar-height: calc(100vh - #{$wp-adminbar-height});
       height: 100%;
       background-image: url('~@/assets/logo.svg');
       background-repeat: no-repeat;
-      background-size: auto 24vw;
-      background-position: top 1.5rem right -9vw;
-      background-position: bottom right -9vw;
+      background-size: auto 50%;
+      background-position: bottom right calc(-9.3vw);
       filter: opacity(.2) saturate(0) invert(1);
 
       pointer-events: none;
