@@ -44,7 +44,7 @@ To Do
 - [ ] Credentials
   - [ ] hosting account
   - [ ] FTP account
-- [ ] Refactor + deploy
+- [ ] Debug + deploy
 
 ### Deployment
 
