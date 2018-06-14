@@ -1,51 +1,56 @@
 To Do
 ===
 
-- **Features**
-  - [x] social sharing
-  - [ ] donation buttons
-- **Metadata**
-  - [x] prerender page metas
+### Features
 
-    > *in WP on the server-side*
+- [x] Social sharing
+- [ ] Donation link (where?)
+
+### Metadata
+
+- [x] Prerender WP page metas on the server-side
+- [x] Set up canon links for non-WP URLs
+
+### Styles
+
+- [ ] Normalize magic numbers
+  - [x] Colors
+  - [ ] Font sizes
+  - [ ] Spacing
+  - [ ] Breakpoints
     
-  - [ ] ~set up canon links for non-WP URLs~
-- **Styles**
-  - [ ] normalize magic numbers
+### Optimization
 
-    > *font sizes, spacing, breakpoints, etc.*
-    
-- **Optimization**
-  - [x] streamline large JS libs
+- [x] Clarify dependencies
+  - [x] Remove extraneous
+  - [x] Externalize the [WPAPI](https://github.com/WP-API/node-wpapi)*
+- [x] Remove extra fonts [from TypeKit](https://typekit.com/kit_editor/kits/xoz1ltr)
+- [x] Use minified bundle in prod environment
 
-    > *externalize the [WPAPI](https://github.com/WP-API/node-wpapi)*
-    
-  - [x] remove extra fonts
+### Wordpress & ACF
 
-    > *[from TypeKit](https://typekit.com/kit_editor/kits/xoz1ltr)*
-    
-  - [x] clarify dependencies
+- [ ] Add layout selector
+  - [ ] WP layout files
+  - [ ] per-layout ACF fieldgroups
+  - [ ] feed, post, page
+  - [ ] map to Vue components
+- [ ] Handle deep page structures in sidebar
+- [x] Whitelabel the [WP admin](http://rgd2.co/clients/BGLJ/wp-admin)
+- [x] Revise data groupings + structures
 
-    > *ensure dev deps are correct; remove extraneous*
-    
-  - [x] use minified bundle in prod environment
-- **Wordpress**
-  - [ ] revise sidebar nav fields
+### Feedback
 
-    > *should handle display of deep page structures*
+- [ ] Client crit
+- [ ] Final refactor
+- [ ] Credentials
+  - [ ] hosting account
+  - [ ] FTP account
 
-  - [ ] page templates
-  - [ ] standardize field groups
-  - [x] whitelabel
+### Deployment
 
-    > *menu order, options pages, etc.*
-    
-  - [x] polish baseline data structures
-- **Deployment**
-  - [ ] debug JS
-  - [ ] debug CSS
-  - [ ] push to BGLJ production environment
-- **Feedback**
-  - [ ] client crit
-  - [ ] final refactor
-  - [ ] hosting details
+- [ ] Debugging
+  - [ ] Javascript
+  - [ ] Stylesheets
+  - [ ] Wordpress
+- [ ] Push to BGLJ prod environment
+  > *(will require hosting + FTP credentials)*
