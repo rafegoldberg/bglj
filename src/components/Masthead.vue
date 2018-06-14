@@ -48,7 +48,7 @@ export default {
       font-weight: 400;
       font-family: $font-serif;
       font-style: italic;
-      text-indent: -.3rem;
+      text-indent: -.36rem;
       box-shadow: -1rem 0 0 $matte;
     }
     td {
