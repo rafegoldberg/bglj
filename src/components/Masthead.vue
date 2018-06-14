@@ -22,6 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/styles/theme/colors";
+@import "~@/styles/theme/fonts";
 @import "~@/styles/theme/breaks";
 .Masthead {
   & {
@@ -41,6 +42,9 @@ export default {
     thead th {
       border-bottom: none;
       font-weight: 400;
+    }
+    td {
+      font-family: $font-serif;
     }
     // @include breakpoint( max-width 500px ){
     //   width: 100%;
