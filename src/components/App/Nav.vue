@@ -3,7 +3,7 @@
 
   <slot></slot>
   
-  <ul v-if="!context.loading" style="display:block; padding: 0 0 0 1em; line-height: 2.6; ">
+  <ul class="AppNav--page-list" v-if="!context.loading">
     <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="makeLink(page)" :replace="$route.name=='nav'">
       <a>{{page.label}}</a>
     </router-link>
@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import "~@/styles/theme/fonts";
+
 .AppNav {
   & {
     position: sticky;
@@ -60,9 +63,16 @@ export default {
       pointer-events: none;
     }
   }
-  .open {
-    font-weight: bold;
-    list-style-type: disc;
+  &--page-list {
+    display: block;
+    padding: 0 0 0 1em;
+    line-height: 2.6;
+    font-family: $font-sans;
+    .open {
+      font-weight: bold;
+      list-style-type: disc;
+    }
   }
 }
+
 </style>

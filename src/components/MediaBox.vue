@@ -5,7 +5,7 @@
     </router-link>
     <VpImg v-if="card.image" class="MediaBox--media" v-bind="card.image"></VpImg>
     <div v-if="card.showExcerpt" class="MediaBox--excerpt">
-      <div class="MediaBox--text" v-html="card.text||excerpt&&excerpt.rendered||excerpt"></div>
+      <p class="MediaBox--text" v-html="card.text||excerpt&&excerpt.rendered||excerpt"></p>
     </div>
     <footer class="MediaBox--actions">
       <slot/>

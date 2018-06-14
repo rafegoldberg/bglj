@@ -28,7 +28,7 @@ export default {
   & {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 3px;
+    grid-gap: 0px;
   }
   @include breakpoint( max-width $break ){
     grid-template-columns: repeat(2,1fr); 
@@ -42,9 +42,16 @@ export default {
     thead th {
       border-bottom: none;
       font-weight: 400;
+      font-family: $font-serif;
+      font-style: italic;
+      text-indent: -.75em;
     }
     td {
-      font-family: $font-serif;
+      font-family: $font-slab;
+      font-size: 0.9em;
+    }
+    tr td {
+      // border-color: red !important;
     }
     // @include breakpoint( max-width 500px ){
     //   width: 100%;
