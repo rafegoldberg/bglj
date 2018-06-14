@@ -70,19 +70,23 @@ $sidebar-min-width: 18rem;
     padding: 0 $gutter;
   }
   &--side {
-    z-index: 9;
-    position: sticky;
-    top: 0;
-    max-height: 100vh;
+    & {
+      z-index: 9;
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
 
-    flex: 0 20vw;
-    min-width: $sidebar-min-width;
+      flex: 0 20vw;
+      min-width: $sidebar-min-width;
 
-    display: flex;
-    flex-flow: nowrap column;
-    justify-content: center;
-    align-items: stretch;
+      display: flex;
+      flex-flow: nowrap column;
+      justify-content: center;
+      align-items: stretch;
 
+      background: $bgc;
+      color: $txt;
+    }
     &:after {
       content: ' ';
       position: absolute;
@@ -92,16 +96,12 @@ $sidebar-min-width: 18rem;
       height: 100%;
       background-image: url('~@/assets/logo.svg');
       background-repeat: no-repeat;
-      background-size: auto 50%;
-      background-position: bottom right calc(-9.3vw);
+      background-size: auto calc(28rem - 3vw);
+      background-position: bottom right calc(-14rem + 6vw);
       filter: opacity(.2) saturate(0) invert(1);
 
       pointer-events: none;
     }
-    
-    background: $bgc;
-    color: $txt;
-    
     @include breakpoint( nth($breaks,-1) ){
       display: none !important;
     }

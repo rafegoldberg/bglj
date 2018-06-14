@@ -177,9 +177,6 @@ table {
   }
   thead th {
     background: mix( $matte, $theme, 96%);
-    // border-bottom:
-    //   3px solid
-    //   mix( $matte, $theme, 93%);
   }
   tr {
     & + tr td {
@@ -193,5 +190,14 @@ table {
 p {
   line-height: 1.6;
   margin: unset;
-  margin-top: 1.5rem
+  & + & { margin-top: 1.3rem }
+}
+
+article, p {
+  a {
+    color: $theme;
+    font-family: inherit;
+    text-decoration: underline $theme;
+    text-decoration-skip-ink: auto;
+  }
 }

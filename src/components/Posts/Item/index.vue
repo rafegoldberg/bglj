@@ -3,7 +3,7 @@
   
   <h2 class="PostItem--title" v-html="context.title.rendered"></h2>
 
-  <SocialBar :url="context.link"></SocialBar>
+  <SocialBar :url="context.link" style="margin-bottom:1.6rem"></SocialBar>
 
   <article class="PostItem--content" v-html="context.content.rendered"></article>
   

@@ -56,6 +56,8 @@ export default {
       font-size: 0.9em;
       font-style: italic;
     }
+    tr:first-child td { border-top:    none }
+    tr:last-child  td { border-bottom: none }
   }
 }
 </style>

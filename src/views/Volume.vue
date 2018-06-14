@@ -14,7 +14,7 @@
       </small>
     </header>
     <hr style="opacity:0!important">
-    <p v-html="context.acf.note"></p>
+    <article v-html="context.acf.note"></article>
     <hr style="opacity:0!important">
     <Masthead :info="context.acf.masthead"></Masthead>
   </div>
