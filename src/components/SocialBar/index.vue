@@ -42,38 +42,37 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
-@import "~@/styles/theme/colors";
-
-.SocialBar {
-  border: solid $edge;
-
-  border-radius: 3px;
-  border-width: .975px;
-
-  border-radius: 0;
-  border-width: .975px 0;
-
-  // float: left;
-  // margin-top: .5em;
-  // margin-right: 2em;
-}
-
-</style>
 <style lang="scss">
 
 @import "~@/styles/theme/colors";
 
-.Boxrow {
-  display: flex;
-  flex-flow: nowrap row;
+.SocialBar {
+
+  $transition: .4s ease-out;
+  
+  border: solid $edge;
+  border-width: .975px 0;
   > * {
     padding: .5em .75em;
     cursor: pointer;
-    &:hover { background: rgba(0,0,0,.12) }
-    & + *   { border-left: 1px solid $edge }
+    box-shadow: 0 0 0 -5px transparent;
+    transition: $transition;
+    &:hover {
+      z-index: 1;
+      color: $theme;
+      background: $edge;
+      box-shadow: 0 0 0 5.5px $edge;
+      transition-delay: .1s;
+    }
+    &:first-child { margin-left: -.25rem }
+    & + * { border-left: 1px solid $edge }
   }
 }
 
+</style>
+<style lang="scss">
+.Boxrow {
+  display: flex;
+  flex-flow: nowrap row;
+}
 </style>
