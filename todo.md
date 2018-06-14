@@ -40,6 +40,7 @@ To Do
 
 ### Feedback
 
+- [ ] Document components 
 - [ ] Client crit
 - [ ] Credentials
   - [ ] hosting account
