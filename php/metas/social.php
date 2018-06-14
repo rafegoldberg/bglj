@@ -1,18 +1,18 @@
-<?function SocialMeta() {
+<?function SocialMetas() {
   if( !is_callable('get_field') ) return;
   
   $context = get_field("metacard");
-  $markup  = SocialMeta_MarkupGenerator( $context );
+  $markup  = SocialMetasGenerator( $context );
   
   return $markup;
 }?>
 
-<?function SocialMeta_MarkupGenerator($context){
+<?function SocialMetasGenerator($context){
   $context = (object) $context;
   $isHome  = is_home() || is_front_page() ? true : false;
   ob_start()
   ?>  
-  <!-- essential metatags -->
+  <!-- social -->
   <meta property="og:title" content="<?=
     $isHome ? '' : get_the_title()." // " ?><?=get_bloginfo('name')
     ?>">
@@ -27,4 +27,4 @@
   return ob_get_clean();
 }?>
 
-<? return SocialMeta() ?>
+<? return SocialMetas() ?>
