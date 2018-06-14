@@ -5,10 +5,12 @@ $COLORLIST:(
   rock: #7B9FBD,
   blues: #2C62A3,
   slate: #0B1552,
-  dark: #160A21,
+  dark: rgb(13, 12, 15),
   black: #0F0F0F,
   );
 
-$theme: #203c64; // ACTUAL
+$key:   #222225;
+$dark:  rgb(13,12,15);
+$theme: #203c64;
 $matte: #fbfbf6;
 $edge:  #E2E2E2;
