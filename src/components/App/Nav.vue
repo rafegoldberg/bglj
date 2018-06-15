@@ -17,32 +17,34 @@
 </template>
 
 <script>
-import WpAsync from "@/components/WpAsync";
-import Inflect from "inflection";
-
+import VpItem from '@/VuePress/item'
+import Inflect from 'inflection'
 import url from 'url'
 import path from 'path'
 
 export default {
-  extends: WpAsync,
-  methods:{
-    makeLink(navItem){
+  extends: VpItem,
+  props:{
+    type:{ default:'page' }
+  },
+  computed:{
+  },
+  methods: {
+    makeLink(item){
       let
-      href = url.parse(navItem.object),
-      slug = href.pathname.replace(this.$router.options.base,'')
-      return `/${slug}`
+      slug = item.acf_fc_layout=='feed' 
+        ? Inflect.pluralize(item.object)
+        : item.object,
+      href = url.parse( slug ),
+      link = href.pathname.replace(this.$router.options.base,'')
+
+      return `/${link}`
     },
-    fetch(API){
-      return API.namespace('acf/v3').options().id('sidebar').get(function(err,rsp){
-        if( err ) return console.error(err)
-        rsp.acf.menu.map( link=>{
-          if( link.acf_fc_layout=='feed' )
-            link.object = Inflect.pluralize(link.object)
-          return link
-          })
-      })
+    fetch(WP){
+      return WP.namespace('bglj/v0').frontpage()
     }
-  }
+  },
+  computed: {},
 }
 </script>
 
