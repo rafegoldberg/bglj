@@ -18,7 +18,6 @@ import VpItem from '@/VuePress/item'
 import Brand from '@/components/brand'
 
 export default {
-  name:'PostItem',
   extends: VpItem,
   props:{
     type:{ default:'page' }
