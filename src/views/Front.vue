@@ -32,20 +32,6 @@ export default {
   computed: {},
   components:{ Brand },
 }
-//---------------------------------------------------------
-// import Brand from '@/components/brand'
-// import WpAsync from '@/components/WpAsync'
-// export default {
-//   name: 'AppFront',
-//   extends: WpAsync,
-//   components:{Brand},
-//   methods:{
-//     fetch(WP){
-//       return WP.namespace('acf/v3').options().id('options').get().then(item=> item.acf || item )
-//     }
-//   },
-//   computed:{}
-// }
 </script>
 
 <style lang="scss" scoped>

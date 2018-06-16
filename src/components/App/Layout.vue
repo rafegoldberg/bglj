@@ -38,7 +38,6 @@
 
 <script>
 import Brand from '../brand'
-
 export default {
   components:{ Brand }
 }
