@@ -1,15 +1,16 @@
 <template>
-  <div class="Events">
+<div class="Events">
 
-    <div class="Events--grid" v-if="!(context.loading||context.error)">
-      <EventWidget v-for="item in context"
-        :key="item.slug"
-        :title="item.title.rendered"
-        :address="item.acf['event-location'].address"
-        :date="item.acf['event-date']"></EventWidget>
-    </div>
-
+  <h2>Upcoming Events</h2>
+  <div class="Events--grid" v-if="!(context.loading||context.error)">
+    <EventWidget v-for="item in context"
+      :key="item.slug"
+      :title="item.title.rendered"
+      :address="item.acf['event-location'].address"
+      :date="item.acf['event-date']"></EventWidget>
   </div>
+
+</div>
 </template>
 
 <script>
@@ -43,9 +44,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/styles/theme/breaks.scss";
+
+@import "~@/styles/theme/breaks";
+@import "~@/styles/mixin/fluidType";
+
 .Events {
+  
   $edge: solid #DDD;    
+  
   &--grid {
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -74,6 +80,10 @@ export default {
         margin-left: 0 !important;
       }
     }
+  }
+
+  h2 {
+    @include fluidType;
   }
 }
 </style>

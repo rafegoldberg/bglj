@@ -1,11 +1,19 @@
 module.exports = {
   baseUrl: '/clients/BGLJ/',
 
-  css:       { extract: true,     },
-  devServer: { host:    "0.0.0.0" },
+  devServer: {
+    host: '0.0.0.0'
+  },
+  css: {
+    extract: true
+  },
 
   configureWebpack: {
-    devtool: "source-map",
+    devtool: 'source-map',
+    output:{
+      chunkFilename: 'js/[name].js',
+      filename: 'js/[name].bundle.js'
+    },
     resolve: {
       alias:{}
     },

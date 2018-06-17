@@ -27,11 +27,11 @@ export default new Vue({
  * In-Browser Aliases
  */
 
-import API from "@/includes/lib/WordpressAPI"
+// import API from "@/includes/lib/WordpressAPI"
 
-if( window && process.env.NODE_ENV=='development' ){
-  window.Vue = Vue
-  API.then(WP=>(
-    window.API = WP
-    ))
-}
+// if( window && process.env.NODE_ENV=='development' ){
+//   window.Vue = Vue
+//   API.then(WP=>(
+//     window.API = WP
+//     ))
+// }

@@ -64,6 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/styles/theme/sizes";
+@import "~@/styles/theme/fonts";
 @import "~@/styles/theme/colors";
 .Event {
   & {
@@ -98,9 +99,11 @@ export default {
     padding: 0.15em $gutter;
     font-size: calc(200% + 1vw);
     line-height: .9;
+    font-family: $font-sans;
     font-weight: 800;
     text-align: right;
     text-transform: uppercase;
+    letter-spacing: 0 !important;
 
     color: rgba($theme,.125);
 

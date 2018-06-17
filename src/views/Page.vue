@@ -1,5 +1,9 @@
 <template>
-  <pre>{{context}}</pre>
+<div v-if="!context.loading">
+  <h2>{{context.title.rendered}}</h2>
+  <article v-if="context.content.rendered" v-html="context.content.rendered"></article>
+  <pre v-else style="max-height:33vh;">{{context}}</pre>
+</div>
 </template>
 
 <script>
@@ -16,7 +20,7 @@ export default {
   methods:{
     fetch(WP){
       let
-      post = this.$route.params.pid,
+      post = this.$route.query.wpid || this.$route.params.pid,
       ajax = WP[this.endpoint||'pages']()
       if( parseInt(post) ){
         let id = parseInt(post)
@@ -27,3 +31,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~@/styles/mixin/fluidType";
+h2 {
+  @include fluidType;
+}
+</style>

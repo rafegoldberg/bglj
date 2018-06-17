@@ -5,7 +5,8 @@
   
   <ul class="AppNav--page-list" v-if="!context.loading">
     <router-link tag="li" v-for="page in context.acf.menu" :key="page.id" :to="makeLink(page)" :replace="$route.name=='nav'">
-      <a>{{page.label}}</a>
+      <a>{{page.label}}</a><span v-if="page.showTree">...</span>
+      <SubNav v-if="page.showTree" v-bind="page"></SubNav>
     </router-link>
   </ul>
     
@@ -18,41 +19,41 @@
 
 <script>
 import VpItem from '@/VuePress/item'
+import SubNav from '@/components/App/Nav/Sub'
+
 import Inflect from 'inflection'
 import url from 'url'
 import path from 'path'
 
 export default {
   extends: VpItem,
+  components:{ SubNav },
   props:{
     type:{ default:'page' }
-  },
-  computed:{
   },
   methods: {
     makeLink(item){
       let
       slug = item.acf_fc_layout=='feed' 
         ? Inflect.pluralize(item.object)
-        : item.object,
-      href = url.parse( slug ),
+        : item.object || item.link,
+      href = url.parse(slug) || item.link,
       link = href.pathname.replace(this.$router.options.base,'')
-
       return `/${link}`
     },
     fetch(WP){
       return WP.namespace('bglj/v0').frontpage()
     }
   },
-  computed: {},
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 @import "~@/styles/theme/fonts";
 
 .AppNav {
+  $base: #{&};
   & {
     position: sticky;
     top: 0;
@@ -70,19 +71,34 @@ export default {
     }
   }
   &--page-list {
-    display: block;
-    padding: 0 0 0 1em;
-    line-height: 2.6;
-    font-family: $font-sans;
-    .open {
+    &, .SubNav {
+      display: block;
+      padding: 0 0 0 1em;
+      line-height: 2.6;
+    }
+    .SubNav {
+      opacity: 0.88;
+    }
+    > li.open > a {
       font-weight: 700;
-      list-style-type: disc;
+      text-decoration: none !important;
+    }
+    li {
+      &:not(.open) .SubNav {
+        display: none;
+      }
+      &.open {
+        list-style-type: disc;
+      }
+      &.active > a:only-of-type {
+        text-decoration: underline;
+      }
     }
   }
   &--after {
-    min-height: 2.8rem;
+    // min-height: 2.8rem;
+    // margin: 1.5rem 0 0;
     transition: all .5s ease-out;
-    margin: 1.5rem 0 0;
   }
 }
 

@@ -37,13 +37,13 @@
 </template>
 
 <script>
-import Brand from '../brand'
+import Brand from '@/components/brand'
 export default {
   components:{ Brand }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~@/styles/theme/sizes";
 @import "~@/styles/theme/breaks";
 @import "~@/styles/theme/colors";
@@ -86,20 +86,22 @@ $sidebar-min-width: 18rem;
       background: $bgc;
       color: $txt;
     }
-    &:after {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      right: 0%;
-      width: 100%;
-      height: 100%;
+    & {
+      // content: ' ';
+      // position: absolute;
+      // top: 0;
+      // right: 0%;
+      // width: 100%;
+      // height: 100%;
+      // filter: opacity(.2) saturate(0) invert(1);
+
+
       background-image: url('~@/assets/logo.svg');
       background-repeat: no-repeat;
       background-size: auto 26rem;
       background-position: bottom right -9rem;
-      filter: opacity(.2) saturate(0) invert(1);
 
-      pointer-events: none;
+      // pointer-events: none;
     }
     @include breakpoint( nth($breaks,-1) ){
       display: none !important;
@@ -185,14 +187,16 @@ $sidebar-min-width: 18rem;
       background-size: auto 70%;
       background-position: left .25rem center;
       
-      filter: opacity(.3) saturate(0) invert(1);
+      opacity: 0.5;
+      // filter: opacity(.3) saturate(0) invert(1);
     }
     &:before,
     .Brand {
       transition: .25s .05s ease-out;
     }
     &_hid:before { 
-      filter: opacity(.5) saturate(0) invert(1);      
+      opacity: 1;
+      filter: brightness(1.25) ;
     }
     &_hid .Brand { opacity: 0 }
   }

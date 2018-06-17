@@ -8,7 +8,7 @@ import Volume from './views/Volume'
 import PostsList from '@/components/Posts'
 import PostsItem from '@/components/Posts/Item'
 
-import SocialBar from '@/components/SocialBar'
+// import SocialBar from '@/components/SocialBar'
 
 export default [
   {
@@ -16,7 +16,7 @@ export default [
     name: 'home',
     components: {
       default: AppFront,
-      nav: SocialBar,
+      // nav: SocialBar,
     },
   },
   {
@@ -58,10 +58,10 @@ export default [
   },
 
   {
-    path: '/:pid',
+    path: '/:pid/:sub*',
     name: 'page',
     component: AppPage,
-    props: true
+    props:{ default:true, wpid:false },
   },
 
   /* TODO: - page route

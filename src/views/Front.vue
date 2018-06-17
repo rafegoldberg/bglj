@@ -5,8 +5,11 @@
   <Brand tag="h1" :large="true" :fluid="true"></Brand>
   <hr>
   
+  
   <template v-if="!context.loading">
     <article v-html="context.acf.mandate"></article>
+    <br>
+    <Social></Social>
   </template>
   <span v-else>Loading...</span>
   
@@ -16,21 +19,19 @@
 <script>
 import VpItem from '@/VuePress/item'
 import Brand from '@/components/brand'
+import Social from '@/components/SocialBar'
 
 export default {
   extends: VpItem,
+  components:{ Brand, Social },
   props:{
     type:{ default:'page' }
-  },
-  computed:{
   },
   methods: {
     fetch(WP){
       return WP.namespace('bglj/v0').frontpage()
     }
   },
-  computed: {},
-  components:{ Brand },
 }
 </script>
 
