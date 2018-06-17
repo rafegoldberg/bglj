@@ -196,7 +196,7 @@ $sidebar-min-width: 18rem;
     }
     &_hid:before { 
       opacity: 1;
-      filter: brightness(1.25) ;
+      // filter: brightness(1.25) ;
     }
     &_hid .Brand { opacity: 0 }
   }

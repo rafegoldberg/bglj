@@ -145,12 +145,12 @@ var staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=70eadb82
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/z00221y/.bitnami/stackman/machines/xampp/volumes/root/htdocs/clients/BGLJ/wp-content/themes/bglj-wp/node_modules/.cache/vue-loader","cacheIdentifier":"7e8be36e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/App/Layout.vue?vue&type=template&id=d5af8d9a
-var Layoutvue_type_template_id_d5af8d9a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"AppLayout"},[_c('div',{staticClass:"AppLayout--side"},[_vm._t("side")],2),_c('main',{staticClass:"AppLayout--main"},[_c('div',{staticClass:"TopNav",class:{ TopNav_hid:this.$route.name=='home' }},[_c('router-link',{staticClass:"Brand",attrs:{"to":"/"}},[_c('Brand',{attrs:{"tag":"h5"}})],1),(_vm.$route.name=='nav')?_c('button',{staticClass:"TopNav--toggle TopNav--toggle-close",on:{"click":function($event){$event.preventDefault();_vm.$router.go(-1)}}}):_c('router-link',{staticClass:"TopNav--toggle TopNav--toggle-open",attrs:{"tag":"button","to":"/nav"}})],1),_c('header',{staticClass:"AppLayout--main-head"},[_vm._t("head")],2),_c('div',{staticClass:"AppLayout--main-page"},[_vm._t("default",[_vm._v("Loading...")])],2),_c('footer',{staticClass:"AppLayout--main-foot"},[_vm._t("foot")],2)])])}
-var Layoutvue_type_template_id_d5af8d9a_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/z00221y/.bitnami/stackman/machines/xampp/volumes/root/htdocs/clients/BGLJ/wp-content/themes/bglj-wp/node_modules/.cache/vue-loader","cacheIdentifier":"7e8be36e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/App/Layout.vue?vue&type=template&id=dfcf0fa6
+var Layoutvue_type_template_id_dfcf0fa6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"AppLayout"},[_c('div',{staticClass:"AppLayout--side"},[_vm._t("side")],2),_c('main',{staticClass:"AppLayout--main"},[_c('div',{staticClass:"TopNav",class:{ TopNav_hid:this.$route.name=='home' }},[_c('router-link',{staticClass:"Brand",attrs:{"to":"/"}},[_c('Brand',{attrs:{"tag":"h5"}})],1),(_vm.$route.name=='nav')?_c('button',{staticClass:"TopNav--toggle TopNav--toggle-close",on:{"click":function($event){$event.preventDefault();_vm.$router.go(-1)}}}):_c('router-link',{staticClass:"TopNav--toggle TopNav--toggle-open",attrs:{"tag":"button","to":"/nav"}})],1),_c('header',{staticClass:"AppLayout--main-head"},[_vm._t("head")],2),_c('div',{staticClass:"AppLayout--main-page"},[_vm._t("default",[_vm._v("Loading...")])],2),_c('footer',{staticClass:"AppLayout--main-foot"},[_vm._t("foot")],2)])])}
+var Layoutvue_type_template_id_dfcf0fa6_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/App/Layout.vue?vue&type=template&id=d5af8d9a
+// CONCATENATED MODULE: ./src/components/App/Layout.vue?vue&type=template&id=dfcf0fa6
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/Users/z00221y/.bitnami/stackman/machines/xampp/volumes/root/htdocs/clients/BGLJ/wp-content/themes/bglj-wp/node_modules/.cache/vue-loader","cacheIdentifier":"7e8be36e-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/brand.vue?vue&type=template&id=0014fa9f
 var brandvue_type_template_id_0014fa9f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",staticClass:"BrandBGLJ",class:{
@@ -378,8 +378,8 @@ var Layoutvue_type_style_index_1_lang_scss = __webpack_require__("Px5V");
 
 var Layout_component = normalizeComponent(
   App_Layoutvue_type_script_lang_js,
-  Layoutvue_type_template_id_d5af8d9a_render,
-  Layoutvue_type_template_id_d5af8d9a_staticRenderFns,
+  Layoutvue_type_template_id_dfcf0fa6_render,
+  Layoutvue_type_template_id_dfcf0fa6_staticRenderFns,
   false,
   null,
   null,
