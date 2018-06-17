@@ -50,6 +50,7 @@ export default {
 
 <style lang="scss">
 
+@import "~@/styles/theme/breaks";
 @import "~@/styles/theme/fonts";
 
 .AppNav {
@@ -84,8 +85,10 @@ export default {
       text-decoration: none !important;
     }
     li {
-      &:not(.open) .SubNav {
-        display: none;
+      @include breakpoint( min-width $break ){
+        &:not(.open) .SubNav {
+          display: none;
+        }
       }
       &.open {
         list-style-type: disc;
