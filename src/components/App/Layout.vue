@@ -134,8 +134,7 @@ $sidebar-min-width: 18rem;
     &-foot {
       box-sizing: border-box;
       margin: $gutter -#{$gutter} 0;
-      padding: $gutter;
-      min-height: 2rem;
+      padding: $gutter*1.5 $gutter;
       background: $edge;
       color: $theme;
 
@@ -188,7 +187,6 @@ $sidebar-min-width: 18rem;
       background-position: left .25rem center;
       
       opacity: 0.5;
-      // filter: opacity(.3) saturate(0) invert(1);
     }
     &:before,
     .Brand {
@@ -196,7 +194,6 @@ $sidebar-min-width: 18rem;
     }
     &_hid:before { 
       opacity: 1;
-      // filter: brightness(1.25) ;
     }
     &_hid .Brand { opacity: 0 }
   }

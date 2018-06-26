@@ -4,9 +4,9 @@
       <a v-html="title&&title.rendered||title"></a>
     </router-link>
     <VpImg v-if="card.image" class="MediaBox--media" v-bind="card.image"></VpImg>
-    <div v-if="card.showExcerpt" class="MediaBox--excerpt">
+    <article v-if="card.showExcerpt" class="MediaBox--excerpt">
       <p class="MediaBox--text" v-html="card.text||excerpt&&excerpt.rendered||excerpt"></p>
-    </div>
+    </article>
     <footer class="MediaBox--actions">
       <slot/>
     </footer>

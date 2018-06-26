@@ -28,7 +28,6 @@ export default {
 @import "~@/styles/theme/fonts";
 .SubNav {
   li {
-    font-style: italic;
     list-style-type: square !important;
   }
 }

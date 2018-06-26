@@ -187,17 +187,3 @@ table {
     border-color: $edge;
   }
 }
-p {
-  line-height: 1.6;
-  margin: unset;
-  & + & { margin-top: 1.3rem }
-}
-
-article, p {
-  a {
-    color: $theme;
-    font-family: inherit;
-    text-decoration: underline $theme;
-    text-decoration-skip-ink: auto;
-  }
-}

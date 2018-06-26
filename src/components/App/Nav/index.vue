@@ -94,7 +94,7 @@ export default {
         list-style-type: disc;
       }
       &.active > a:only-of-type {
-        text-decoration: underline;
+        text-decoration-line: line-through;
       }
     }
   }
