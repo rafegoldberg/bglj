@@ -1,6 +1,11 @@
 <template>
 <div v-if="title" class="PostHead">
-  <h2 class="PostHead--title">{{title}}</h2>
+  <h2 class="PostHead--title">
+    <slot>{{title}}</slot>
+  </h2>
+</div>
+<div v-else>
+  {{$log(this)}}
 </div>
 </template>
 

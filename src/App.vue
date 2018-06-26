@@ -31,7 +31,7 @@
         <b>Donate to the Journal</b>
       </a> 
     </div>
-    <div style="transform: translate(0,2px)">
+    <div style="transform: translate(0,3px)">
       ©{{new Date(Date.now()).getFullYear()}} — <em>the Berkley Journal of Gender, Law & Justice</em>
     </div>
   </small>
@@ -101,11 +101,11 @@ export default {
 #donate {
   @include button;
   display: inline-block;
-  margin-bottom: -4px;
+  margin-bottom: -3px;
   padding: .66rem .8rem;
-  border-radius: 4em;
-  box-shadow: 2px 4px 0 -1px rgba(0,0,0,.088);
   line-height: 1.2;
+  border-radius: 4em;
+  // box-shadow: 2px 4px 0 -1px rgba(0,0,0,.088);
   &:hover {
     box-shadow: 2px 3px 3px -1px rgba(0,0,0,.25);
   }
