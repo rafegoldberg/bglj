@@ -1,15 +1,27 @@
 <template>
 <div class="Event">
   
-  <header>
-    <h3 class="Event--title">{{title}}</h3>
-    <time>At <b>{{time}}</b> on {{month}} {{day}} {{year}}</time>
-  </header>
-  <div class="Event--decorator">{{day}}<br>{{month}}</div>
+
   
-  <address class="Event--details">
-    <a :href="mapLink" target="_BLANK" v-html="locale"></a>
-  </address>
+  <header>
+    <h3 class="Event--title">
+      {{title}}
+    </h3>
+    <time>
+      <small>at {{ date | moment("ha on ddd. MM/DD/YY") }}</small>
+    </time>
+  </header>
+  <div class="Event--decorator">
+    {{ date | moment("D") }}
+    <br>
+    {{ date | moment("MMM") }}
+  </div>
+  
+  <div class="Event--details">
+    <address>
+      <a :href="locate" v-html="locale" target="_BLANK"></a>
+    </address>
+  </div>
 
 </div>
 </template>
@@ -31,18 +43,6 @@ export default {
     },
   },
   computed:{
-    month(){
-      return this.date.toLocaleString( 'en-US', { month:'short' } )
-    },
-    year(){
-      return this.date.toLocaleString( 'en-US', { year:'numeric' } )
-    },
-    day(){
-      return this.date.toLocaleString( 'en-US', { day:'numeric' } )
-    },
-    time(){
-      return this.date.toLocaleString( 'en-US', { hour:'numeric', minute:'numeric' } )
-    },
     locale(){
       let
       sep = ', ',
@@ -52,7 +52,7 @@ export default {
 
       return [ln1,ln2].map( arr=>arr.join(sep) ).join('<br>')
     },
-    mapLink(){
+    locate(){
       let
       addr = this.address.replace(',','')
       addr = encodeURIComponent(addr)
@@ -63,9 +63,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/styles/theme/colors";
 @import "~@/styles/theme/sizes";
 @import "~@/styles/theme/fonts";
-@import "~@/styles/theme/colors";
+@import "~@/styles/theme/breaks";
 .Event {
   & {
     position: relative;
@@ -74,15 +75,24 @@ export default {
     flex-flow: nowrap column;
     justify-content: space-between;
   }
+    
+  time { opacity: .5 }
+  address {
+    @include breakpoint( min-width 1250px ){
+      &:first-line { font-style: normal }
+      >:only-child {
+        overflow: hidden;
+        white-space: pre;
+        text-overflow: ellipsis;
+        display: block;
+      }
+    }
+  }
+
   &--title {
     margin: 0;
     align-self: flex-start;
     max-width: 88%;
-  }
-  header > time {
-    // TODO add class
-    font-size: 0.8em;
-    opacity: 0.5;
   }
   &--details {
     font-size: 0.8em;
@@ -91,21 +101,29 @@ export default {
     text-align: left;
     min-width: 100%;
     margin-top: 1.5rem;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: clip;
   }
   &--decorator {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: .5rem;
+    top: 1rem;
     padding: 0.15em $gutter;
-    font-size: calc(200% + 1vw);
-    line-height: .9;
+    font-size: calc(400% + 0vw);
+    line-height: .5;
     font-family: $font-sans;
     font-weight: 800;
-    text-align: right;
+    // text-align: right;
+    direction: rtl;
+    text-indent: -.5rem;
     text-transform: uppercase;
     letter-spacing: 0 !important;
 
-    color: rgba($theme,.125);
+    color: rgba($theme,.08);
 
     pointer-events: none;
   }
