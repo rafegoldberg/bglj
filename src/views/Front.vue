@@ -9,7 +9,7 @@
   <template v-if="!context.loading">
     <article v-html="context.acf.mandate"></article>
     <br>
-    <Social></Social>
+    <Social style="margin-right:-1rem"></Social>
   </template>
   <span v-else>Loading...</span>
   

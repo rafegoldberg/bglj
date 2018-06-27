@@ -8,7 +8,7 @@
   <div v-else>
     <header>
       <h2 style="margin-bottom:0">{{context.title.rendered}}</h2>
-      <small style="display: inline-block; text-indent: .45rem;">
+      <small>
         Published <time>{{context.acf.pubdate}}</time>.
         <a :href="context.acf.link"><u>View archive.</u></a>
       </small>
