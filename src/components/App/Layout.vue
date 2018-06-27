@@ -132,15 +132,28 @@ $sidebar-min-width: 18rem;
       margin: auto 0;
     }
     &-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .8em;
+
       box-sizing: border-box;
       margin: $gutter -#{$gutter} 0;
       padding: $gutter*1.5 $gutter;
-      background: $edge;
-      color: $theme;
 
-      text-align: right;
       font-family: $font-serif;
-      line-height: .9;
+      text-align: right;
+      color: $theme;
+      background: $edge;
+
+      > * { margin: 1rem 0 }
+      
+      @include breakpoint( nth($breaks,1) ){
+        flex-flow: nowrap column;
+        text-align: center;
+        > *     { margin: unset }
+        > * + * { margin: 1rem 0 0 }
+      }
     }
   }
 }

@@ -1,14 +1,14 @@
 @import "~breakpoint-sass";
 
-$break: 920px !default;
+$__break__: max-width !default;
 
+$break: 920px !default;
 $point: 920px !default;
-$__break__: max-width;
 
 $points: (
   36rem
   $point
-);
+  );  
 $breaks: (
   $__break__ nth($points,1),
   $__break__ nth($points,2),
