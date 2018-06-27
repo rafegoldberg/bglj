@@ -7,6 +7,7 @@ import Vue from "vue"
 import "@/includes/use.log"
 import "@/includes/use.async"
 import "@/includes/use.meta"
+import "@/includes/use.moment"
 
 Vue.config.productionTip = false
 
